@@ -1,0 +1,1535 @@
+SUCCESS: Flush patches count: 164
+Prepare to create bugzilla...
+SUCCESS: create bugzilla, 51a709adb9c6 0
+SUCCESS: create bugzilla, 3652d3820ebd 0
+SUCCESS: create bugzilla, c506b71c4c62 0
+SUCCESS: create bugzilla, 8a901e19407d 0
+SUCCESS: create bugzilla, ddf088d7aaaa 0
+SUCCESS: create bugzilla, caec9bcaeb1a 0
+SUCCESS: create bugzilla, 268218460584 0
+SUCCESS: create bugzilla, 551677defbb5 0
+SUCCESS: create bugzilla, 542bbcaa930a 0
+SUCCESS: create bugzilla, 3762e844c5a0 0
+SUCCESS: create bugzilla, 5a3d82dc8ace 0
+SUCCESS: create bugzilla, 830e7653e940 0
+SUCCESS: create bugzilla, 9b77839fd4b6 0
+SUCCESS: create bugzilla, 1df2dc09926f 0
+SUCCESS: create bugzilla, d1629b5b925d 0
+SUCCESS: create bugzilla, 6f2a834f364d 0
+SUCCESS: create bugzilla, 9ddd1b2c8c31 0
+SUCCESS: create bugzilla, 6280e8aca1e0 0
+SUCCESS: create bugzilla, 7feb7361efe0 0
+SUCCESS: create bugzilla, ff8de2cec65a 0
+SUCCESS: create bugzilla, 4cd303735bdf 0
+SUCCESS: create bugzilla, a70d4dac28aa 0
+SUCCESS: create bugzilla, b37885cc0135 0
+SUCCESS: create bugzilla, 363747ad1f44 0
+SUCCESS: create bugzilla, 99eee2efe4b7 0
+SUCCESS: create bugzilla, 22beee867bf1 0
+SUCCESS: create bugzilla, 50863015b6a7 0
+SUCCESS: create bugzilla, 3cbf4d6d2b52 0
+SUCCESS: create bugzilla, 25823b4e08f6 0
+SUCCESS: create bugzilla, a1f10530c732 0
+SUCCESS: create bugzilla, 9d1d6c04a603 0
+SUCCESS: create bugzilla, 0c4559736d9a 0
+SUCCESS: create bugzilla, bf63f3676c5f 0
+SUCCESS: create bugzilla, 01049949f673 0
+SUCCESS: create bugzilla, de8a25bef860 0
+SUCCESS: create bugzilla, 25aaa062fa73 0
+SUCCESS: create bugzilla, 4c438acbfbdf 0
+SUCCESS: create bugzilla, 455170aca45a 0
+SUCCESS: create bugzilla, 3c822fea4bb2 0
+SUCCESS: create bugzilla, 0a31dd6fd2f4 0
+SUCCESS: create bugzilla, b8ff869f2015 0
+SUCCESS: create bugzilla, 9a01a5cd63cd 0
+SUCCESS: create bugzilla, 18071d618c1a 0
+SUCCESS: create bugzilla, 08ec01b5318a 0
+SUCCESS: create bugzilla, 62fa43c7ee55 0
+SUCCESS: create bugzilla, c48d71d1367f 0
+SUCCESS: create bugzilla, 04fb2baa0b14 0
+SUCCESS: create bugzilla, ba499e0bf9c8 0
+SUCCESS: create bugzilla, 48105dc98c9c 0
+SUCCESS: create bugzilla, 1385b23396d5 0
+SUCCESS: create bugzilla, ff7fe51dc492 0
+SUCCESS: create bugzilla, d16c0b0658b2 0
+SUCCESS: create bugzilla, 5c671c9d8363 0
+SUCCESS: create bugzilla, 89b6aacdc483 0
+SUCCESS: create bugzilla, 601554201a95 0
+SUCCESS: create bugzilla, 112c92cf82a2 0
+SUCCESS: create bugzilla, 92462d2e0a4c 0
+SUCCESS: create bugzilla, 9cf27473f219 0
+SUCCESS: create bugzilla, 4a88d9210c52 0
+SUCCESS: create bugzilla, dde8686985ec 0
+SUCCESS: create bugzilla, 6a0e317f6109 0
+SUCCESS: create bugzilla, 88550e9c900b 0
+SUCCESS: create bugzilla, 19e089e07e19 0
+SUCCESS: create bugzilla, 5ceb59f40c09 0
+SUCCESS: create bugzilla, af04157d885e 0
+SUCCESS: create bugzilla, 6f425fc65c08 0
+SUCCESS: create bugzilla, 8eee870d8290 0
+SUCCESS: create bugzilla, 90b33dbb8395 0
+SUCCESS: create bugzilla, 4b8aa955bf47 0
+SUCCESS: create bugzilla, 3709c87e0dbe 0
+SUCCESS: create bugzilla, 958810e99f6f 0
+SUCCESS: create bugzilla, 8af215cc8305 0
+SUCCESS: create bugzilla, 7422eadcf201 0
+SUCCESS: create bugzilla, 3556fac71e41 0
+SUCCESS: create bugzilla, af512f09385a 0
+SUCCESS: create bugzilla, 805e5a259f99 0
+SUCCESS: create bugzilla, 4a728699bc2a 0
+SUCCESS: create bugzilla, 1f64f5e903b9 0
+SUCCESS: create bugzilla, 9e44293267a5 0
+SUCCESS: create bugzilla, 0cd6e16742d4 0
+SUCCESS: create bugzilla, 876808dba2ff 0
+SUCCESS: create bugzilla, 5a5357cd2cd9 0
+SUCCESS: create bugzilla, 904987a65092 0
+SUCCESS: create bugzilla, f9a2672791d0 0
+SUCCESS: create bugzilla, ab5cfe2c05fe 0
+SUCCESS: create bugzilla, 506285aa2f7f 0
+SUCCESS: create bugzilla, ca93a7e6d22d 0
+SUCCESS: create bugzilla, c8f7f44ca1e9 0
+SUCCESS: create bugzilla, 0c41a1124d37 0
+SUCCESS: create bugzilla, 1f00cc03b8a1 0
+SUCCESS: create bugzilla, 250792f40b6d 0
+SUCCESS: create bugzilla, 8567131103a5 0
+SUCCESS: create bugzilla, f3b70e434a6e 0
+SUCCESS: create bugzilla, f61ce6a8225c 0
+SUCCESS: create bugzilla, e86d02dbd177 0
+SUCCESS: create bugzilla, c57ad9d41026 0
+SUCCESS: create bugzilla, 484634991cdc 0
+SUCCESS: create bugzilla, bc6a0dfb0535 0
+SUCCESS: create bugzilla, 435d7f1049e0 0
+SUCCESS: create bugzilla, 88728042be15 0
+SUCCESS: create bugzilla, 85e8a90cd7cb 0
+SUCCESS: create bugzilla, 1b002f376a9d 0
+SUCCESS: create bugzilla, e2d914baa1c2 0
+SUCCESS: create bugzilla, 567d67a3cb9d 0
+SUCCESS: create bugzilla, c93d6b804035 0
+SUCCESS: create bugzilla, 0ce89496a1f9 0
+SUCCESS: create bugzilla, 2411c02d0389 0
+SUCCESS: create bugzilla, bf807cfb9feb 0
+SUCCESS: create bugzilla, 5cd9ec7ad51c 0
+SUCCESS: create bugzilla, 9ba861c7957a 0
+SUCCESS: create bugzilla, 4f000fa8076b 0
+SUCCESS: create bugzilla, 53ba29c32b41 0
+SUCCESS: create bugzilla, e2bd0bc13d27 0
+SUCCESS: create bugzilla, 0a462e25ef0f 0
+SUCCESS: create bugzilla, 511ffe92734e 0
+SUCCESS: create bugzilla, 1d34fa4fcf06 0
+SUCCESS: create bugzilla, a1c1b1ef41cd 0
+SUCCESS: create bugzilla, 5a8e2bf7eebb 0
+SUCCESS: create bugzilla, bb5da059defe 0
+SUCCESS: create bugzilla, 6820c1aaf8e5 0
+SUCCESS: create bugzilla, e5a823123782 0
+SUCCESS: create bugzilla, acc43fc6cf0d 0
+SUCCESS: create bugzilla, f2c444cacbb0 0
+SUCCESS: create bugzilla, 851fcb15e735 0
+SUCCESS: create bugzilla, 2c0e6b35b88a 0
+SUCCESS: create bugzilla, 8a452d62e7ce 0
+SUCCESS: create bugzilla, ef94ecfa3e5b 0
+SUCCESS: create bugzilla, 500563cb6fb0 0
+SUCCESS: create bugzilla, 9606de3ac084 0
+SUCCESS: create bugzilla, d1ead783fe2e 0
+SUCCESS: create bugzilla, f8bdc8d7d8e8 0
+SUCCESS: create bugzilla, 0f1e6fe66977 0
+SUCCESS: create bugzilla, aada29744711 0
+SUCCESS: create bugzilla, 80cebcccc120 0
+SUCCESS: create bugzilla, ee64a27e9edc 0
+SUCCESS: create bugzilla, eba7c76a5651 0
+SUCCESS: create bugzilla, b89474465f69 0
+SUCCESS: create bugzilla, ec6793f17576 0
+SUCCESS: create bugzilla, 7d4446bcb406 0
+SUCCESS: create bugzilla, 9d0d1d10ba54 0
+SUCCESS: create bugzilla, b9c78b1a9596 0
+SUCCESS: create bugzilla, 41d6cc0cd8e9 0
+SUCCESS: create bugzilla, 30822781c899 0
+SUCCESS: create bugzilla, 36c19acbbc7e 0
+SUCCESS: create bugzilla, 47b0e3728f47 0
+SUCCESS: create bugzilla, c30c28987173 0
+SUCCESS: create bugzilla, 29beadea66a2 0
+SUCCESS: create bugzilla, 427bc15bbd9d 0
+SUCCESS: create bugzilla, 192576732f76 0
+SUCCESS: create bugzilla, 25775914cc8b 0
+SUCCESS: create bugzilla, f1a02cde2deb 0
+SUCCESS: create bugzilla, a5ed75187580 0
+SUCCESS: create bugzilla, 1752346dfd97 0
+SUCCESS: create bugzilla, 2d5e0f9d5b8d 0
+SUCCESS: create bugzilla, 99702e4d6e9b 0
+SUCCESS: create bugzilla, e786eacbf323 0
+SUCCESS: create bugzilla, 68e34413ba72 0
+SUCCESS: create bugzilla, 8a7e8b4e5631 0
+SUCCESS: create bugzilla, dda954b96c90 0
+SUCCESS: create bugzilla, 62c52507cddc 0
+SUCCESS: create bugzilla, 9cad2c70e408 0
+SUCCESS: create bugzilla, 068c4db1eed3 0
+SUCCESS: create bugzilla, 6919e8a24e70 0
+SUCCESS: create bugzilla, a31a19948c94 0
+Create bugzilla end
+SUCCESS: prepare candidates OK
+SUCCESS: Flush patches count: 164
+Prepare to create bugzilla...
+Create bugzilla end
+SUCCESS: prepare candidates OK
+Start refresh candidates... time:[2021-06-24]
+SUCCESS: Flush patches count: 164
+Prepare to create bugzilla...
+Create bugzilla end
+SUCCESS: refresh candidates OK
+Start refresh candidates... time:[2021-06-24]
+SUCCESS: Flush patches count: 164
+Prepare to create bugzilla...
+SUCCESS: create bugzilla, 51a709adb9c6 0
+SUCCESS: create bugzilla, 3652d3820ebd 0
+SUCCESS: create bugzilla, c506b71c4c62 0
+SUCCESS: create bugzilla, 8a901e19407d 0
+SUCCESS: create bugzilla, ddf088d7aaaa 0
+SUCCESS: create bugzilla, caec9bcaeb1a 0
+SUCCESS: create bugzilla, 268218460584 0
+SUCCESS: create bugzilla, 551677defbb5 0
+SUCCESS: create bugzilla, 542bbcaa930a 0
+SUCCESS: create bugzilla, 3762e844c5a0 0
+SUCCESS: create bugzilla, 5a3d82dc8ace 0
+SUCCESS: create bugzilla, 830e7653e940 0
+SUCCESS: create bugzilla, 9b77839fd4b6 0
+SUCCESS: create bugzilla, 1df2dc09926f 0
+SUCCESS: create bugzilla, d1629b5b925d 0
+SUCCESS: create bugzilla, 6f2a834f364d 0
+SUCCESS: create bugzilla, 9ddd1b2c8c31 0
+SUCCESS: create bugzilla, 6280e8aca1e0 0
+SUCCESS: create bugzilla, 7feb7361efe0 0
+SUCCESS: create bugzilla, ff8de2cec65a 0
+SUCCESS: create bugzilla, 4cd303735bdf 0
+SUCCESS: create bugzilla, a70d4dac28aa 0
+SUCCESS: create bugzilla, b37885cc0135 0
+SUCCESS: create bugzilla, 363747ad1f44 0
+SUCCESS: create bugzilla, 99eee2efe4b7 0
+SUCCESS: create bugzilla, 22beee867bf1 0
+SUCCESS: create bugzilla, 50863015b6a7 0
+SUCCESS: create bugzilla, 3cbf4d6d2b52 0
+SUCCESS: create bugzilla, 25823b4e08f6 0
+SUCCESS: create bugzilla, a1f10530c732 0
+SUCCESS: create bugzilla, 9d1d6c04a603 0
+SUCCESS: create bugzilla, 0c4559736d9a 0
+SUCCESS: create bugzilla, bf63f3676c5f 0
+SUCCESS: create bugzilla, 01049949f673 0
+SUCCESS: create bugzilla, de8a25bef860 0
+SUCCESS: create bugzilla, 25aaa062fa73 0
+SUCCESS: create bugzilla, 4c438acbfbdf 0
+SUCCESS: create bugzilla, 455170aca45a 0
+SUCCESS: create bugzilla, 3c822fea4bb2 0
+SUCCESS: create bugzilla, 0a31dd6fd2f4 0
+SUCCESS: create bugzilla, b8ff869f2015 0
+SUCCESS: create bugzilla, 9a01a5cd63cd 0
+SUCCESS: create bugzilla, 18071d618c1a 0
+SUCCESS: create bugzilla, 08ec01b5318a 0
+SUCCESS: create bugzilla, 62fa43c7ee55 0
+SUCCESS: create bugzilla, c48d71d1367f 0
+SUCCESS: create bugzilla, 04fb2baa0b14 0
+SUCCESS: create bugzilla, ba499e0bf9c8 0
+SUCCESS: create bugzilla, 48105dc98c9c 0
+SUCCESS: create bugzilla, 1385b23396d5 0
+SUCCESS: create bugzilla, ff7fe51dc492 0
+SUCCESS: create bugzilla, d16c0b0658b2 0
+SUCCESS: create bugzilla, 5c671c9d8363 0
+SUCCESS: create bugzilla, 89b6aacdc483 0
+SUCCESS: create bugzilla, 601554201a95 0
+SUCCESS: create bugzilla, 112c92cf82a2 0
+SUCCESS: create bugzilla, 92462d2e0a4c 0
+SUCCESS: create bugzilla, 9cf27473f219 0
+SUCCESS: create bugzilla, 4a88d9210c52 0
+SUCCESS: create bugzilla, dde8686985ec 0
+SUCCESS: create bugzilla, 6a0e317f6109 0
+SUCCESS: create bugzilla, 88550e9c900b 0
+SUCCESS: create bugzilla, 19e089e07e19 0
+SUCCESS: create bugzilla, 5ceb59f40c09 0
+SUCCESS: create bugzilla, af04157d885e 0
+SUCCESS: create bugzilla, 6f425fc65c08 0
+SUCCESS: create bugzilla, 8eee870d8290 0
+SUCCESS: create bugzilla, 90b33dbb8395 0
+SUCCESS: create bugzilla, 4b8aa955bf47 0
+SUCCESS: create bugzilla, 3709c87e0dbe 0
+SUCCESS: create bugzilla, 958810e99f6f 0
+SUCCESS: create bugzilla, 8af215cc8305 0
+SUCCESS: create bugzilla, 7422eadcf201 0
+SUCCESS: create bugzilla, 3556fac71e41 0
+SUCCESS: create bugzilla, af512f09385a 0
+SUCCESS: create bugzilla, 805e5a259f99 0
+SUCCESS: create bugzilla, 4a728699bc2a 0
+SUCCESS: create bugzilla, 1f64f5e903b9 0
+SUCCESS: create bugzilla, 9e44293267a5 0
+SUCCESS: create bugzilla, 0cd6e16742d4 0
+SUCCESS: create bugzilla, 876808dba2ff 0
+SUCCESS: create bugzilla, 5a5357cd2cd9 0
+SUCCESS: create bugzilla, 904987a65092 0
+SUCCESS: create bugzilla, f9a2672791d0 0
+SUCCESS: create bugzilla, ab5cfe2c05fe 0
+SUCCESS: create bugzilla, 506285aa2f7f 0
+SUCCESS: create bugzilla, ca93a7e6d22d 0
+SUCCESS: create bugzilla, c8f7f44ca1e9 0
+SUCCESS: create bugzilla, 0c41a1124d37 0
+SUCCESS: create bugzilla, 1f00cc03b8a1 0
+SUCCESS: create bugzilla, 250792f40b6d 0
+SUCCESS: create bugzilla, 8567131103a5 0
+SUCCESS: create bugzilla, f3b70e434a6e 0
+SUCCESS: create bugzilla, f61ce6a8225c 0
+SUCCESS: create bugzilla, e86d02dbd177 0
+SUCCESS: create bugzilla, c57ad9d41026 0
+SUCCESS: create bugzilla, 484634991cdc 0
+SUCCESS: create bugzilla, bc6a0dfb0535 0
+SUCCESS: create bugzilla, 435d7f1049e0 0
+SUCCESS: create bugzilla, 88728042be15 0
+SUCCESS: create bugzilla, 85e8a90cd7cb 0
+SUCCESS: create bugzilla, 1b002f376a9d 0
+SUCCESS: create bugzilla, e2d914baa1c2 0
+SUCCESS: create bugzilla, 567d67a3cb9d 0
+SUCCESS: create bugzilla, c93d6b804035 0
+SUCCESS: create bugzilla, 0ce89496a1f9 0
+SUCCESS: create bugzilla, 2411c02d0389 0
+SUCCESS: create bugzilla, bf807cfb9feb 0
+SUCCESS: create bugzilla, 5cd9ec7ad51c 0
+SUCCESS: create bugzilla, 9ba861c7957a 0
+SUCCESS: create bugzilla, 4f000fa8076b 0
+SUCCESS: create bugzilla, 53ba29c32b41 0
+SUCCESS: create bugzilla, e2bd0bc13d27 0
+SUCCESS: create bugzilla, 0a462e25ef0f 0
+SUCCESS: create bugzilla, 511ffe92734e 0
+SUCCESS: create bugzilla, 1d34fa4fcf06 0
+SUCCESS: create bugzilla, a1c1b1ef41cd 0
+SUCCESS: create bugzilla, 5a8e2bf7eebb 0
+SUCCESS: create bugzilla, bb5da059defe 0
+SUCCESS: create bugzilla, 6820c1aaf8e5 0
+SUCCESS: create bugzilla, e5a823123782 0
+SUCCESS: create bugzilla, acc43fc6cf0d 0
+SUCCESS: create bugzilla, f2c444cacbb0 0
+SUCCESS: create bugzilla, 851fcb15e735 0
+SUCCESS: create bugzilla, 2c0e6b35b88a 0
+SUCCESS: create bugzilla, 8a452d62e7ce 0
+SUCCESS: create bugzilla, ef94ecfa3e5b 0
+SUCCESS: create bugzilla, 500563cb6fb0 0
+SUCCESS: create bugzilla, 9606de3ac084 0
+SUCCESS: create bugzilla, d1ead783fe2e 0
+SUCCESS: create bugzilla, f8bdc8d7d8e8 0
+SUCCESS: create bugzilla, 0f1e6fe66977 0
+SUCCESS: create bugzilla, aada29744711 0
+SUCCESS: create bugzilla, 80cebcccc120 0
+SUCCESS: create bugzilla, ee64a27e9edc 0
+SUCCESS: create bugzilla, eba7c76a5651 0
+SUCCESS: create bugzilla, b89474465f69 0
+SUCCESS: create bugzilla, ec6793f17576 0
+SUCCESS: create bugzilla, 7d4446bcb406 0
+SUCCESS: create bugzilla, 9d0d1d10ba54 0
+SUCCESS: create bugzilla, b9c78b1a9596 0
+SUCCESS: create bugzilla, 41d6cc0cd8e9 0
+SUCCESS: create bugzilla, 30822781c899 0
+SUCCESS: create bugzilla, 36c19acbbc7e 0
+SUCCESS: create bugzilla, 47b0e3728f47 0
+SUCCESS: create bugzilla, c30c28987173 0
+SUCCESS: create bugzilla, 29beadea66a2 0
+SUCCESS: create bugzilla, 427bc15bbd9d 0
+SUCCESS: create bugzilla, 192576732f76 0
+SUCCESS: create bugzilla, 25775914cc8b 0
+SUCCESS: create bugzilla, f1a02cde2deb 0
+SUCCESS: create bugzilla, a5ed75187580 0
+SUCCESS: create bugzilla, 1752346dfd97 0
+SUCCESS: create bugzilla, 2d5e0f9d5b8d 0
+SUCCESS: create bugzilla, 99702e4d6e9b 0
+SUCCESS: create bugzilla, e786eacbf323 0
+SUCCESS: create bugzilla, 68e34413ba72 0
+SUCCESS: create bugzilla, 8a7e8b4e5631 0
+SUCCESS: create bugzilla, dda954b96c90 0
+SUCCESS: create bugzilla, 62c52507cddc 0
+SUCCESS: create bugzilla, 9cad2c70e408 0
+SUCCESS: create bugzilla, 068c4db1eed3 0
+SUCCESS: create bugzilla, 6919e8a24e70 0
+SUCCESS: create bugzilla, a31a19948c94 0
+Create bugzilla end
+SUCCESS: refresh candidates OK
+Start refresh candidates... time:[2021-06-24]
+SUCCESS: Flush patches count: 164
+Prepare to create bugzilla...
+Create bugzilla end
+SUCCESS: refresh candidates OK
+Start refresh candidates... time:[2021-06-24]
+SUCCESS: Flush patches count: 164
+Prepare to create bugzilla...
+SUCCESS: create bugzilla, 51a709adb9c6 0
+SUCCESS: create bugzilla, 3652d3820ebd 0
+SUCCESS: create bugzilla, c506b71c4c62 0
+SUCCESS: create bugzilla, 8a901e19407d 0
+SUCCESS: create bugzilla, ddf088d7aaaa 0
+SUCCESS: create bugzilla, caec9bcaeb1a 0
+SUCCESS: create bugzilla, 268218460584 0
+SUCCESS: create bugzilla, 551677defbb5 0
+SUCCESS: create bugzilla, 542bbcaa930a 0
+SUCCESS: create bugzilla, 3762e844c5a0 0
+SUCCESS: create bugzilla, 5a3d82dc8ace 0
+SUCCESS: create bugzilla, 830e7653e940 0
+SUCCESS: create bugzilla, 9b77839fd4b6 0
+SUCCESS: create bugzilla, 1df2dc09926f 0
+SUCCESS: create bugzilla, d1629b5b925d 0
+SUCCESS: create bugzilla, 6f2a834f364d 0
+SUCCESS: create bugzilla, 9ddd1b2c8c31 0
+SUCCESS: create bugzilla, 6280e8aca1e0 0
+SUCCESS: create bugzilla, 7feb7361efe0 0
+SUCCESS: create bugzilla, ff8de2cec65a 0
+SUCCESS: create bugzilla, 4cd303735bdf 0
+SUCCESS: create bugzilla, a70d4dac28aa 0
+SUCCESS: create bugzilla, b37885cc0135 0
+SUCCESS: create bugzilla, 363747ad1f44 0
+SUCCESS: create bugzilla, 99eee2efe4b7 0
+SUCCESS: create bugzilla, 22beee867bf1 0
+SUCCESS: create bugzilla, 50863015b6a7 0
+SUCCESS: create bugzilla, 3cbf4d6d2b52 0
+SUCCESS: create bugzilla, 25823b4e08f6 0
+SUCCESS: create bugzilla, a1f10530c732 0
+SUCCESS: create bugzilla, 9d1d6c04a603 0
+SUCCESS: create bugzilla, 0c4559736d9a 0
+SUCCESS: create bugzilla, bf63f3676c5f 0
+SUCCESS: create bugzilla, 01049949f673 0
+SUCCESS: create bugzilla, de8a25bef860 0
+SUCCESS: create bugzilla, 25aaa062fa73 0
+SUCCESS: create bugzilla, 4c438acbfbdf 0
+SUCCESS: create bugzilla, 455170aca45a 0
+SUCCESS: create bugzilla, 3c822fea4bb2 0
+SUCCESS: create bugzilla, 0a31dd6fd2f4 0
+SUCCESS: create bugzilla, b8ff869f2015 0
+SUCCESS: create bugzilla, 9a01a5cd63cd 0
+SUCCESS: create bugzilla, 18071d618c1a 0
+SUCCESS: create bugzilla, 08ec01b5318a 0
+SUCCESS: create bugzilla, 62fa43c7ee55 0
+SUCCESS: create bugzilla, c48d71d1367f 0
+SUCCESS: create bugzilla, 04fb2baa0b14 0
+SUCCESS: create bugzilla, ba499e0bf9c8 0
+SUCCESS: create bugzilla, 48105dc98c9c 0
+SUCCESS: create bugzilla, 1385b23396d5 0
+SUCCESS: create bugzilla, ff7fe51dc492 0
+SUCCESS: create bugzilla, d16c0b0658b2 0
+SUCCESS: create bugzilla, 5c671c9d8363 0
+SUCCESS: create bugzilla, 89b6aacdc483 0
+SUCCESS: create bugzilla, 601554201a95 0
+SUCCESS: create bugzilla, 112c92cf82a2 0
+SUCCESS: create bugzilla, 92462d2e0a4c 0
+SUCCESS: create bugzilla, 9cf27473f219 0
+SUCCESS: create bugzilla, 4a88d9210c52 0
+SUCCESS: create bugzilla, dde8686985ec 0
+SUCCESS: create bugzilla, 6a0e317f6109 0
+SUCCESS: create bugzilla, 88550e9c900b 0
+SUCCESS: create bugzilla, 19e089e07e19 0
+SUCCESS: create bugzilla, 5ceb59f40c09 0
+SUCCESS: create bugzilla, af04157d885e 0
+SUCCESS: create bugzilla, 6f425fc65c08 0
+SUCCESS: create bugzilla, 8eee870d8290 0
+SUCCESS: create bugzilla, 90b33dbb8395 0
+SUCCESS: create bugzilla, 4b8aa955bf47 0
+SUCCESS: create bugzilla, 3709c87e0dbe 0
+SUCCESS: create bugzilla, 958810e99f6f 0
+SUCCESS: create bugzilla, 8af215cc8305 0
+SUCCESS: create bugzilla, 7422eadcf201 0
+SUCCESS: create bugzilla, 3556fac71e41 0
+SUCCESS: create bugzilla, af512f09385a 0
+SUCCESS: create bugzilla, 805e5a259f99 0
+SUCCESS: create bugzilla, 4a728699bc2a 0
+SUCCESS: create bugzilla, 1f64f5e903b9 0
+SUCCESS: create bugzilla, 9e44293267a5 0
+SUCCESS: create bugzilla, 0cd6e16742d4 0
+SUCCESS: create bugzilla, 876808dba2ff 0
+SUCCESS: create bugzilla, 5a5357cd2cd9 0
+SUCCESS: create bugzilla, 904987a65092 0
+SUCCESS: create bugzilla, f9a2672791d0 0
+SUCCESS: create bugzilla, ab5cfe2c05fe 0
+SUCCESS: create bugzilla, 506285aa2f7f 0
+SUCCESS: create bugzilla, ca93a7e6d22d 0
+SUCCESS: create bugzilla, c8f7f44ca1e9 0
+SUCCESS: create bugzilla, 0c41a1124d37 0
+SUCCESS: create bugzilla, 1f00cc03b8a1 0
+SUCCESS: create bugzilla, 250792f40b6d 0
+SUCCESS: create bugzilla, 8567131103a5 0
+SUCCESS: create bugzilla, f3b70e434a6e 0
+SUCCESS: create bugzilla, f61ce6a8225c 0
+SUCCESS: create bugzilla, e86d02dbd177 0
+SUCCESS: create bugzilla, c57ad9d41026 0
+SUCCESS: create bugzilla, 484634991cdc 0
+SUCCESS: create bugzilla, bc6a0dfb0535 0
+SUCCESS: create bugzilla, 435d7f1049e0 0
+SUCCESS: create bugzilla, 88728042be15 0
+SUCCESS: create bugzilla, 85e8a90cd7cb 0
+SUCCESS: create bugzilla, 1b002f376a9d 0
+SUCCESS: create bugzilla, e2d914baa1c2 0
+SUCCESS: create bugzilla, 567d67a3cb9d 0
+SUCCESS: create bugzilla, c93d6b804035 0
+SUCCESS: create bugzilla, 0ce89496a1f9 0
+SUCCESS: create bugzilla, 2411c02d0389 0
+SUCCESS: create bugzilla, bf807cfb9feb 0
+SUCCESS: create bugzilla, 5cd9ec7ad51c 0
+SUCCESS: create bugzilla, 9ba861c7957a 0
+SUCCESS: create bugzilla, 4f000fa8076b 0
+SUCCESS: create bugzilla, 53ba29c32b41 0
+SUCCESS: create bugzilla, e2bd0bc13d27 0
+SUCCESS: create bugzilla, 0a462e25ef0f 0
+SUCCESS: create bugzilla, 511ffe92734e 0
+SUCCESS: create bugzilla, 1d34fa4fcf06 0
+SUCCESS: create bugzilla, a1c1b1ef41cd 0
+SUCCESS: create bugzilla, 5a8e2bf7eebb 0
+SUCCESS: create bugzilla, bb5da059defe 0
+SUCCESS: create bugzilla, 6820c1aaf8e5 0
+SUCCESS: create bugzilla, e5a823123782 0
+SUCCESS: create bugzilla, acc43fc6cf0d 0
+SUCCESS: create bugzilla, f2c444cacbb0 0
+SUCCESS: create bugzilla, 851fcb15e735 0
+SUCCESS: create bugzilla, 2c0e6b35b88a 0
+SUCCESS: create bugzilla, 8a452d62e7ce 0
+SUCCESS: create bugzilla, ef94ecfa3e5b 0
+SUCCESS: create bugzilla, 500563cb6fb0 0
+SUCCESS: create bugzilla, 9606de3ac084 0
+SUCCESS: create bugzilla, d1ead783fe2e 0
+SUCCESS: create bugzilla, f8bdc8d7d8e8 0
+SUCCESS: create bugzilla, 0f1e6fe66977 0
+SUCCESS: create bugzilla, aada29744711 0
+SUCCESS: create bugzilla, 80cebcccc120 0
+SUCCESS: create bugzilla, ee64a27e9edc 0
+SUCCESS: create bugzilla, eba7c76a5651 0
+SUCCESS: create bugzilla, b89474465f69 0
+SUCCESS: create bugzilla, ec6793f17576 0
+SUCCESS: create bugzilla, 7d4446bcb406 0
+SUCCESS: create bugzilla, 9d0d1d10ba54 0
+SUCCESS: create bugzilla, b9c78b1a9596 0
+SUCCESS: create bugzilla, 41d6cc0cd8e9 0
+SUCCESS: create bugzilla, 30822781c899 0
+SUCCESS: create bugzilla, 36c19acbbc7e 0
+SUCCESS: create bugzilla, 47b0e3728f47 0
+SUCCESS: create bugzilla, c30c28987173 0
+SUCCESS: create bugzilla, 29beadea66a2 0
+SUCCESS: create bugzilla, 427bc15bbd9d 0
+SUCCESS: create bugzilla, 192576732f76 0
+SUCCESS: create bugzilla, 25775914cc8b 0
+SUCCESS: create bugzilla, f1a02cde2deb 0
+SUCCESS: create bugzilla, a5ed75187580 0
+SUCCESS: create bugzilla, 1752346dfd97 0
+SUCCESS: create bugzilla, 2d5e0f9d5b8d 0
+SUCCESS: create bugzilla, 99702e4d6e9b 0
+SUCCESS: create bugzilla, e786eacbf323 0
+SUCCESS: create bugzilla, 68e34413ba72 0
+SUCCESS: create bugzilla, 8a7e8b4e5631 0
+SUCCESS: create bugzilla, dda954b96c90 0
+SUCCESS: create bugzilla, 62c52507cddc 0
+SUCCESS: create bugzilla, 9cad2c70e408 0
+SUCCESS: create bugzilla, 068c4db1eed3 0
+SUCCESS: create bugzilla, 6919e8a24e70 0
+SUCCESS: create bugzilla, a31a19948c94 0
+Create bugzilla end
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+SUCCESS: refresh candidates OK
+Start refresh candidates... time:[2021-06-24]
+SUCCESS: Flush patches count: 164
+Prepare to create bugzilla...
+SUCCESS: create bugzilla, 51a709adb9c6 0
+SUCCESS: create bugzilla, 3652d3820ebd 0
+SUCCESS: create bugzilla, c506b71c4c62 0
+SUCCESS: create bugzilla, 8a901e19407d 0
+SUCCESS: create bugzilla, ddf088d7aaaa 0
+SUCCESS: create bugzilla, caec9bcaeb1a 0
+SUCCESS: create bugzilla, 268218460584 0
+SUCCESS: create bugzilla, 551677defbb5 0
+SUCCESS: create bugzilla, 542bbcaa930a 0
+SUCCESS: create bugzilla, 3762e844c5a0 0
+SUCCESS: create bugzilla, 5a3d82dc8ace 0
+SUCCESS: create bugzilla, 830e7653e940 0
+SUCCESS: create bugzilla, 9b77839fd4b6 0
+SUCCESS: create bugzilla, 1df2dc09926f 0
+SUCCESS: create bugzilla, d1629b5b925d 0
+SUCCESS: create bugzilla, 6f2a834f364d 0
+SUCCESS: create bugzilla, 9ddd1b2c8c31 0
+SUCCESS: create bugzilla, 6280e8aca1e0 0
+SUCCESS: create bugzilla, 7feb7361efe0 0
+SUCCESS: create bugzilla, ff8de2cec65a 0
+SUCCESS: create bugzilla, 4cd303735bdf 0
+SUCCESS: create bugzilla, a70d4dac28aa 0
+SUCCESS: create bugzilla, b37885cc0135 0
+SUCCESS: create bugzilla, 363747ad1f44 0
+SUCCESS: create bugzilla, 99eee2efe4b7 0
+SUCCESS: create bugzilla, 22beee867bf1 0
+SUCCESS: create bugzilla, 50863015b6a7 0
+SUCCESS: create bugzilla, 3cbf4d6d2b52 0
+SUCCESS: create bugzilla, 25823b4e08f6 0
+SUCCESS: create bugzilla, a1f10530c732 0
+SUCCESS: create bugzilla, 9d1d6c04a603 0
+SUCCESS: create bugzilla, 0c4559736d9a 0
+SUCCESS: create bugzilla, bf63f3676c5f 0
+SUCCESS: create bugzilla, 01049949f673 0
+SUCCESS: create bugzilla, de8a25bef860 0
+SUCCESS: create bugzilla, 25aaa062fa73 0
+SUCCESS: create bugzilla, 4c438acbfbdf 0
+SUCCESS: create bugzilla, 455170aca45a 0
+SUCCESS: create bugzilla, 3c822fea4bb2 0
+SUCCESS: create bugzilla, 0a31dd6fd2f4 0
+SUCCESS: create bugzilla, b8ff869f2015 0
+SUCCESS: create bugzilla, 9a01a5cd63cd 0
+SUCCESS: create bugzilla, 18071d618c1a 0
+SUCCESS: create bugzilla, 08ec01b5318a 0
+SUCCESS: create bugzilla, 62fa43c7ee55 0
+SUCCESS: create bugzilla, c48d71d1367f 0
+SUCCESS: create bugzilla, 04fb2baa0b14 0
+SUCCESS: create bugzilla, ba499e0bf9c8 0
+SUCCESS: create bugzilla, 48105dc98c9c 0
+SUCCESS: create bugzilla, 1385b23396d5 0
+SUCCESS: create bugzilla, ff7fe51dc492 0
+SUCCESS: create bugzilla, d16c0b0658b2 0
+SUCCESS: create bugzilla, 5c671c9d8363 0
+SUCCESS: create bugzilla, 89b6aacdc483 0
+SUCCESS: create bugzilla, 601554201a95 0
+SUCCESS: create bugzilla, 112c92cf82a2 0
+SUCCESS: create bugzilla, 92462d2e0a4c 0
+SUCCESS: create bugzilla, 9cf27473f219 0
+SUCCESS: create bugzilla, 4a88d9210c52 0
+SUCCESS: create bugzilla, dde8686985ec 0
+SUCCESS: create bugzilla, 6a0e317f6109 0
+SUCCESS: create bugzilla, 88550e9c900b 0
+SUCCESS: create bugzilla, 19e089e07e19 0
+SUCCESS: create bugzilla, 5ceb59f40c09 0
+SUCCESS: create bugzilla, af04157d885e 0
+SUCCESS: create bugzilla, 6f425fc65c08 0
+SUCCESS: create bugzilla, 8eee870d8290 0
+SUCCESS: create bugzilla, 90b33dbb8395 0
+SUCCESS: create bugzilla, 4b8aa955bf47 0
+SUCCESS: create bugzilla, 3709c87e0dbe 0
+SUCCESS: create bugzilla, 958810e99f6f 0
+SUCCESS: create bugzilla, 8af215cc8305 0
+SUCCESS: create bugzilla, 7422eadcf201 0
+SUCCESS: create bugzilla, 3556fac71e41 0
+SUCCESS: create bugzilla, af512f09385a 0
+SUCCESS: create bugzilla, 805e5a259f99 0
+SUCCESS: create bugzilla, 4a728699bc2a 0
+SUCCESS: create bugzilla, 1f64f5e903b9 0
+SUCCESS: create bugzilla, 9e44293267a5 0
+SUCCESS: create bugzilla, 0cd6e16742d4 0
+SUCCESS: create bugzilla, 876808dba2ff 0
+SUCCESS: create bugzilla, 5a5357cd2cd9 0
+SUCCESS: create bugzilla, 904987a65092 0
+SUCCESS: create bugzilla, f9a2672791d0 0
+SUCCESS: create bugzilla, ab5cfe2c05fe 0
+SUCCESS: create bugzilla, 506285aa2f7f 0
+SUCCESS: create bugzilla, ca93a7e6d22d 0
+SUCCESS: create bugzilla, c8f7f44ca1e9 0
+SUCCESS: create bugzilla, 0c41a1124d37 0
+SUCCESS: create bugzilla, 1f00cc03b8a1 0
+SUCCESS: create bugzilla, 250792f40b6d 0
+SUCCESS: create bugzilla, 8567131103a5 0
+SUCCESS: create bugzilla, f3b70e434a6e 0
+SUCCESS: create bugzilla, f61ce6a8225c 0
+SUCCESS: create bugzilla, e86d02dbd177 0
+SUCCESS: create bugzilla, c57ad9d41026 0
+SUCCESS: create bugzilla, 484634991cdc 0
+SUCCESS: create bugzilla, bc6a0dfb0535 0
+SUCCESS: create bugzilla, 435d7f1049e0 0
+SUCCESS: create bugzilla, 88728042be15 0
+SUCCESS: create bugzilla, 85e8a90cd7cb 0
+SUCCESS: create bugzilla, 1b002f376a9d 0
+SUCCESS: create bugzilla, e2d914baa1c2 0
+SUCCESS: create bugzilla, 567d67a3cb9d 0
+SUCCESS: create bugzilla, c93d6b804035 0
+SUCCESS: create bugzilla, 0ce89496a1f9 0
+SUCCESS: create bugzilla, 2411c02d0389 0
+SUCCESS: create bugzilla, bf807cfb9feb 0
+SUCCESS: create bugzilla, 5cd9ec7ad51c 0
+SUCCESS: create bugzilla, 9ba861c7957a 0
+SUCCESS: create bugzilla, 4f000fa8076b 0
+SUCCESS: create bugzilla, 53ba29c32b41 0
+SUCCESS: create bugzilla, e2bd0bc13d27 0
+SUCCESS: create bugzilla, 0a462e25ef0f 0
+SUCCESS: create bugzilla, 511ffe92734e 0
+SUCCESS: create bugzilla, 1d34fa4fcf06 0
+SUCCESS: create bugzilla, a1c1b1ef41cd 0
+SUCCESS: create bugzilla, 5a8e2bf7eebb 0
+SUCCESS: create bugzilla, bb5da059defe 0
+SUCCESS: create bugzilla, 6820c1aaf8e5 0
+SUCCESS: create bugzilla, e5a823123782 0
+SUCCESS: create bugzilla, acc43fc6cf0d 0
+SUCCESS: create bugzilla, f2c444cacbb0 0
+SUCCESS: create bugzilla, 851fcb15e735 0
+SUCCESS: create bugzilla, 2c0e6b35b88a 0
+SUCCESS: create bugzilla, 8a452d62e7ce 0
+SUCCESS: create bugzilla, ef94ecfa3e5b 0
+SUCCESS: create bugzilla, 500563cb6fb0 0
+SUCCESS: create bugzilla, 9606de3ac084 0
+SUCCESS: create bugzilla, d1ead783fe2e 0
+SUCCESS: create bugzilla, f8bdc8d7d8e8 0
+SUCCESS: create bugzilla, 0f1e6fe66977 0
+SUCCESS: create bugzilla, aada29744711 0
+SUCCESS: create bugzilla, 80cebcccc120 0
+SUCCESS: create bugzilla, ee64a27e9edc 0
+SUCCESS: create bugzilla, eba7c76a5651 0
+SUCCESS: create bugzilla, b89474465f69 0
+SUCCESS: create bugzilla, ec6793f17576 0
+SUCCESS: create bugzilla, 7d4446bcb406 0
+SUCCESS: create bugzilla, 9d0d1d10ba54 0
+SUCCESS: create bugzilla, b9c78b1a9596 0
+SUCCESS: create bugzilla, 41d6cc0cd8e9 0
+SUCCESS: create bugzilla, 30822781c899 0
+SUCCESS: create bugzilla, 36c19acbbc7e 0
+SUCCESS: create bugzilla, 47b0e3728f47 0
+SUCCESS: create bugzilla, c30c28987173 0
+SUCCESS: create bugzilla, 29beadea66a2 0
+SUCCESS: create bugzilla, 427bc15bbd9d 0
+SUCCESS: create bugzilla, 192576732f76 0
+SUCCESS: create bugzilla, 25775914cc8b 0
+SUCCESS: create bugzilla, f1a02cde2deb 0
+SUCCESS: create bugzilla, a5ed75187580 0
+SUCCESS: create bugzilla, 1752346dfd97 0
+SUCCESS: create bugzilla, 2d5e0f9d5b8d 0
+SUCCESS: create bugzilla, 99702e4d6e9b 0
+SUCCESS: create bugzilla, e786eacbf323 0
+SUCCESS: create bugzilla, 68e34413ba72 0
+SUCCESS: create bugzilla, 8a7e8b4e5631 0
+SUCCESS: create bugzilla, dda954b96c90 0
+SUCCESS: create bugzilla, 62c52507cddc 0
+SUCCESS: create bugzilla, 9cad2c70e408 0
+SUCCESS: create bugzilla, 068c4db1eed3 0
+SUCCESS: create bugzilla, 6919e8a24e70 0
+SUCCESS: create bugzilla, a31a19948c94 0
+Create bugzilla end
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####
+SUCCESS: refresh candidates OK
+Start refresh candidates... time:[2021-06-24]
+SUCCESS: Flush patches count: 164
+Prepare to create bugzilla...
+Create bugzilla end
+SUCCESS: refresh candidates OK
+Start refresh candidates... time:[2021-06-24]
+Start refresh candidates... time:[2021-06-24]
+SUCCESS: Flush patches count: 164
+Prepare to create bugzilla...
+SUCCESS: create bugzilla, 51a709adb9c6 0
+SUCCESS: create bugzilla, 3652d3820ebd 0
+SUCCESS: create bugzilla, c506b71c4c62 0
+SUCCESS: create bugzilla, 8a901e19407d 0
+SUCCESS: create bugzilla, ddf088d7aaaa 0
+SUCCESS: create bugzilla, caec9bcaeb1a 0
+SUCCESS: create bugzilla, 268218460584 0
+SUCCESS: create bugzilla, 551677defbb5 0
+SUCCESS: create bugzilla, 542bbcaa930a 0
+SUCCESS: create bugzilla, 3762e844c5a0 0
+SUCCESS: create bugzilla, 5a3d82dc8ace 0
+SUCCESS: create bugzilla, 830e7653e940 0
+SUCCESS: create bugzilla, 9b77839fd4b6 0
+SUCCESS: create bugzilla, 1df2dc09926f 0
+SUCCESS: create bugzilla, d1629b5b925d 0
+SUCCESS: create bugzilla, 6f2a834f364d 0
+SUCCESS: create bugzilla, 9ddd1b2c8c31 0
+SUCCESS: create bugzilla, 6280e8aca1e0 0
+SUCCESS: create bugzilla, 7feb7361efe0 0
+SUCCESS: create bugzilla, ff8de2cec65a 0
+SUCCESS: create bugzilla, 4cd303735bdf 0
+SUCCESS: create bugzilla, a70d4dac28aa 0
+SUCCESS: create bugzilla, b37885cc0135 0
+SUCCESS: create bugzilla, 363747ad1f44 0
+SUCCESS: create bugzilla, 99eee2efe4b7 0
+SUCCESS: create bugzilla, 22beee867bf1 0
+SUCCESS: create bugzilla, 50863015b6a7 0
+SUCCESS: create bugzilla, 3cbf4d6d2b52 0
+SUCCESS: create bugzilla, 25823b4e08f6 0
+SUCCESS: create bugzilla, a1f10530c732 0
+SUCCESS: create bugzilla, 9d1d6c04a603 0
+SUCCESS: create bugzilla, 0c4559736d9a 0
+SUCCESS: create bugzilla, bf63f3676c5f 0
+SUCCESS: create bugzilla, 01049949f673 0
+SUCCESS: create bugzilla, de8a25bef860 0
+SUCCESS: create bugzilla, 25aaa062fa73 0
+SUCCESS: create bugzilla, 4c438acbfbdf 0
+SUCCESS: create bugzilla, 455170aca45a 0
+SUCCESS: create bugzilla, 3c822fea4bb2 0
+SUCCESS: create bugzilla, 0a31dd6fd2f4 0
+SUCCESS: create bugzilla, b8ff869f2015 0
+SUCCESS: create bugzilla, 9a01a5cd63cd 0
+SUCCESS: create bugzilla, 18071d618c1a 0
+SUCCESS: create bugzilla, 08ec01b5318a 0
+SUCCESS: create bugzilla, 62fa43c7ee55 0
+SUCCESS: create bugzilla, c48d71d1367f 0
+SUCCESS: create bugzilla, 04fb2baa0b14 0
+SUCCESS: create bugzilla, ba499e0bf9c8 0
+SUCCESS: create bugzilla, 48105dc98c9c 0
+SUCCESS: create bugzilla, 1385b23396d5 0
+SUCCESS: create bugzilla, ff7fe51dc492 0
+SUCCESS: create bugzilla, d16c0b0658b2 0
+SUCCESS: create bugzilla, 5c671c9d8363 0
+SUCCESS: create bugzilla, 89b6aacdc483 0
+SUCCESS: create bugzilla, 601554201a95 0
+SUCCESS: create bugzilla, 112c92cf82a2 0
+SUCCESS: create bugzilla, 92462d2e0a4c 0
+SUCCESS: create bugzilla, 9cf27473f219 0
+SUCCESS: create bugzilla, 4a88d9210c52 0
+SUCCESS: create bugzilla, dde8686985ec 0
+SUCCESS: create bugzilla, 6a0e317f6109 0
+SUCCESS: create bugzilla, 88550e9c900b 0
+SUCCESS: create bugzilla, 19e089e07e19 0
+SUCCESS: create bugzilla, 5ceb59f40c09 0
+SUCCESS: create bugzilla, af04157d885e 0
+SUCCESS: create bugzilla, 6f425fc65c08 0
+SUCCESS: create bugzilla, 8eee870d8290 0
+SUCCESS: create bugzilla, 90b33dbb8395 0
+SUCCESS: create bugzilla, 4b8aa955bf47 0
+SUCCESS: create bugzilla, 3709c87e0dbe 0
+SUCCESS: create bugzilla, 958810e99f6f 0
+SUCCESS: create bugzilla, 8af215cc8305 0
+SUCCESS: create bugzilla, 7422eadcf201 0
+SUCCESS: create bugzilla, 3556fac71e41 0
+SUCCESS: create bugzilla, af512f09385a 0
+SUCCESS: create bugzilla, 805e5a259f99 0
+SUCCESS: create bugzilla, 4a728699bc2a 0
+SUCCESS: create bugzilla, 1f64f5e903b9 0
+SUCCESS: create bugzilla, 9e44293267a5 0
+SUCCESS: create bugzilla, 0cd6e16742d4 0
+SUCCESS: create bugzilla, 876808dba2ff 0
+SUCCESS: create bugzilla, 5a5357cd2cd9 0
+SUCCESS: create bugzilla, 904987a65092 0
+SUCCESS: create bugzilla, f9a2672791d0 0
+SUCCESS: create bugzilla, ab5cfe2c05fe 0
+SUCCESS: create bugzilla, 506285aa2f7f 0
+SUCCESS: create bugzilla, ca93a7e6d22d 0
+SUCCESS: create bugzilla, c8f7f44ca1e9 0
+SUCCESS: create bugzilla, 0c41a1124d37 0
+SUCCESS: create bugzilla, 1f00cc03b8a1 0
+SUCCESS: create bugzilla, 250792f40b6d 0
+SUCCESS: create bugzilla, 8567131103a5 0
+SUCCESS: create bugzilla, f3b70e434a6e 0
+SUCCESS: create bugzilla, f61ce6a8225c 0
+SUCCESS: create bugzilla, e86d02dbd177 0
+SUCCESS: create bugzilla, c57ad9d41026 0
+SUCCESS: create bugzilla, 484634991cdc 0
+SUCCESS: create bugzilla, bc6a0dfb0535 0
+SUCCESS: create bugzilla, 435d7f1049e0 0
+SUCCESS: create bugzilla, 88728042be15 0
+SUCCESS: create bugzilla, 85e8a90cd7cb 0
+SUCCESS: create bugzilla, 1b002f376a9d 0
+SUCCESS: create bugzilla, e2d914baa1c2 0
+SUCCESS: create bugzilla, 567d67a3cb9d 0
+SUCCESS: create bugzilla, c93d6b804035 0
+SUCCESS: create bugzilla, 0ce89496a1f9 0
+SUCCESS: create bugzilla, 2411c02d0389 0
+SUCCESS: create bugzilla, bf807cfb9feb 0
+SUCCESS: create bugzilla, 5cd9ec7ad51c 0
+SUCCESS: create bugzilla, 9ba861c7957a 0
+SUCCESS: create bugzilla, 4f000fa8076b 0
+SUCCESS: create bugzilla, 53ba29c32b41 0
+SUCCESS: create bugzilla, e2bd0bc13d27 0
+SUCCESS: create bugzilla, 0a462e25ef0f 0
+SUCCESS: create bugzilla, 511ffe92734e 0
+SUCCESS: create bugzilla, 1d34fa4fcf06 0
+SUCCESS: create bugzilla, a1c1b1ef41cd 0
+SUCCESS: create bugzilla, 5a8e2bf7eebb 0
+SUCCESS: create bugzilla, bb5da059defe 0
+SUCCESS: create bugzilla, 6820c1aaf8e5 0
+SUCCESS: create bugzilla, e5a823123782 0
+SUCCESS: create bugzilla, acc43fc6cf0d 0
+SUCCESS: create bugzilla, f2c444cacbb0 0
+SUCCESS: create bugzilla, 851fcb15e735 0
+SUCCESS: create bugzilla, 2c0e6b35b88a 0
+SUCCESS: create bugzilla, 8a452d62e7ce 0
+SUCCESS: create bugzilla, ef94ecfa3e5b 0
+SUCCESS: create bugzilla, 500563cb6fb0 0
+SUCCESS: create bugzilla, 9606de3ac084 0
+SUCCESS: create bugzilla, d1ead783fe2e 0
+SUCCESS: create bugzilla, f8bdc8d7d8e8 0
+SUCCESS: create bugzilla, 0f1e6fe66977 0
+SUCCESS: create bugzilla, aada29744711 0
+SUCCESS: create bugzilla, 80cebcccc120 0
+SUCCESS: create bugzilla, ee64a27e9edc 0
+SUCCESS: create bugzilla, eba7c76a5651 0
+SUCCESS: create bugzilla, b89474465f69 0
+SUCCESS: create bugzilla, ec6793f17576 0
+SUCCESS: create bugzilla, 7d4446bcb406 0
+SUCCESS: create bugzilla, 9d0d1d10ba54 0
+SUCCESS: create bugzilla, b9c78b1a9596 0
+SUCCESS: create bugzilla, 41d6cc0cd8e9 0
+SUCCESS: create bugzilla, 30822781c899 0
+SUCCESS: create bugzilla, 36c19acbbc7e 0
+SUCCESS: create bugzilla, 47b0e3728f47 0
+SUCCESS: create bugzilla, c30c28987173 0
+SUCCESS: create bugzilla, 29beadea66a2 0
+SUCCESS: create bugzilla, 427bc15bbd9d 0
+SUCCESS: create bugzilla, 192576732f76 0
+SUCCESS: create bugzilla, 25775914cc8b 0
+SUCCESS: create bugzilla, f1a02cde2deb 0
+SUCCESS: create bugzilla, a5ed75187580 0
+SUCCESS: create bugzilla, 1752346dfd97 0
+SUCCESS: create bugzilla, 2d5e0f9d5b8d 0
+SUCCESS: create bugzilla, 99702e4d6e9b 0
+SUCCESS: create bugzilla, e786eacbf323 0
+SUCCESS: create bugzilla, 68e34413ba72 0
+SUCCESS: create bugzilla, 8a7e8b4e5631 0
+SUCCESS: create bugzilla, dda954b96c90 0
+SUCCESS: create bugzilla, 62c52507cddc 0
+SUCCESS: create bugzilla, 9cad2c70e408 0
+SUCCESS: create bugzilla, 068c4db1eed3 0
+SUCCESS: create bugzilla, 6919e8a24e70 0
+SUCCESS: create bugzilla, a31a19948c94 0
+Create bugzilla end
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+########
+SUCCESS: refresh candidates OK
+Start refresh candidates... time:[2021-06-24]
+SUCCESS: Flush patches count: 164
+Prepare to create bugzilla...
+Create bugzilla end
+SUCCESS: refresh candidates OK
+Start refresh candidates... time:[2021-06-24]
+SUCCESS: Flush patches count: 164
+Prepare to create bugzilla...
+SUCCESS: create bugzilla, 51a709adb9c6 0
+SUCCESS: create bugzilla, 3652d3820ebd 0
+SUCCESS: create bugzilla, c506b71c4c62 0
+SUCCESS: create bugzilla, 8a901e19407d 0
+SUCCESS: create bugzilla, ddf088d7aaaa 0
+SUCCESS: create bugzilla, caec9bcaeb1a 0
+SUCCESS: create bugzilla, 268218460584 0
+SUCCESS: create bugzilla, 551677defbb5 0
+SUCCESS: create bugzilla, 542bbcaa930a 0
+SUCCESS: create bugzilla, 3762e844c5a0 0
+SUCCESS: create bugzilla, 5a3d82dc8ace 0
+SUCCESS: create bugzilla, 830e7653e940 0
+SUCCESS: create bugzilla, 9b77839fd4b6 0
+SUCCESS: create bugzilla, 1df2dc09926f 0
+SUCCESS: create bugzilla, d1629b5b925d 0
+SUCCESS: create bugzilla, 6f2a834f364d 0
+SUCCESS: create bugzilla, 9ddd1b2c8c31 0
+SUCCESS: create bugzilla, 6280e8aca1e0 0
+SUCCESS: create bugzilla, 7feb7361efe0 0
+SUCCESS: create bugzilla, ff8de2cec65a 0
+SUCCESS: create bugzilla, 4cd303735bdf 0
+SUCCESS: create bugzilla, a70d4dac28aa 0
+SUCCESS: create bugzilla, b37885cc0135 0
+SUCCESS: create bugzilla, 363747ad1f44 0
+SUCCESS: create bugzilla, 99eee2efe4b7 0
+SUCCESS: create bugzilla, 22beee867bf1 0
+SUCCESS: create bugzilla, 50863015b6a7 0
+SUCCESS: create bugzilla, 3cbf4d6d2b52 0
+SUCCESS: create bugzilla, 25823b4e08f6 0
+SUCCESS: create bugzilla, a1f10530c732 0
+SUCCESS: create bugzilla, 9d1d6c04a603 0
+SUCCESS: create bugzilla, 0c4559736d9a 0
+SUCCESS: create bugzilla, bf63f3676c5f 0
+SUCCESS: create bugzilla, 01049949f673 0
+SUCCESS: create bugzilla, de8a25bef860 0
+SUCCESS: create bugzilla, 25aaa062fa73 0
+SUCCESS: create bugzilla, 4c438acbfbdf 0
+SUCCESS: create bugzilla, 455170aca45a 0
+SUCCESS: create bugzilla, 3c822fea4bb2 0
+SUCCESS: create bugzilla, 0a31dd6fd2f4 0
+SUCCESS: create bugzilla, b8ff869f2015 0
+SUCCESS: create bugzilla, 9a01a5cd63cd 0
+SUCCESS: create bugzilla, 18071d618c1a 0
+SUCCESS: create bugzilla, 08ec01b5318a 0
+SUCCESS: create bugzilla, 62fa43c7ee55 0
+SUCCESS: create bugzilla, c48d71d1367f 0
+SUCCESS: create bugzilla, 04fb2baa0b14 0
+SUCCESS: create bugzilla, ba499e0bf9c8 0
+SUCCESS: create bugzilla, 48105dc98c9c 0
+SUCCESS: create bugzilla, 1385b23396d5 0
+SUCCESS: create bugzilla, ff7fe51dc492 0
+SUCCESS: create bugzilla, d16c0b0658b2 0
+SUCCESS: create bugzilla, 5c671c9d8363 0
+SUCCESS: create bugzilla, 89b6aacdc483 0
+SUCCESS: create bugzilla, 601554201a95 0
+SUCCESS: create bugzilla, 112c92cf82a2 0
+SUCCESS: create bugzilla, 92462d2e0a4c 0
+SUCCESS: create bugzilla, 9cf27473f219 0
+SUCCESS: create bugzilla, 4a88d9210c52 0
+SUCCESS: create bugzilla, dde8686985ec 0
+SUCCESS: create bugzilla, 6a0e317f6109 0
+SUCCESS: create bugzilla, 88550e9c900b 0
+SUCCESS: create bugzilla, 19e089e07e19 0
+SUCCESS: create bugzilla, 5ceb59f40c09 0
+SUCCESS: create bugzilla, af04157d885e 0
+SUCCESS: create bugzilla, 6f425fc65c08 0
+SUCCESS: create bugzilla, 8eee870d8290 0
+SUCCESS: create bugzilla, 90b33dbb8395 0
+SUCCESS: create bugzilla, 4b8aa955bf47 0
+SUCCESS: create bugzilla, 3709c87e0dbe 0
+SUCCESS: create bugzilla, 958810e99f6f 0
+SUCCESS: create bugzilla, 8af215cc8305 0
+SUCCESS: create bugzilla, 7422eadcf201 0
+SUCCESS: create bugzilla, 3556fac71e41 0
+SUCCESS: create bugzilla, af512f09385a 0
+SUCCESS: create bugzilla, 805e5a259f99 0
+SUCCESS: create bugzilla, 4a728699bc2a 0
+SUCCESS: create bugzilla, 1f64f5e903b9 0
+SUCCESS: create bugzilla, 9e44293267a5 0
+SUCCESS: create bugzilla, 0cd6e16742d4 0
+SUCCESS: create bugzilla, 876808dba2ff 0
+SUCCESS: create bugzilla, 5a5357cd2cd9 0
+SUCCESS: create bugzilla, 904987a65092 0
+SUCCESS: create bugzilla, f9a2672791d0 0
+SUCCESS: create bugzilla, ab5cfe2c05fe 0
+SUCCESS: create bugzilla, 506285aa2f7f 0
+SUCCESS: create bugzilla, ca93a7e6d22d 0
+SUCCESS: create bugzilla, c8f7f44ca1e9 0
+SUCCESS: create bugzilla, 0c41a1124d37 0
+SUCCESS: create bugzilla, 1f00cc03b8a1 0
+SUCCESS: create bugzilla, 250792f40b6d 0
+SUCCESS: create bugzilla, 8567131103a5 0
+SUCCESS: create bugzilla, f3b70e434a6e 0
+SUCCESS: create bugzilla, f61ce6a8225c 0
+SUCCESS: create bugzilla, e86d02dbd177 0
+SUCCESS: create bugzilla, c57ad9d41026 0
+SUCCESS: create bugzilla, 484634991cdc 0
+SUCCESS: create bugzilla, bc6a0dfb0535 0
+SUCCESS: create bugzilla, 435d7f1049e0 0
+SUCCESS: create bugzilla, 88728042be15 0
+SUCCESS: create bugzilla, 85e8a90cd7cb 0
+SUCCESS: create bugzilla, 1b002f376a9d 0
+SUCCESS: create bugzilla, e2d914baa1c2 0
+SUCCESS: create bugzilla, 567d67a3cb9d 0
+SUCCESS: create bugzilla, c93d6b804035 0
+SUCCESS: create bugzilla, 0ce89496a1f9 0
+SUCCESS: create bugzilla, 2411c02d0389 0
+SUCCESS: create bugzilla, bf807cfb9feb 0
+SUCCESS: create bugzilla, 5cd9ec7ad51c 0
+SUCCESS: create bugzilla, 9ba861c7957a 0
+SUCCESS: create bugzilla, 4f000fa8076b 0
+SUCCESS: create bugzilla, 53ba29c32b41 0
+SUCCESS: create bugzilla, e2bd0bc13d27 0
+SUCCESS: create bugzilla, 0a462e25ef0f 0
+SUCCESS: create bugzilla, 511ffe92734e 0
+SUCCESS: create bugzilla, 1d34fa4fcf06 0
+SUCCESS: create bugzilla, a1c1b1ef41cd 0
+SUCCESS: create bugzilla, 5a8e2bf7eebb 0
+SUCCESS: create bugzilla, bb5da059defe 0
+SUCCESS: create bugzilla, 6820c1aaf8e5 0
+SUCCESS: create bugzilla, e5a823123782 0
+SUCCESS: create bugzilla, acc43fc6cf0d 0
+SUCCESS: create bugzilla, f2c444cacbb0 0
+SUCCESS: create bugzilla, 851fcb15e735 0
+SUCCESS: create bugzilla, 2c0e6b35b88a 0
+SUCCESS: create bugzilla, 8a452d62e7ce 0
+SUCCESS: create bugzilla, ef94ecfa3e5b 0
+SUCCESS: create bugzilla, 500563cb6fb0 0
+SUCCESS: create bugzilla, 9606de3ac084 0
+SUCCESS: create bugzilla, d1ead783fe2e 0
+SUCCESS: create bugzilla, f8bdc8d7d8e8 0
+SUCCESS: create bugzilla, 0f1e6fe66977 0
+SUCCESS: create bugzilla, aada29744711 0
+SUCCESS: create bugzilla, 80cebcccc120 0
+SUCCESS: create bugzilla, ee64a27e9edc 0
+SUCCESS: create bugzilla, eba7c76a5651 0
+SUCCESS: create bugzilla, b89474465f69 0
+SUCCESS: create bugzilla, ec6793f17576 0
+SUCCESS: create bugzilla, 7d4446bcb406 0
+SUCCESS: create bugzilla, 9d0d1d10ba54 0
+SUCCESS: create bugzilla, b9c78b1a9596 0
+SUCCESS: create bugzilla, 41d6cc0cd8e9 0
+SUCCESS: create bugzilla, 30822781c899 0
+SUCCESS: create bugzilla, 36c19acbbc7e 0
+SUCCESS: create bugzilla, 47b0e3728f47 0
+SUCCESS: create bugzilla, c30c28987173 0
+SUCCESS: create bugzilla, 29beadea66a2 0
+SUCCESS: create bugzilla, 427bc15bbd9d 0
+SUCCESS: create bugzilla, 192576732f76 0
+SUCCESS: create bugzilla, 25775914cc8b 0
+SUCCESS: create bugzilla, f1a02cde2deb 0
+SUCCESS: create bugzilla, a5ed75187580 0
+SUCCESS: create bugzilla, 1752346dfd97 0
+SUCCESS: create bugzilla, 2d5e0f9d5b8d 0
+SUCCESS: create bugzilla, 99702e4d6e9b 0
+SUCCESS: create bugzilla, e786eacbf323 0
+SUCCESS: create bugzilla, 68e34413ba72 0
+SUCCESS: create bugzilla, 8a7e8b4e5631 0
+SUCCESS: create bugzilla, dda954b96c90 0
+SUCCESS: create bugzilla, 62c52507cddc 0
+SUCCESS: create bugzilla, 9cad2c70e408 0
+SUCCESS: create bugzilla, 068c4db1eed3 0
+SUCCESS: create bugzilla, 6919e8a24e70 0
+SUCCESS: create bugzilla, a31a19948c94 0
+Create bugzilla end
+SUCCESS: refresh candidates OK
+Start refresh candidates... time:[2021-06-24]
+SUCCESS: Flush patches count: 164
+Prepare to create bugzilla...
+Create bugzilla end
+SUCCESS: refresh candidates OK

@@ -1,0 +1,35 @@
+// [python quickstart](https://grpc.io/docs/quickstart/python.html#run-a-grpc-application)
+// python -m grpc_tools.protoc --python_out=. --grpc_python_out=. -I. helloworld.proto
+
+// helloworld.proto
+syntax = "proto3";
+
+service dist {
+    rpc distSelect(UsrMsg) returns (Select) {}
+    rpc distCancel(UsrMsg) returns (Result) {}
+    rpc distShow(Usr) returns (stream Show) {}
+}
+
+message Usr {
+    string user = 1;
+}
+
+message UsrMsg {
+    string user = 1;
+    string commitID = 2;
+}
+
+message Result {
+    int32 result = 1;
+}
+
+message Select {
+    string commitID = 1;
+    string bugzilla = 2;
+}
+
+message Show {
+    string commitID = 1;
+    string bugzilla = 2;
+    string user = 3;
+}
