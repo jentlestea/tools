@@ -4,7 +4,7 @@ import grpc
 import dist_pb2
 import dist_pb2_grpc
 
-addr = "139.159.148.89:50051"
+addr = "localhost:50051"
 stub = None
 
 def distClient_Connect():
@@ -28,7 +28,6 @@ def distClient_Show(__user):
 	global stub
 	distClient_Connect()
 	result = []
-	__user = "me"
 	response = stub.distShow(
 		dist_pb2.Usr(user = __user)
 	)
