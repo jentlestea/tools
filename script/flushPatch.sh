@@ -7,9 +7,9 @@ log=$SCRIPTDIR/log/$time.log
 cd $SCRIPTDIR
 echo 'Start refresh candidates... time:['$time']' >> $log
 
-REPOPATH=$WORKON_HOME/../repo
-TARGET_BRANCH=workspace
-SOURCE_BRANCH=repo.linux.5.10.y
+REPOPATH=$INSTALL_REPO_PATH
+TARGET_BRANCH=$INSTALL_TARGET_BRANCH
+SOURCE_BRANCH=$INSTALL_SOURCE_BRANCH
 
 [ -r tag.conf ] && . ./tag.conf || echo " tag.conf file not exist"
 
@@ -41,6 +41,7 @@ cd - 2>&1 >/dev/null
 scanPatchesHasMerged(){
 	cd $REPOPATH
 	git log --oneline $TARGET_BRANCH $targetHeadCommits..HEAD | awk ' ''{print $1}' > .tmp
+	sed -i "1d" .tmp
 	cd - 2>&1 >/dev/null
 	cat /$REPOPATH/.tmp > .mergedCommitIDs.tmp
 
@@ -56,6 +57,7 @@ scanPatchesHasMerged(){
 		cd - 2>&1 >/dev/null
 		echo $author' '$line' '$bugzilla > $DATABASEDIR/newMerged.record
     done
+    rm -f .mergedCommitIDs.tmp
 
     # drop this commits from active.pchs to history, it has been merged
     cat $DATABASEDIR/history/$time.pchs | while read line

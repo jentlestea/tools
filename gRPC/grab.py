@@ -26,7 +26,7 @@ if __name__ == '__main__':
 			help()
 		result = dist_client.distClient_Show(email)
 		for r in result:
-			print("{commitID:0[0], bugzilla:0[1], belongsU:0[2]}".format(r))
+			print("commitID:{0[0]}, bugzilla:{0[1]}, ACK:{0[2]}".format(r))
 		exit(0)
 
 	if argv[2] == 'select':

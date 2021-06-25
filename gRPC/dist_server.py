@@ -20,10 +20,11 @@ class dist(dist_pb2_grpc.distServicer):
 		process.lockCancel(user, commitID)
 		return dist_pb2.Result(result = 0)
 	def distShow(self, request, context):
+		return []
 		user = request.user
 		result = process.lockShow(user)
 		for i in result:
-			grpcResult = dist_pb2.Show(commitID = result[0], bugzilla = result[1], user = result[2])
+			grpcResult = dist_pb2.Show(commitID = i[0], bugzilla = i[1], user = i[2])
 			yield grpcResult
 
 def serve():
@@ -31,15 +32,17 @@ def serve():
 	dist_pb2_grpc.add_distServicer_to_server(dist(), server)
 	server.add_insecure_port('[::]:50051')
 	server.start()
+	process.prepare()
 	print('[dist Service] startup [OK]')
 	try:
 		while True:
-			f = os.popen("sh ../script/flushPatch.sh")
+			f = os.popen("bash ../script/flushPatch.sh")
 			err = f.read().strip('\n')
 			if err != '0':
 				print("Flush patches failed!")
 			time.sleep(60*60*24) # one day in seconds
 	except KeyboardInterrupt:
+		process.clean()
 		server.stop(0)
 
 if __name__ == '__main__':

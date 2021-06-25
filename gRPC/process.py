@@ -6,11 +6,21 @@ LOCKPATH = "../dataBase/.lockf"
 flockfd = None
 
 def flock():
-	flockfd = open(LOCKPATH)
+	global flockfd
 	fcntl.flock(flockfd, fcntl.LOCK_EX)
 def funlock():
-	fcntl.flock(flockfd.fcntl.LOCK_UN)
-	close(flockfd)
+	global flockfd
+	fcntl.flock(flockfd, fcntl.LOCK_UN)
+
+def prepare():
+	global flockfd
+	if flockfd == None:
+		flockfd = open(LOCKPATH)
+def clean():
+	global flockfd
+	if flockfd != None:
+		flockfd.close()
+	flockfd = None
 
 def select(user, commitID):
 	ret = [None, None]
@@ -102,8 +112,8 @@ def show(user):
 					i[2] = '1'
 	return ret
 
-def lockSelect(user, commitID):
+def lockShow(user):
 	flock()
-	ret = select(user, commitID)
+	ret = show(user)
 	funlock()
 	return ret
