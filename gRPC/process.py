@@ -100,9 +100,9 @@ def show(user):
 			content = line.strip("\n").split()
 			if len(content) != 2:
 				return -1
-			ftype = os.popen('bash get_type.sh {0[0]}'.format(content))
+			ftype = os.popen('bash get_type.sh {0}'.format(content[0]))
 			type = ftype.read()
-			fscore = os.popen('bash get_score.sh {0[0]}'.format(content))
+			fscore = os.popen('bash get_score.sh {0}'.format(type))
 			score = fscore.read()
 			showinfo = [content[0], content[1], '0', type, score]
 			ret.append(showinfo)

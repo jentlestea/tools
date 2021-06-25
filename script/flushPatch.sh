@@ -160,4 +160,22 @@ cleanFrozen
 echo 'SUCCESS: refresh candidates OK' >> $log
 rm -f .candidates.tmp
 
+cat /dev/null > $DATABASEDIR/mergeConflicts
+judgeMergeConflicts(){
+	cd $REPOPATH
+	git checkout openEuler-21.03 &> /dev/null
+ 	cat $DATABASEDIR/active.pchs | while read line
+	do
+		git cherry-pick $line &> /dev/null
+		if [ $? -ne 0 ];then
+			echo $line >> $DATABASEDIR/mergeConflicts
+		else
+			git add -A
+		fi
+		git reset $targetHeadCommits --hard &> /dev/null
+	done
+	cd - 2>&1 >/dev/null
+}
+judgeMergeConflicts
+
 echo 0
