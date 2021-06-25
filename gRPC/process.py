@@ -23,7 +23,7 @@ def clean():
 	flockfd = None
 
 def select(user, commitID):
-	ret = [None, None]
+	ret = ['-1', None]
 	commitIDs=[]
 	contents=[]
 	with open("../dataBase/frozen.usr") as f:
@@ -31,7 +31,7 @@ def select(user, commitID):
 		for line in lines:
 			content = line.strip("\n").split()
 			if len(content) != 3:
-				return -1
+				return ret
 			if content[0] == commitID and content[2] == user:
 				ret = [content[0], content[1]]
 				return ret
@@ -42,10 +42,10 @@ def select(user, commitID):
 		for line in lines:
 			content = line.strip("\n").split()
 			if len(content) != 2:
-				return -1
+				return ret
 			contents.append(content)
 	if len(contents) == 0:
-		return -1
+		return ret
 
 	if commitID == '0':
 		rd = random.randint(0, len(contents))
@@ -54,12 +54,11 @@ def select(user, commitID):
 		for c in contents:
 			if commitID == c[0]:
 				ret = c
-
-	if ret[0] != None:
+	if ret[0] != '-1':
 		wc = [ret[0], ret[1], user]
 
 	with open("../dataBase/frozen.usr", 'a') as f:
-		f.write("{0[0]} {0[1]} {0[2]}".format(wc))
+		f.write("{0[0]} {0[1]} {0[2]}\n".format(wc))
 	return ret
 
 def lockSelect(user, commitID):
@@ -79,10 +78,11 @@ def cancel(user, commitID):
 			if content[0] == commitID:
 				continue
 			contents.append(content)
-	with open("../dataBase/frozen.usr", 'a') as f:
+	with open("../dataBase/frozen.usr", 'r+') as f:
 		f.truncate()
 	for line in contents:
-		f.write("{0[0]} {0[1]} {0[2]}".format(line))
+		f.write("{0[0]} {0[1]} {0[2]}\n".format(line))
+	return 0
 
 def lockCancel(user, commitID):
 	flock()

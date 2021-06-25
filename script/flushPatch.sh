@@ -148,8 +148,8 @@ cleanFrozen(){
 	cat $DATABASEDIR/frozen.usr | while read line
 	do
 		commitID=`echo $line | awk ' ''{print $1}'`
-		found=`cat $DATABASEDIR/candidates | grep "$line"`
-		if [ -z $found ];then
+		found=`cat $DATABASEDIR/candidates | grep "$commitID"`
+		if [ -z "$found" ];then
 			sed -i 's#'"$line"'##' $DATABASEDIR/frozen.usr
 		fi
 	done

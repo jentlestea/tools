@@ -17,10 +17,9 @@ class dist(dist_pb2_grpc.distServicer):
 	def distCancel(self, request, context):
 		user = request.user
 		commitID = request.commitID
-		process.lockCancel(user, commitID)
-		return dist_pb2.Result(result = 0)
+		ret = process.lockCancel(user, commitID)
+		return dist_pb2.Result(result = ret)
 	def distShow(self, request, context):
-		return []
 		user = request.user
 		result = process.lockShow(user)
 		for i in result:
