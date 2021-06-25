@@ -69,6 +69,7 @@ def lockSelect(user, commitID):
 
 def cancel(user, commitID):
 	contents=[]
+	found = 0
 	with open("../dataBase/frozen.usr") as f:
 		lines = f.readlines()
 		for line in lines:
@@ -76,18 +77,20 @@ def cancel(user, commitID):
 			if len(content) != 3:
 				return -1
 			if content[0] == commitID:
+				found = 1
 				continue
 			contents.append(content)
 	with open("../dataBase/frozen.usr", 'r+') as f:
 		f.truncate()
-	for line in contents:
-		f.write("{0[0]} {0[1]} {0[2]}\n".format(line))
-	return 0
+		for line in contents:
+			f.write("{0[0]} {0[1]} {0[2]}\n".format(line))
+	return found
 
 def lockCancel(user, commitID):
 	flock()
-	cancel(user, commitID)
+	ret = cancel(user, commitID)
 	funlock()
+	return ret
 
 def show(user):
 	ret = []
@@ -97,7 +100,11 @@ def show(user):
 			content = line.strip("\n").split()
 			if len(content) != 2:
 				return -1
-			showinfo = [content[0], content[1], '0']
+			ftype = os.popen('bash get_type.sh {0[0]}'.format(content))
+			type = ftype.read()
+			fscore = os.popen('bash get_score.sh {0[0]}'.format(content))
+			score = fscore.read()
+			showinfo = [content[0], content[1], '0', type, score]
 			ret.append(showinfo)
 	with open("../dataBase/frozen.usr") as f:
 		lines = f.readlines()

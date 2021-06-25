@@ -23,7 +23,7 @@ class dist(dist_pb2_grpc.distServicer):
 		user = request.user
 		result = process.lockShow(user)
 		for i in result:
-			grpcResult = dist_pb2.Show(commitID = i[0], bugzilla = i[1], user = i[2])
+			grpcResult = dist_pb2.Show(commitID = i[0], bugzilla = i[1], user = i[2], type = i[3], score = i[4])
 			yield grpcResult
 
 def serve():

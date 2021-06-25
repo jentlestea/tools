@@ -1,15 +1,14 @@
 import sys
-sys.path.append("../")
 import dist_client
 import os
 import re
 
 def help():
 	print('Usage:')
-	print('# python3 grab.py show')
-	print('# python3 grab.py select')
-	print('# python3 grab.py select {commitID}')
-	print('# python3 grab.py cancel {commitID}')
+	print('# Question show')
+	print('# Question select')
+	print('# Question select {commitID}')
+	print('# Question cancel {commitID}')
 	exit(0)
 
 if __name__ == '__main__':
@@ -29,7 +28,7 @@ if __name__ == '__main__':
 			help()
 		result = dist_client.distClient_Show(email)
 		for r in result:
-			print("commitID:{0[0]}, bugzilla:{0[1]}, ACK:{0[2]}".format(r))
+			print("commitID:{0[0]}, bugzilla:{0[1]}, ACK:{0[2]}, type:{0[3]}, score:{0[4]}".format(r))
 		exit(0)
 
 	if argv[1] == 'select':
@@ -52,7 +51,7 @@ if __name__ == '__main__':
 		if len(argv) != 3:
 			help()
 		result = dist_client.distClient_Cancel(email, argv[2])
-		if result != 0:
+		if result == 0:
 			print("Failed to cancel commitID:", argv[2])
 		else:
 			print("Success cancel: commitID:", argv[2])

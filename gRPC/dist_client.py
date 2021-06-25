@@ -37,5 +37,7 @@ def distClient_Show(__user):
 		rr.append(r.commitID)
 		rr.append(r.bugzilla)
 		rr.append(r.user)
+		rr.append(r.type)
+		rr.append(r.score)
 		result.append(rr)
 	return result

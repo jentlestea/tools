@@ -32,4 +32,6 @@ message Show {
     string commitID = 1;
     string bugzilla = 2;
     string user = 3;
+	string type = 4;
+	string score = 5;
 }
