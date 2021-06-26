@@ -6,6 +6,7 @@ import re
 def help():
 	print('Usage:')
 	print('# Question show')
+	print('# Question show selected')
 	print('# Question select')
 	print('# Question select {commitID}')
 	print('# Question cancel {commitID}')
@@ -24,11 +25,20 @@ if __name__ == '__main__':
 		exit(0)
 
 	if argv[1] == 'show':
-		if len(argv) != 2:
+		result_filter = []
+		if len(argv) == 2:
+			result = dist_client.distClient_Show(email)
+			result_filter = result
+		elif len(argv) and argv[2] == 'selected':
+			result = dist_client.distClient_Show(email)
+			for r in result:
+				if r[2] != '1':
+					continue
+				result_filter.append(r)
+		else:
 			help()
-		result = dist_client.distClient_Show(email)
-		for r in result:
-			print("commitID:{0[0]}, bugzilla:{0[1]}, ACK:{0[2]}, type:{0[3]}, score:{0[4]}".format(r))
+		for rf in result_filter:
+			print("commitID:{0[0]}, bugzilla:{0[1]}, ACK:{0[2]}, type:{0[3]}, score:{0[4]}".format(rf))
 		exit(0)
 
 	if argv[1] == 'select':
