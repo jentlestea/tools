@@ -9,7 +9,7 @@ def help():
 	print('# Question show selected //显示你选中的问题')
 	print('# Question select //随机选中一个问题')
 	print('# Question select {commitID} //选中你想要的问题，输入时候{}要去掉')
-	print('# Question cancel {commitID}, //取消选中的问题')
+	print('# Question cancel {commitID} //取消选中的问题')
 	exit(0)
 
 if __name__ == '__main__':
