@@ -5,11 +5,11 @@ import re
 
 def help():
 	print('Usage:')
-	print('# Question show')
-	print('# Question show selected')
-	print('# Question select')
-	print('# Question select {commitID}')
-	print('# Question cancel {commitID}')
+	print('# Question show //显示所有问题，一个commitID对应一个问题, bugzilla代表记录该问题的地址，ACK代表你是否选中')
+	print('# Question show selected //显示你选中的问题')
+	print('# Question select //随机选中一个问题')
+	print('# Question select {commitID} //选中你想要的问题，输入时候{}要去掉')
+	print('# Question cancel {commitID}, //取消选中的问题')
 	exit(0)
 
 if __name__ == '__main__':
