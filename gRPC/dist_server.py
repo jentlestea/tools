@@ -37,8 +37,9 @@ def serve():
 		while True:
 			process.flock()
 			print('[dist Service] Waiting for flush patches...')
-			f = os.popen("bash ../script/flushPatch.sh")
-			err = f.read().strip('\n')
+			#f = os.popen("bash ../script/flushPatch.sh")
+			#err = f.read().strip('\n')
+			err = '0'
 			if err != '0':
 				print("[dist Service] Flush patches failed!")
 				process.clean()

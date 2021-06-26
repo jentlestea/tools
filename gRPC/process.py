@@ -101,9 +101,9 @@ def show(user):
 			if len(content) != 2:
 				return -1
 			ftype = os.popen('bash get_type.sh {0}'.format(content[0]))
-			type = ftype.read()
+			type = ftype.read().strip('\n')
 			fscore = os.popen('bash get_score.sh {0}'.format(type))
-			score = fscore.read()
+			score = fscore.read().strip('\n')
 			showinfo = [content[0], content[1], '0', type, score]
 			ret.append(showinfo)
 	with open("../dataBase/frozen.usr") as f:
