@@ -56,9 +56,8 @@ def select(user, commitID):
 				ret = c
 	if ret[0] != '-1':
 		wc = [ret[0], ret[1], user]
-
-	with open("../dataBase/frozen.usr", 'a') as f:
-		f.write("{0[0]} {0[1]} {0[2]}\n".format(wc))
+		with open("../dataBase/frozen.usr", 'a') as f:
+			f.write("{0[0]} {0[1]} {0[2]}\n".format(wc))
 	return ret
 
 def lockSelect(user, commitID):
