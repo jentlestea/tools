@@ -38,7 +38,7 @@ if __name__ == '__main__':
 		else:
 			help()
 		for rf in result_filter:
-			print("commitID:{0[0]}, bugzilla:{0[1]}, ACK:{0[2]}, type:{0[3]}, score:{0[4]}".format(rf))
+			print("commitID:{0[0]} bugzilla:{0[1]} ACK:{0[2]} type:{0[3]} score:{0[4]}".format(rf))
 		exit(0)
 
 	if argv[1] == 'select':

@@ -4,7 +4,7 @@ import grpc
 import dist_pb2
 import dist_pb2_grpc
 
-addr = "localhost:50051"
+addr = "139.159.148.89:50051"
 stub = None
 
 def distClient_Connect():
