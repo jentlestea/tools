@@ -51,11 +51,11 @@ if __name__ == '__main__':
 			help()
 		if result[0] == '-1':
 			if len(argv) == 2:
-				print("["+time.asctime(time.localtime(time.time()))+"]"+"Random selection failed")
+				print("["+time.asctime(time.localtime(time.time()))+"]"+" Random selection failed")
 			if len(argv) == 3:
-				print("["+time.asctime(time.localtime(time.time()))+"]"+"Fail to select commitID:{0}".format(argv[2]))
+				print("["+time.asctime(time.localtime(time.time()))+"]"+" Fail to select commitID:{0}".format(argv[2]))
 		else:
-			print("["+time.asctime(time.localtime(time.time()))+"]"+"Success select: commitID:{0[0]}, bugzilla:{0[1]}".format(result))
+			print("["+time.asctime(time.localtime(time.time()))+"]"+" Success select: commitID:{0[0]}, bugzilla:{0[1]}".format(result))
 		exit(0)
 
 	if argv[1] == 'cancel':
@@ -63,7 +63,7 @@ if __name__ == '__main__':
 			help()
 		result = dist_client.distClient_Cancel(email, argv[2])
 		if result == 0:
-			print("["+time.asctime(time.localtime(time.time()))+"]"+"Failed to cancel commitID:{0}".format(argv[2]))
+			print("["+time.asctime(time.localtime(time.time()))+"]"+" Failed to cancel commitID:{0}".format(argv[2]))
 		else:
-			print("["+time.asctime(time.localtime(time.time()))+"]"+"Success cancel: commitID:{0}".format(argv[2]))
+			print("["+time.asctime(time.localtime(time.time()))+"]"+" Success cancel: commitID:{0}".format(argv[2]))
 		exit(0)
