@@ -35,15 +35,17 @@ def serve():
 	print('[dist Service] startup [OK]')
 	try:
 		while True:
-			#f = os.popen("bash ../script/flushPatch.sh")
-			#err = f.read().strip('\n')
-			err = '0'
+			process.flock()
+			print('[dist Service] Waiting for flush patches...')
+			f = os.popen("bash ../script/flushPatch.sh")
+			err = f.read().strip('\n')
 			if err != '0':
-				print("Flush patches failed!")
+				print("[dist Service] Flush patches failed!")
 				process.clean()
 				server.stop(0)
 				exit(0)
-			print("Flush patches success!")
+			print("[dist Service] Flush patches success!")
+			process.funlock()
 			time.sleep(60*60*24) # one day in seconds
 	except KeyboardInterrupt:
 		process.clean()
