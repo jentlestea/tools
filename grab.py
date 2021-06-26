@@ -2,14 +2,15 @@ import sys
 import dist_client
 import os
 import re
+import time
 
 def help():
 	print('Usage:')
-	print('# Question show              //显示所有问题，一个commitID对应一个问题, bugzilla代表记录该问题的地址，ACK代表你是否选中')
+	print('# Question show              //显示所有待解决的问题，一个commitID对应一个问题, bugzilla代表记录该问题的地址，ACK代表你是否选中')
 	print('# Question show selected     //显示你选中的问题')
 	print('# Question select            //随机选中一个问题')
-	print('# Question select {commitID} //选中你想要的问题，输入时候{}要去掉')
-	print('# Question cancel {commitID} //取消选中的问题')
+	print('# Question select {commitID} //选中你想要解决的问题，输入一个commitID，输入时候{}要去掉')
+	print('# Question cancel {commitID} //取消你选中的问题，输入一个commitID，输入的时候{}要去掉')
 	exit(0)
 
 if __name__ == '__main__':
@@ -50,11 +51,11 @@ if __name__ == '__main__':
 			help()
 		if result[0] == '-1':
 			if len(argv) == 2:
-				print("Random selection failed")
+				print("["+time.asctime(time.localtime(time.time()))+"]"+"Random selection failed")
 			if len(argv) == 3:
-				print("Fail to select commitID:", argv[2])
+				print("["+time.asctime(time.localtime(time.time()))+"]"+"Fail to select commitID:{0}".format(argv[2]))
 		else:
-			print("Success select: commitID:{0[0]}, bugzilla:{0[1]}".format(result))
+			print("["+time.asctime(time.localtime(time.time()))+"]"+"Success select: commitID:{0[0]}, bugzilla:{0[1]}".format(result))
 		exit(0)
 
 	if argv[1] == 'cancel':
@@ -62,7 +63,7 @@ if __name__ == '__main__':
 			help()
 		result = dist_client.distClient_Cancel(email, argv[2])
 		if result == 0:
-			print("Failed to cancel commitID:", argv[2])
+			print("["+time.asctime(time.localtime(time.time()))+"]"+"Failed to cancel commitID:{0}".format(argv[2]))
 		else:
-			print("Success cancel: commitID:", argv[2])
+			print("["+time.asctime(time.localtime(time.time()))+"]"+"Success cancel: commitID:{0}".format(argv[2]))
 		exit(0)
