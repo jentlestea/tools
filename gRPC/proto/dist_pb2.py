@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\ndist.proto\"\x13\n\x03Usr\x12\x0c\n\x04user\x18\x01 \x01(\t\"(\n\x06UsrMsg\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x10\n\x08\x63ommitID\x18\x02 \x01(\t\"\x18\n\x06Result\x12\x0e\n\x06result\x18\x01 \x01(\x05\",\n\x06Select\x12\x10\n\x08\x63ommitID\x18\x01 \x01(\t\x12\x10\n\x08\x62ugzilla\x18\x02 \x01(\t\"U\n\x04Show\x12\x10\n\x08\x63ommitID\x18\x01 \x01(\t\x12\x10\n\x08\x62ugzilla\x18\x02 \x01(\t\x12\x0c\n\x04user\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\r\n\x05score\x18\x05 \x01(\t2g\n\x04\x64ist\x12 \n\ndistSelect\x12\x07.UsrMsg\x1a\x07.Select\"\x00\x12 \n\ndistCancel\x12\x07.UsrMsg\x1a\x07.Result\"\x00\x12\x1b\n\x08\x64istShow\x12\x04.Usr\x1a\x05.Show\"\x00\x30\x01\x62\x06proto3'
+  serialized_pb=b'\n\ndist.proto\"\x13\n\x03Usr\x12\x0c\n\x04user\x18\x01 \x01(\t\"(\n\x06UsrMsg\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x10\n\x08\x63ommitID\x18\x02 \x01(\t\"\x18\n\x06Result\x12\x0e\n\x06result\x18\x01 \x01(\x05\",\n\x06Select\x12\x10\n\x08\x63ommitID\x18\x01 \x01(\t\x12\x10\n\x08\x62ugzilla\x18\x02 \x01(\t\"U\n\x04Show\x12\x10\n\x08\x63ommitID\x18\x01 \x01(\t\x12\x10\n\x08\x62ugzilla\x18\x02 \x01(\t\x12\x0c\n\x04user\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\r\n\x05score\x18\x05 \x01(\t\"*\n\x07History\x12\x0e\n\x06result\x18\x01 \x01(\x05\x12\x0f\n\x07history\x18\x02 \x01(\t2\x88\x01\n\x04\x64ist\x12 \n\ndistSelect\x12\x07.UsrMsg\x1a\x07.Select\"\x00\x12 \n\ndistCancel\x12\x07.UsrMsg\x1a\x07.Result\"\x00\x12\x1b\n\x08\x64istShow\x12\x04.Usr\x1a\x05.Show\"\x00\x30\x01\x12\x1f\n\x0b\x64istHistory\x12\x04.Usr\x1a\x08.History\"\x00\x62\x06proto3'
 )
 
 
@@ -226,11 +226,51 @@ _SHOW = _descriptor.Descriptor(
   serialized_end=234,
 )
 
+
+_HISTORY = _descriptor.Descriptor(
+  name='History',
+  full_name='History',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='result', full_name='History.result', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='history', full_name='History.history', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=236,
+  serialized_end=278,
+)
+
 DESCRIPTOR.message_types_by_name['Usr'] = _USR
 DESCRIPTOR.message_types_by_name['UsrMsg'] = _USRMSG
 DESCRIPTOR.message_types_by_name['Result'] = _RESULT
 DESCRIPTOR.message_types_by_name['Select'] = _SELECT
 DESCRIPTOR.message_types_by_name['Show'] = _SHOW
+DESCRIPTOR.message_types_by_name['History'] = _HISTORY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Usr = _reflection.GeneratedProtocolMessageType('Usr', (_message.Message,), {
@@ -268,6 +308,13 @@ Show = _reflection.GeneratedProtocolMessageType('Show', (_message.Message,), {
   })
 _sym_db.RegisterMessage(Show)
 
+History = _reflection.GeneratedProtocolMessageType('History', (_message.Message,), {
+  'DESCRIPTOR' : _HISTORY,
+  '__module__' : 'dist_pb2'
+  # @@protoc_insertion_point(class_scope:History)
+  })
+_sym_db.RegisterMessage(History)
+
 
 
 _DIST = _descriptor.ServiceDescriptor(
@@ -277,8 +324,8 @@ _DIST = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=236,
-  serialized_end=339,
+  serialized_start=281,
+  serialized_end=417,
   methods=[
   _descriptor.MethodDescriptor(
     name='distSelect',
@@ -307,6 +354,16 @@ _DIST = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_USR,
     output_type=_SHOW,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='distHistory',
+    full_name='dist.distHistory',
+    index=3,
+    containing_service=None,
+    input_type=_USR,
+    output_type=_HISTORY,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

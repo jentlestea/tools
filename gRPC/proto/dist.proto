@@ -8,6 +8,7 @@ service dist {
     rpc distSelect(UsrMsg) returns (Select) {}
     rpc distCancel(UsrMsg) returns (Result) {}
     rpc distShow(Usr) returns (stream Show) {}
+    rpc distHistory(Usr) returns (History) {}
 }
 
 message Usr {
@@ -34,4 +35,9 @@ message Show {
     string user = 3;
 	string type = 4;
 	string score = 5;
+}
+
+message History {
+	int32 result = 1;
+	string history = 2;
 }

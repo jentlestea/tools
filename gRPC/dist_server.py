@@ -25,6 +25,11 @@ class dist(dist_pb2_grpc.distServicer):
 		for i in result:
 			grpcResult = dist_pb2.Show(commitID = i[0], bugzilla = i[1], user = i[2], type = i[3], score = i[4])
 			yield grpcResult
+	def distHistory(self, request, context):
+		user = request.user
+		ret, __history = process.lockHistory(user)
+		return dist_pb2.History(result = ret, history = __history)
+
 
 def serve():
 	server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))

@@ -29,6 +29,11 @@ class distStub(object):
                 request_serializer=dist__pb2.Usr.SerializeToString,
                 response_deserializer=dist__pb2.Show.FromString,
                 )
+        self.distHistory = channel.unary_unary(
+                '/dist/distHistory',
+                request_serializer=dist__pb2.Usr.SerializeToString,
+                response_deserializer=dist__pb2.History.FromString,
+                )
 
 
 class distServicer(object):
@@ -52,6 +57,12 @@ class distServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def distHistory(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_distServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -69,6 +80,11 @@ def add_distServicer_to_server(servicer, server):
                     servicer.distShow,
                     request_deserializer=dist__pb2.Usr.FromString,
                     response_serializer=dist__pb2.Show.SerializeToString,
+            ),
+            'distHistory': grpc.unary_unary_rpc_method_handler(
+                    servicer.distHistory,
+                    request_deserializer=dist__pb2.Usr.FromString,
+                    response_serializer=dist__pb2.History.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -128,5 +144,22 @@ class dist(object):
         return grpc.experimental.unary_stream(request, target, '/dist/distShow',
             dist__pb2.Usr.SerializeToString,
             dist__pb2.Show.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def distHistory(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/dist/distHistory',
+            dist__pb2.Usr.SerializeToString,
+            dist__pb2.History.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -10,6 +10,13 @@ echo 'Start refresh candidates... time:['$time']' >> $log
 REPOPATH=$INSTALL_REPO_PATH
 TARGET_BRANCH=$INSTALL_TARGET_BRANCH
 SOURCE_BRANCH=$INSTALL_SOURCE_BRANCH
+SOURCE_FILE=$INSTALL_SOURCE_FILE
+
+if [ ! -d $REPOPATH ];then
+	echo 'ERROR: '$REPOPATH" does not exist, skipping..." >> $log
+	echo 0
+	exit
+fi
 
 [ -r tag.conf ] && . ./tag.conf || echo " tag.conf file not exist"
 
@@ -28,6 +35,17 @@ git log --oneline $SOURCE_BRANCH $TAGFROM..$TAGTO | awk ' ''{print $1}' > .tmp
 cd - 2>&1 >/dev/null
 
 cat $REPOPATH/.tmp > .prepareToMergePatches.tmp
+# pull source file
+if [ -f $SOURCE_FILE ];then
+	cat $SOURCE_FILE | while read line
+	do
+		commitID=`echo $line | awk ' ''{print $1}'`
+		existed=`cat .prepareToMergePatches.tmp | grep $commitID`
+		if [ -z "$existed" ];then
+			echo "$commitID" >> .prepareToMergePatches.tmp
+		fi
+	done
+fi
 
 cd $REPOPATH
 targetHeadCommits=`git rev-list -1 $TARGET_BRANCH`

@@ -1,6 +1,7 @@
 import os
 import random
 import fcntl
+import time
 
 LOCKPATH = "../dataBase/.lockf"
 flockfd = None
@@ -22,12 +23,31 @@ def clean():
 		flockfd.close()
 	flockfd = None
 
+def record(user, line):
+	path = "../database/person/{0}".format(user)
+	with open(path, 'a+') as f:
+		f.write("["+time.asctime(time.localtime(time.time()))+"] "+"{0}\n".format(line))
+
+def getRecord(user):
+	path = "../dataBase/person/{0}".format(user)
+	if os.path.exists(path) == False:
+		return -1, ""
+	lines = None
+	with open(path) as f:
+		lines = f.readlines()
+	record = ""
+	for line in lines:
+		record = record + line
+	return 0, record
+
 def select(user, commitID):
 	ret = ['-1', None]
 	commitIDs=[]
 	contents=[]
 	with open("../dataBase/frozen.usr") as f:
 		lines = f.readlines()
+		times = 0
+		ltsTimes = 0
 		for line in lines:
 			content = line.strip("\n").split()
 			if len(content) != 3:
@@ -37,6 +57,14 @@ def select(user, commitID):
 				return ret
 			if content[0] == commitID and content[2] != user:
 				return ret
+			if content[2] == user:
+				times += 1
+				ftype = os.popen('bash get_type.sh {0}'.format(content[0]))
+				type = ftype.read().strip('\n')
+				if type.find("LTS") != -1:
+					ltsTimes += 1
+		if times >= 5 or ltsTimes >= 3:
+			return ret
 	with open("../dataBase/candidates") as f:
 		lines = f.readlines()
 		for line in lines:
@@ -58,6 +86,7 @@ def select(user, commitID):
 		wc = [ret[0], ret[1], user]
 		with open("../dataBase/frozen.usr", 'a') as f:
 			f.write("{0[0]} {0[1]} {0[2]}\n".format(wc))
+		record(user, "Select commitID:{0}".format(ret[0]))
 	return ret
 
 def lockSelect(user, commitID):
@@ -83,6 +112,8 @@ def cancel(user, commitID):
 		f.truncate()
 		for line in contents:
 			f.write("{0[0]} {0[1]} {0[2]}\n".format(line))
+	if found == 1:
+		record(user, "Cancel commitID:{0}".format(commitID))
 	return found
 
 def lockCancel(user, commitID):
@@ -116,6 +147,7 @@ def show(user):
 					ret.remove(i)
 				if i[0] == content[0] and user == content[2]:
 					i[2] = '1'
+	record(user, "Show commitIDs")
 	return ret
 
 def lockShow(user):
@@ -123,3 +155,12 @@ def lockShow(user):
 	ret = show(user)
 	funlock()
 	return ret
+
+def history(user):
+	return getRecord(user)
+
+def lockHistory(user):
+	flock()
+	ret, __history = history(user)
+	funlock()
+	return ret, __history
