@@ -11,6 +11,7 @@ def help():
 	print('# Question select            //随机选中一个问题')
 	print('# Question select {commitID} //选中你想要解决的问题，输入一个commitID，输入时候{}要去掉')
 	print('# Question cancel {commitID} //取消你选中的问题，输入一个commitID，输入的时候{}要去掉')
+	print('# Question history           //查询你的操作记录')
 	exit(0)
 
 if __name__ == '__main__':
@@ -67,3 +68,11 @@ if __name__ == '__main__':
 		else:
 			print("["+time.asctime(time.localtime(time.time()))+"]"+" Success cancel: commitID:{0}".format(argv[2]))
 		exit(0)
+	if argv[1] == 'history':
+		if len(argv) != 2:
+			help()
+		result, history = dist_client.distClient_History(email)
+		if result == 0:
+			print(history.strip('\n'))
+		else:
+			print("["+time.asctime(time.localtime(time.time()))+"]"+" Fail to search your processing history")

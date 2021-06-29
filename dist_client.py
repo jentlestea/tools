@@ -40,3 +40,11 @@ def distClient_Show(__user):
 		rr.append(r.score)
 		result.append(rr)
 	return result
+
+def distClient_History(__user):
+	global stub
+	distClient_Connect()
+	response = stub.distHistory(
+		dist_pb2.Usr(user = __user)
+	)
+	return response.result, response.history
