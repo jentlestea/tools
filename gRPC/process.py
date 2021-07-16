@@ -24,7 +24,7 @@ def clean():
 	flockfd = None
 
 def record(user, line):
-	path = "../database/person/{0}".format(user)
+	path = "../dataBase/person/{0}".format(user)
 	with open(path, 'a+') as f:
 		f.write("["+time.asctime(time.localtime(time.time()))+"] "+"{0}\n".format(line))
 
@@ -132,7 +132,7 @@ def show(user):
 				return -1
 			ftype = os.popen('bash get_type.sh {0}'.format(content[0]))
 			type = ftype.read().strip('\n')
-			fscore = os.popen('bash get_score.sh {0}'.format(type))
+			fscore = os.popen('bash get_score.sh {0}'.format(content[0]))
 			score = fscore.read().strip('\n')
 			showinfo = [content[0], content[1], '0', type, score]
 			ret.append(showinfo)

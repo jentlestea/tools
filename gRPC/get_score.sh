@@ -1,9 +1,12 @@
 #!/bin/bash
+DATABASEDIR=$WORKON_HOME/dataBase
 
-type=$1
+commitID=$1
 
-if [ $type == 'BUG' ];then
-	echo 10
-else
-	echo 2
+score=`cat $DATABASEDIR/summary/total.csv | grep $commitID | awk ' ''{print $3}`
+
+if [ -n "$score" ];then
+	echo '?'
+elif
+	echo $score
 fi

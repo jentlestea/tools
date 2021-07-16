@@ -18,9 +18,9 @@ elif [ -n "$course" ]; then
 else
 	rejected=`cat $DATABASEDIR/mergeConflicts | grep $commitID`
 	if [ -z "$rejected" ];then
-		echo 'LTS[O]'
+		echo 'LTS'
 	else
-		echo 'LTS[X]'
+		echo 'LTS[C]'
 	fi
 fi
 cd - &> /dev/null
