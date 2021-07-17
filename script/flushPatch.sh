@@ -99,8 +99,9 @@ scanPatchesHasMerged(){
 		cd - 2>&1 >/dev/null
 		#get score
 		score=`cat $DATABASEDIR/summary/total.csv | grep $bugzilla | awk ' ''{print $3}`
-		echo $author' '$line' '$bugzilla' '$score > $DATABASEDIR/record/newMerged$time.record
+		echo $author' '$line' '$bugzilla' '$score >> $DATABASEDIR/record/newMerged$time.record
     done
+	cat $DATABASEDIR/record/newMerged$time.record >> $OUTPUT_REPORT_DIR/$time.report 2>&1 > /dev/null
 
     # drop this commits from active.pchs to history, it has been merged
     cat .mergedCommitIDs.tmp | while read line

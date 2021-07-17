@@ -16,6 +16,12 @@ if [ -z "$COMMIT_FILE_PATH" ];then
 fi
 echo IMPORT_COMMIT_FILE=$COMMIT_FILE_PATH >> ~/.bashrc
 
+if [ -z "$REPORT_DIR_PATH" ];then
+	REPORT_DIR_PATH=~/oqserver/front
+	mkdir -p $REPORT_DIR_PATH
+fi
+echo OUTPUT_REPORT_DIR=$REPORT_DIR_PATH >> ~/.bashrc
+
 echo "alias oqserver=cd `pwd` && python3 ./gRPC/dist_server.py" >> ~/.bashrc
 
 #export PATH=$PATH:/usr/local/bin/
