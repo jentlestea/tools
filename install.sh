@@ -1,36 +1,22 @@
 #!/bin/sh
 
-export WORKON_HOME=`pwd`
-export INSTALL_REPO_PATH=$WORKON_HOME/../repo
+echo WORKON_HOME=`pwd` >> ~/.bashrc
 
-export INSTALL_TARGET_BRANCH=openEuler-21.03
-export INSTALL_SOURCE_BRANCH=Questions
-export PYTHONPATH=$WORKON_HOME/gRPC:$WORKON_HOME/gRPC/proto
-
-#CHECK REPO
-if [ ! -d $INSTALL_REPO_PATH ];then
-	echo 'ERROR: '$INSTALL_REPO_PATH' not exit.'
-	return
-fi
-
-cd $INSTALL_REPO_PATH
-if [ ! `git branch | grep $INSTALL_TARGET_BRANCH` ];then
-	echo 'ERROR: branch '$INSTALL_TARGET_BRANCH' not exit.'
-	return
-fi
-if [ ! `git branch | grep $INSTALL_SOURCE_BRANCH` ];then
-	echo 'ERROR: branch '$INSTALL_SOURCE_BRANCH' not exit.'
-	return
-fi
-cd - 2>&1 >/dev/null
+mkdir -p ~/oqserver
+echo INSTALL_REPO_PATH=~/oqserver/repo >> ~/.bashrc
+echo INSTALL_TARGET_BRANCH=openEuler-21.03 >> ~/.bashrc
+echo INSTALL_SOURCE_BRANCH=Questions >> ~/.bashrc
+echo PYTHONPATH=`pwd`/gRPC:`pwd`/gRPC/proto >> ~/.bashrc
 
 if [ -z "$COMMIT_FILE_PATH" ];then
-	COMMIT_DIR_PATH=~/QI
+	COMMIT_DIR_PATH=~/oqserver/front
 	mkdir -p $COMMIT_DIR_PATH
 	COMMIT_FILE_PATH=$COMMIT_DIR_PATH/import.csv
 	touch $COMMIT_FILE_PATH
 fi
-export IMPORT_COMMIT_FILE=$COMMIT_FILE_PATH
+echo IMPORT_COMMIT_FILE=$COMMIT_FILE_PATH >> ~/.bashrc
 
-python3 ./gRPC/dist_server.py
-return
+echo "alias oqserver=cd `pwd` && python3 ./gRPC/dist_server.py" >> ~/.bashrc
+
+#export PATH=$PATH:/usr/local/bin/
+#python3 ./gRPC/dist_server.py > python.log 2>&1 &

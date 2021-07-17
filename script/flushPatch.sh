@@ -17,6 +17,18 @@ if [ ! -d $REPOPATH ];then
 	exit
 fi
 
+cd $INSTALL_REPO_PATH
+if [ ! `git branch | grep $INSTALL_TARGET_BRANCH` ];then
+	echo 'ERROR: branch '$INSTALL_TARGET_BRANCH' not exit.'
+	echo 0
+	exit
+fi
+if [ ! `git branch | grep $INSTALL_SOURCE_BRANCH` ];then
+	echo 'ERROR: branch '$INSTALL_SOURCE_BRANCH' not exit.'
+	echo 0
+	exit
+fi
+
 [ -r tag.conf ] && . ./tag.conf || echo " tag.conf file not exist"
 
 TTAGBASE=$TARGETBASE
