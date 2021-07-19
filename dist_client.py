@@ -31,16 +31,17 @@ def distClient_Cancel(__user, __commitID):
 	response = stub.distCancel(dist_pb2.UsrMsg(user = __user, commitID = __commitID))
 	return response.result
 
-def distClient_Show(__user):
+def distClient_Show(__user, __commitID, __selected):
 	global stub
 	distClient_Connect()
 	result = []
 	response = stub.distShow(
-		dist_pb2.Usr(user = __user)
+		dist_pb2.UsrShow(user = __user, commitID = __commitID, selected = __selected)
 	)
 	for r in response:
 		rr = []
 		rr.append(r.commitID)
+		rr.append(r.detail)
 		rr.append(r.bugzilla)
 		rr.append(r.user)
 		rr.append(r.type)

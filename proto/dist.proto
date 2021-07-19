@@ -7,12 +7,18 @@ syntax = "proto3";
 service dist {
     rpc distSelect(UsrMsg) returns (Select) {}
     rpc distCancel(UsrMsg) returns (Result) {}
-    rpc distShow(Usr) returns (stream Show) {}
+    rpc distShow(UsrShow) returns (stream Show) {}
     rpc distHistory(Usr) returns (History) {}
 }
 
 message Usr {
     string user = 1;
+}
+
+message UsrShow {
+    string user = 1;
+	string commitID = 2;
+	string selected = 3;
 }
 
 message UsrMsg {
