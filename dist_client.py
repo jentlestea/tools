@@ -1,10 +1,17 @@
 import sys
-sys.path.append("./proto")
+import os
+workProtoHome = os.getenv('CWORKON_HOME') + '/proto'
+if workProtoHome not in sys.path:
+	sys.path.append(workProtoHome)
 import grpc
 import dist_pb2
 import dist_pb2_grpc
 
-addr = "localhost:50051"
+workHome = os.getenv('CWORKON_HOME')
+#addr = "139.159.148.89:50051"
+f = open(workHome + "/ip.conf")
+addr = f.readline().strip('\n')
+f.close()
 stub = None
 
 def distClient_Connect():

@@ -1,6 +1,9 @@
 import sys
-import dist_client
 import os
+workHome = os.getenv('CWORKON_HOME')
+if workHome not in sys.path:
+	sys.path.append(workHome)
+import dist_client
 import re
 import time
 
