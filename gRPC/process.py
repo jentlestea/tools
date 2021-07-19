@@ -142,7 +142,7 @@ def show(user, commitID, selected):
 				ret.append(showinfo)
 		else:
 			detail = os.popen('bash get_commit_detail.sh {0}'.format(commitID))
-			showinfo = [detail, '0', '0', '0', '0', '0']
+			showinfo = [0, detail, '0', '0', '0', '0']
 			ret.append(showinfo)
 		return ret
 	with open("../dataBase/candidates") as f:
