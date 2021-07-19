@@ -6,7 +6,7 @@ mkdir -p ~/oqserver
 echo "export INSTALL_REPO_PATH=~/oqserver/repo" >> ~/.bashrc
 echo "export INSTALL_TARGET_BRANCH=openEuler-21.03" >> ~/.bashrc
 echo "export INSTALL_SOURCE_BRANCH=Questions" >> ~/.bashrc
-echo "export PYTHONPATH=`pwd`/gRPC:`pwd`/gRPC/proto" >> ~/.bashrc
+echo "export SPYTHONPATH=`pwd`/gRPC:`pwd`/gRPC/proto" >> ~/.bashrc
 
 if [ -z "$COMMIT_FILE_PATH" ];then
 	COMMIT_DIR_PATH=~/oqserver/front

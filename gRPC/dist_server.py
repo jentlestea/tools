@@ -3,6 +3,9 @@ import time
 import grpc
 import sys
 import os
+workProtoHome = os.getenv('CWORKON_HOME') + '/gRPC/proto'
+if workProtoHome not in sys.path:
+	sys.path.append(workProtoHome)
 import dist_pb2
 import dist_pb2_grpc
 import process
@@ -30,7 +33,6 @@ class dist(dist_pb2_grpc.distServicer):
 		ret, __history = process.lockHistory(user)
 		return dist_pb2.History(result = ret, history = __history)
 
-
 def serve():
 	server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
 	dist_pb2_grpc.add_distServicer_to_server(dist(), server)
@@ -48,6 +50,7 @@ def serve():
 				print("[dist Service] Flush patches failed!")
 				process.clean()
 				server.stop(0)
+				process.funlock()
 				exit(0)
 			print("[dist Service] Flush patches success!")
 			process.funlock()
@@ -57,6 +60,6 @@ def serve():
 		server.stop(0)
 
 if __name__ == '__main__':
-	workhome = os.getenv('WORKON_HOME') + '/gRPC'
-	os.chdir(workhome)
+	workHome = os.getenv('WORKON_HOME') + '/gRPC'
+	os.chdir(workHome)
 	serve()
