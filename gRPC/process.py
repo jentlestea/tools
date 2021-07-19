@@ -5,6 +5,7 @@ import time
 
 LOCKPATH = "../dataBase/.lockf"
 flockfd = None
+ = os.getenv('WORKON_HOME')
 
 def flock():
 	global flockfd
@@ -122,37 +123,57 @@ def lockCancel(user, commitID):
 	funlock()
 	return ret
 
-def show(user):
+def show(user, commitID, selected):
 	ret = []
+	if commitID != '0' or selected != '0':
+		if selected == 'selected':
+			with open("../dataBase/frozen.usr") as f:
+			lines = f.readlines()
+			for line in lines:
+				content = line.strip("\n").split()
+				if len(content) != 3:
+					print("OQServer ERROR: frozen.usr format error")
+					continue
+				ftype = os.popen('bash get_type.sh {0}'.format(content[0]))
+				type = ftype.read().strip('\n')
+				fscore = os.popen('bash get_score.sh {0}'.format(content[0]))
+				score = fscore.read().strip('\n')
+				showinfo = [content[0], '0', content[1], '1', type, score]
+				ret.append(showinfo)
+		else:
+			detail = os.popen('bash get_commit_detail.sh {0}'.format(commitID))
+			showinfo = [detail, '0', '0', '0', '0', '0']
+			ret.append(showinfo)
+		return ret
 	with open("../dataBase/candidates") as f:
 		lines = f.readlines()
 		for line in lines:
 			content = line.strip("\n").split()
 			if len(content) != 2:
-				return -1
+				print("OQServer ERROR: candidates format error")
+				continue
 			ftype = os.popen('bash get_type.sh {0}'.format(content[0]))
 			type = ftype.read().strip('\n')
 			fscore = os.popen('bash get_score.sh {0}'.format(content[0]))
 			score = fscore.read().strip('\n')
-			showinfo = [content[0], content[1], '0', type, score]
+			showinfo = [content[0], '0', content[1], '0', type, score]
 			ret.append(showinfo)
 	with open("../dataBase/frozen.usr") as f:
 		lines = f.readlines()
 		for line in lines:
 			content = line.strip("\n").split()
 			if len(content) != 3:
-				return -1
+				print("OQServer ERROR: frozen.usr format error")
+				continue
 			for i in ret:
-				if i[0] == content[0] and user != content[2]:
-					ret.remove(i)
 				if i[0] == content[0] and user == content[2]:
-					i[2] = '1'
+					i[3] = '1'
 	record(user, "Show commitIDs")
 	return ret
 
-def lockShow(user):
+def lockShow(user, commitID, selected):
 	flock()
-	ret = show(user)
+	ret = show(user, commitID, selected)
 	funlock()
 	return ret
 

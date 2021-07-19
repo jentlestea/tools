@@ -3,7 +3,7 @@ import time
 import grpc
 import sys
 import os
-workProtoHome = os.getenv('CWORKON_HOME') + '/gRPC/proto'
+workProtoHome = os.getenv('WORKON_HOME') + '/gRPC/proto'
 if workProtoHome not in sys.path:
 	sys.path.append(workProtoHome)
 import dist_pb2
@@ -24,7 +24,9 @@ class dist(dist_pb2_grpc.distServicer):
 		return dist_pb2.Result(result = ret)
 	def distShow(self, request, context):
 		user = request.user
-		result = process.lockShow(user)
+		commitID = request.commitID
+		selected = request.selected
+		result = process.lockShow(user, commitID, selected)
 		for i in result:
 			grpcResult = dist_pb2.Show(commitID = i[0], bugzilla = i[1], user = i[2], type = i[3], score = i[4])
 			yield grpcResult

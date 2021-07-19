@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\ndist.proto\"\x13\n\x03Usr\x12\x0c\n\x04user\x18\x01 \x01(\t\"(\n\x06UsrMsg\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x10\n\x08\x63ommitID\x18\x02 \x01(\t\"\x18\n\x06Result\x12\x0e\n\x06result\x18\x01 \x01(\x05\",\n\x06Select\x12\x10\n\x08\x63ommitID\x18\x01 \x01(\t\x12\x10\n\x08\x62ugzilla\x18\x02 \x01(\t\"U\n\x04Show\x12\x10\n\x08\x63ommitID\x18\x01 \x01(\t\x12\x10\n\x08\x62ugzilla\x18\x02 \x01(\t\x12\x0c\n\x04user\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\r\n\x05score\x18\x05 \x01(\t\"*\n\x07History\x12\x0e\n\x06result\x18\x01 \x01(\x05\x12\x0f\n\x07history\x18\x02 \x01(\t2\x88\x01\n\x04\x64ist\x12 \n\ndistSelect\x12\x07.UsrMsg\x1a\x07.Select\"\x00\x12 \n\ndistCancel\x12\x07.UsrMsg\x1a\x07.Result\"\x00\x12\x1b\n\x08\x64istShow\x12\x04.Usr\x1a\x05.Show\"\x00\x30\x01\x12\x1f\n\x0b\x64istHistory\x12\x04.Usr\x1a\x08.History\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\ndist.proto\"\x13\n\x03Usr\x12\x0c\n\x04user\x18\x01 \x01(\t\";\n\x07UsrShow\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x10\n\x08\x63ommitID\x18\x02 \x01(\t\x12\x10\n\x08selected\x18\x03 \x01(\t\"(\n\x06UsrMsg\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x10\n\x08\x63ommitID\x18\x02 \x01(\t\"\x18\n\x06Result\x12\x0e\n\x06result\x18\x01 \x01(\x05\",\n\x06Select\x12\x10\n\x08\x63ommitID\x18\x01 \x01(\t\x12\x10\n\x08\x62ugzilla\x18\x02 \x01(\t\"U\n\x04Show\x12\x10\n\x08\x63ommitID\x18\x01 \x01(\t\x12\x10\n\x08\x62ugzilla\x18\x02 \x01(\t\x12\x0c\n\x04user\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\r\n\x05score\x18\x05 \x01(\t\"*\n\x07History\x12\x0e\n\x06result\x18\x01 \x01(\x05\x12\x0f\n\x07history\x18\x02 \x01(\t2\x8c\x01\n\x04\x64ist\x12 \n\ndistSelect\x12\x07.UsrMsg\x1a\x07.Select\"\x00\x12 \n\ndistCancel\x12\x07.UsrMsg\x1a\x07.Result\"\x00\x12\x1f\n\x08\x64istShow\x12\x08.UsrShow\x1a\x05.Show\"\x00\x30\x01\x12\x1f\n\x0b\x64istHistory\x12\x04.Usr\x1a\x08.History\"\x00\x62\x06proto3'
 )
 
 
@@ -57,6 +57,52 @@ _USR = _descriptor.Descriptor(
 )
 
 
+_USRSHOW = _descriptor.Descriptor(
+  name='UsrShow',
+  full_name='UsrShow',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user', full_name='UsrShow.user', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='commitID', full_name='UsrShow.commitID', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='selected', full_name='UsrShow.selected', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=35,
+  serialized_end=94,
+)
+
+
 _USRMSG = _descriptor.Descriptor(
   name='UsrMsg',
   full_name='UsrMsg',
@@ -91,8 +137,8 @@ _USRMSG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=35,
-  serialized_end=75,
+  serialized_start=96,
+  serialized_end=136,
 )
 
 
@@ -123,8 +169,8 @@ _RESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=77,
-  serialized_end=101,
+  serialized_start=138,
+  serialized_end=162,
 )
 
 
@@ -162,8 +208,8 @@ _SELECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=103,
-  serialized_end=147,
+  serialized_start=164,
+  serialized_end=208,
 )
 
 
@@ -222,8 +268,8 @@ _SHOW = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=149,
-  serialized_end=234,
+  serialized_start=210,
+  serialized_end=295,
 )
 
 
@@ -261,11 +307,12 @@ _HISTORY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=236,
-  serialized_end=278,
+  serialized_start=297,
+  serialized_end=339,
 )
 
 DESCRIPTOR.message_types_by_name['Usr'] = _USR
+DESCRIPTOR.message_types_by_name['UsrShow'] = _USRSHOW
 DESCRIPTOR.message_types_by_name['UsrMsg'] = _USRMSG
 DESCRIPTOR.message_types_by_name['Result'] = _RESULT
 DESCRIPTOR.message_types_by_name['Select'] = _SELECT
@@ -279,6 +326,13 @@ Usr = _reflection.GeneratedProtocolMessageType('Usr', (_message.Message,), {
   # @@protoc_insertion_point(class_scope:Usr)
   })
 _sym_db.RegisterMessage(Usr)
+
+UsrShow = _reflection.GeneratedProtocolMessageType('UsrShow', (_message.Message,), {
+  'DESCRIPTOR' : _USRSHOW,
+  '__module__' : 'dist_pb2'
+  # @@protoc_insertion_point(class_scope:UsrShow)
+  })
+_sym_db.RegisterMessage(UsrShow)
 
 UsrMsg = _reflection.GeneratedProtocolMessageType('UsrMsg', (_message.Message,), {
   'DESCRIPTOR' : _USRMSG,
@@ -324,8 +378,8 @@ _DIST = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=281,
-  serialized_end=417,
+  serialized_start=342,
+  serialized_end=482,
   methods=[
   _descriptor.MethodDescriptor(
     name='distSelect',
@@ -352,7 +406,7 @@ _DIST = _descriptor.ServiceDescriptor(
     full_name='dist.distShow',
     index=2,
     containing_service=None,
-    input_type=_USR,
+    input_type=_USRSHOW,
     output_type=_SHOW,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,

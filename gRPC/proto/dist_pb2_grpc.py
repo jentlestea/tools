@@ -26,7 +26,7 @@ class distStub(object):
                 )
         self.distShow = channel.unary_stream(
                 '/dist/distShow',
-                request_serializer=dist__pb2.Usr.SerializeToString,
+                request_serializer=dist__pb2.UsrShow.SerializeToString,
                 response_deserializer=dist__pb2.Show.FromString,
                 )
         self.distHistory = channel.unary_unary(
@@ -78,7 +78,7 @@ def add_distServicer_to_server(servicer, server):
             ),
             'distShow': grpc.unary_stream_rpc_method_handler(
                     servicer.distShow,
-                    request_deserializer=dist__pb2.Usr.FromString,
+                    request_deserializer=dist__pb2.UsrShow.FromString,
                     response_serializer=dist__pb2.Show.SerializeToString,
             ),
             'distHistory': grpc.unary_unary_rpc_method_handler(
@@ -142,7 +142,7 @@ class dist(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_stream(request, target, '/dist/distShow',
-            dist__pb2.Usr.SerializeToString,
+            dist__pb2.UsrShow.SerializeToString,
             dist__pb2.Show.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
