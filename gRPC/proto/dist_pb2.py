@@ -19,10 +19,56 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\ndist.proto\"\x13\n\x03Usr\x12\x0c\n\x04user\x18\x01 \x01(\t\";\n\x07UsrShow\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x10\n\x08\x63ommitID\x18\x02 \x01(\t\x12\x10\n\x08selected\x18\x03 \x01(\t\"(\n\x06UsrMsg\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x10\n\x08\x63ommitID\x18\x02 \x01(\t\"\x18\n\x06Result\x12\x0e\n\x06result\x18\x01 \x01(\x05\",\n\x06Select\x12\x10\n\x08\x63ommitID\x18\x01 \x01(\t\x12\x10\n\x08\x62ugzilla\x18\x02 \x01(\t\"U\n\x04Show\x12\x10\n\x08\x63ommitID\x18\x01 \x01(\t\x12\x10\n\x08\x62ugzilla\x18\x02 \x01(\t\x12\x0c\n\x04user\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\r\n\x05score\x18\x05 \x01(\t\"*\n\x07History\x12\x0e\n\x06result\x18\x01 \x01(\x05\x12\x0f\n\x07history\x18\x02 \x01(\t2\x8c\x01\n\x04\x64ist\x12 \n\ndistSelect\x12\x07.UsrMsg\x1a\x07.Select\"\x00\x12 \n\ndistCancel\x12\x07.UsrMsg\x1a\x07.Result\"\x00\x12\x1f\n\x08\x64istShow\x12\x08.UsrShow\x1a\x05.Show\"\x00\x30\x01\x12\x1f\n\x0b\x64istHistory\x12\x04.Usr\x1a\x08.History\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\ndist.proto\"8\n\x05QComt\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x10\n\x08\x63ommitID\x18\x02 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x03 \x01(\t\"\x13\n\x03Usr\x12\x0c\n\x04user\x18\x01 \x01(\t\";\n\x07UsrShow\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x10\n\x08\x63ommitID\x18\x02 \x01(\t\x12\x10\n\x08selected\x18\x03 \x01(\t\"(\n\x06UsrMsg\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x10\n\x08\x63ommitID\x18\x02 \x01(\t\"\x18\n\x06Result\x12\x0e\n\x06result\x18\x01 \x01(\x05\",\n\x06Select\x12\x10\n\x08\x63ommitID\x18\x01 \x01(\t\x12\x10\n\x08\x62ugzilla\x18\x02 \x01(\t\"v\n\x04Show\x12\x10\n\x08\x63ommitID\x18\x01 \x01(\t\x12\x0e\n\x06\x64\x65tail\x18\x02 \x01(\t\x12\x10\n\x08\x62ugzilla\x18\x03 \x01(\t\x12\x0f\n\x07\x63omment\x18\x04 \x01(\t\x12\x0c\n\x04user\x18\x05 \x01(\t\x12\x0c\n\x04type\x18\x06 \x01(\t\x12\r\n\x05score\x18\x07 \x01(\t\"*\n\x07History\x12\x0e\n\x06result\x18\x01 \x01(\x05\x12\x0f\n\x07history\x18\x02 \x01(\t2\xae\x01\n\x04\x64ist\x12 \n\ndistSelect\x12\x07.UsrMsg\x1a\x07.Select\"\x00\x12 \n\ndistCancel\x12\x07.UsrMsg\x1a\x07.Result\"\x00\x12\x1f\n\x08\x64istShow\x12\x08.UsrShow\x1a\x05.Show\"\x00\x30\x01\x12\x1f\n\x0b\x64istHistory\x12\x04.Usr\x1a\x08.History\"\x00\x12 \n\x0b\x64istComment\x12\x06.QComt\x1a\x07.Result\"\x00\x62\x06proto3'
 )
 
 
+
+
+_QCOMT = _descriptor.Descriptor(
+  name='QComt',
+  full_name='QComt',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user', full_name='QComt.user', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='commitID', full_name='QComt.commitID', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='content', full_name='QComt.content', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14,
+  serialized_end=70,
+)
 
 
 _USR = _descriptor.Descriptor(
@@ -52,8 +98,8 @@ _USR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14,
-  serialized_end=33,
+  serialized_start=72,
+  serialized_end=91,
 )
 
 
@@ -98,8 +144,8 @@ _USRSHOW = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=35,
-  serialized_end=94,
+  serialized_start=93,
+  serialized_end=152,
 )
 
 
@@ -137,8 +183,8 @@ _USRMSG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=96,
-  serialized_end=136,
+  serialized_start=154,
+  serialized_end=194,
 )
 
 
@@ -169,8 +215,8 @@ _RESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=138,
-  serialized_end=162,
+  serialized_start=196,
+  serialized_end=220,
 )
 
 
@@ -208,8 +254,8 @@ _SELECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=164,
-  serialized_end=208,
+  serialized_start=222,
+  serialized_end=266,
 )
 
 
@@ -229,29 +275,43 @@ _SHOW = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='bugzilla', full_name='Show.bugzilla', index=1,
+      name='detail', full_name='Show.detail', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='user', full_name='Show.user', index=2,
+      name='bugzilla', full_name='Show.bugzilla', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='type', full_name='Show.type', index=3,
+      name='comment', full_name='Show.comment', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='score', full_name='Show.score', index=4,
+      name='user', full_name='Show.user', index=4,
       number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='Show.type', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='score', full_name='Show.score', index=6,
+      number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -268,8 +328,8 @@ _SHOW = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=210,
-  serialized_end=295,
+  serialized_start=268,
+  serialized_end=386,
 )
 
 
@@ -307,10 +367,11 @@ _HISTORY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=297,
-  serialized_end=339,
+  serialized_start=388,
+  serialized_end=430,
 )
 
+DESCRIPTOR.message_types_by_name['QComt'] = _QCOMT
 DESCRIPTOR.message_types_by_name['Usr'] = _USR
 DESCRIPTOR.message_types_by_name['UsrShow'] = _USRSHOW
 DESCRIPTOR.message_types_by_name['UsrMsg'] = _USRMSG
@@ -319,6 +380,13 @@ DESCRIPTOR.message_types_by_name['Select'] = _SELECT
 DESCRIPTOR.message_types_by_name['Show'] = _SHOW
 DESCRIPTOR.message_types_by_name['History'] = _HISTORY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+QComt = _reflection.GeneratedProtocolMessageType('QComt', (_message.Message,), {
+  'DESCRIPTOR' : _QCOMT,
+  '__module__' : 'dist_pb2'
+  # @@protoc_insertion_point(class_scope:QComt)
+  })
+_sym_db.RegisterMessage(QComt)
 
 Usr = _reflection.GeneratedProtocolMessageType('Usr', (_message.Message,), {
   'DESCRIPTOR' : _USR,
@@ -378,8 +446,8 @@ _DIST = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=342,
-  serialized_end=482,
+  serialized_start=433,
+  serialized_end=607,
   methods=[
   _descriptor.MethodDescriptor(
     name='distSelect',
@@ -418,6 +486,16 @@ _DIST = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_USR,
     output_type=_HISTORY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='distComment',
+    full_name='dist.distComment',
+    index=4,
+    containing_service=None,
+    input_type=_QCOMT,
+    output_type=_RESULT,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

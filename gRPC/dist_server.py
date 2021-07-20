@@ -28,12 +28,18 @@ class dist(dist_pb2_grpc.distServicer):
 		selected = request.selected
 		result = process.lockShow(user, commitID, selected)
 		for i in result:
-			grpcResult = dist_pb2.Show(commitID = i[0], detail = i[1], bugzilla = i[2], user = i[3], type = i[4], score = i[5])
+			grpcResult = dist_pb2.Show(commitID = i[0], detail = i[1], comment = i[2], bugzilla = i[3], user = i[4], type = i[5], score = i[6])
 			yield grpcResult
 	def distHistory(self, request, context):
 		user = request.user
 		ret, __history = process.lockHistory(user)
 		return dist_pb2.History(result = ret, history = __history)
+	def distComment(self, request, context):
+		user = request.user
+		commitID = request.commitID
+		content = request.content
+		ret = process.lockComment(user, commitID, content)
+		return dist_pb2.Result(result = ret)
 
 def serve():
 	server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))

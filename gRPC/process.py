@@ -6,7 +6,7 @@ import _thread
 
 LOCKPATH = "../dataBase/.lockf"
 flockfd = None
- = os.getenv('WORKON_HOME')
+#workOnHome = os.getenv('WORKON_HOME')
 
 def flock():
 	global flockfd
@@ -55,7 +55,7 @@ def lockClearFrozen():
 			div = currentTime - lockTimeMap[content[0]]
 			if div < frozenTime:
 				f.write("{0[0]} {0[1]} {0[2]}\n".format(content))
-			else
+			else:
 				del lockTimeMap[content[0]]
 	funlock()
 
@@ -121,12 +121,10 @@ def select(user, commitID):
 	if commitID == '0':
 		type = 'LTS'
 		while type.find('LTS') != -1:
-		do
 			rd = random.randint(0, len(contents))
 			ret = contents[rd]
 			ftype = os.popen('bash get_type.sh {0}'.format(ret[0]))
 			type = ftype.read().strip('\n')
-		done
 	else:
 		for c in contents:
 			if commitID == c[0]:
@@ -181,21 +179,38 @@ def show(user, commitID, selected):
 	if commitID != '0' or selected != '0':
 		if selected == 'selected':
 			with open("../dataBase/frozen.usr") as f:
-			lines = f.readlines()
-			for line in lines:
-				content = line.strip("\n").split()
-				if len(content) != 3:
-					print("OQServer ERROR: frozen.usr format error")
-					continue
-				ftype = os.popen('bash get_type.sh {0}'.format(content[0]))
-				type = ftype.read().strip('\n')
-				fscore = os.popen('bash get_score.sh {0}'.format(content[0]))
-				score = fscore.read().strip('\n')
-				showinfo = [content[0], '0', content[1], '1', type, score]
-				ret.append(showinfo)
+				lines = f.readlines()
+				for line in lines:
+					content = line.strip("\n").split()
+					if len(content) != 3:
+						print("OQServer ERROR: frozen.usr format error")
+						continue
+					ftype = os.popen('bash get_type.sh {0}'.format(content[0]))
+					type = ftype.read().strip('\n')
+					fscore = os.popen('bash get_score.sh {0}'.format(content[0]))
+					score = fscore.read().strip('\n')
+					showinfo = [content[0], '0', '0', content[1], '1', type, score]
+					ret.append(showinfo)
 		else:
-			detail = os.popen('bash get_commit_detail.sh {0}'.format(commitID))
-			showinfo = [0, detail, '0', '0', '0', '0']
+			# show selected commit
+			checkCommitID = False
+			with open("../dataBase/candidates") as f:
+				lines = f.readlines()
+				for line in lines:
+					content = line.strip("\n").split()
+					if len(content) != 2:
+						print("OQServer ERROR: candidates format error")
+						continue
+					if commitID == content[0]:
+						checkCommitID = True
+						break
+			showinfo = None
+			if checkCommitID == False:
+				showinfo = ['0', 'No details.', 'No details.', '0', '0', '0', '0']
+			else:
+				detail = os.popen('bash get_commit_detail.sh {0}'.format(commitID))
+				comment = os.popen('bash get_commit_comment.sh {0}'.format(commitID))
+				showinfo = ['0', detail, comment, '0', '0', '0', '0']
 			ret.append(showinfo)
 		return ret
 	with open("../dataBase/candidates") as f:
@@ -209,7 +224,7 @@ def show(user, commitID, selected):
 			type = ftype.read().strip('\n')
 			fscore = os.popen('bash get_score.sh {0}'.format(content[0]))
 			score = fscore.read().strip('\n')
-			showinfo = [content[0], '0', content[1], '0', type, score]
+			showinfo = [content[0], '0', '0', content[1], '0', type, score]
 			ret.append(showinfo)
 	with open("../dataBase/frozen.usr") as f:
 		lines = f.readlines()
@@ -238,3 +253,32 @@ def lockHistory(user):
 	ret, __history = history(user)
 	funlock()
 	return ret, __history
+
+def comment(user, commitID, __content):
+	checkCommit = False
+	if len(__content) == 0:
+		return -1
+	with open("../dataBase/candidates") as f:
+		lines = f.readlines()
+		for line in lines:
+			content = line.strip("\n").split()
+			if len(content) != 2:
+				print("OQServer ERROR: candidates format error")
+				continue
+			if commitID == content[0]:
+				checkCommit = True
+				break
+	if checkCommit == False:
+		return -1
+	commentBody = "{0} 说：\n{1}\n".format(user, content)
+	with open("../dataBase/comments/{0}", 'a+') as f:
+		f.write(commentBody)
+	record(user, "Comment {0}".format(commitID))
+	return 0
+
+def lockComment(user, commitID, content):
+	flock()
+	ret = comment(user, commitID, content)
+	funlock()
+	return ret
+

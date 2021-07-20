@@ -9,6 +9,13 @@ service dist {
     rpc distCancel(UsrMsg) returns (Result) {}
     rpc distShow(UsrShow) returns (stream Show) {}
     rpc distHistory(Usr) returns (History) {}
+    rpc distComment(QComt) returns (Result) {}
+}
+
+message QComt {
+	string user = 1;
+	string commitID = 2;
+	string content = 3;
 }
 
 message Usr {
@@ -39,9 +46,10 @@ message Show {
     string commitID = 1;
 	string detail = 2;
     string bugzilla = 3;
-    string user = 4;
-	string type = 5;
-	string score = 6;
+	string comment = 4;
+    string user = 5;
+	string type = 6;
+	string score = 7;
 }
 
 message History {
