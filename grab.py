@@ -17,13 +17,16 @@ def help():
 	print(" 2、BUG类型的问题，每个有效期（2天）之内最多只能选2个")
 	print(" 3、COURSE类型问题，暂不做限制")
 	print('\033[0;37;44m指令:\033[0m')
-	print(' # Question show              //显示所有待解决的问题，一个commitID对应一个问题, bugzilla为记录该问题的数据库地址')
-	print(' # Question show {commitID}   //显示该问题的详细信息，输入一个commitID，输入时候{}要去掉')
-	print(' # Question show selected     //显示你选中的问题')
-	print(' # Question select            //随机锁定一个问题')
-	print(' # Question select {commitID} //锁定你想要解决的问题，输入一个commitID，输入时候{}要去掉')
-	print(' # Question cancel {commitID} //取消你选中的问题，输入一个commitID，输入的时候{}要去掉')
-	print(' # Question history           //查询你的操作记录')
+	print(' # Question show                     //显示所有待解决的问题，bugzilla为记录该问题的数据库地址')
+	print(' # Question show {commitID}          //显示该问题的详细信息包括评论，输入一个commitID，输入时候{}要去掉')
+	print(' # Question show {commitID} detail   //显示该问题的详细信息，输入一个commitID，输入时候{}要去掉')
+	print(' # Question show {commitID} comment  //显示该问题的评论，输入一个commitID，输入时候{}要去掉')
+	print(' # Question show selected            //显示被你锁定的问题')
+	print(' # Question select                   //随机锁定一个问题')
+	print(' # Question select {commitID}        //锁定你想要解决的问题，输入一个commitID，输入时候{}要去掉')
+	print(' # Question cancel {commitID}        //取消你选中的问题，输入一个commitID，输入的时候{}要去掉')
+	print(' # Question comment {commitID}       //对问题进行评论，按ctrl+D结束输入，输入一个commitID，输入时候{}要去掉')
+	print(' # Question history                  //查询你的操作记录')
 	print('\n查看积分排名的网址：www.xxx.com')
 	print('规则详情请参考：www.xxx.com')
 	print('\n\033[1;37mCopyright © Bobo \033[0m')
@@ -43,20 +46,33 @@ if __name__ == '__main__':
 
 	if argv[1] == 'show':
 		result_filter = []
-		if len(argv) != 3 and len(argv) != 2:
-			help()
 		if len(argv) == 2:
 			result = dist_client.distClient_Show(email, '0', '0')
 			result_filter = result
-		elif len(argv) and argv[2] == 'selected':
-			result = dist_client.distClient_Show(email, '0', 'selected')
-			for r in result:
-				result_filter.append(r)
-		else:
-			# input is commitID
-			result = dist_client.distClient_Show(email, argv[3], '0')
-			print(result[0][1])
+		elif len(argv) == 3:
+			if argv[2] == 'selected':
+				result = dist_client.distClient_Show(email, '0', 'selected')
+				for r in result:
+					result_filter.append(r)
+			else:
+				# input is commitID
+				result = dist_client.distClient_Show(email, argv[2], '0')
+				if len(result) != 0:
+					print(result[0][1])
+					print("评论区：\n{0}".format(result[0][2]))
+				exit(0)
+		elif len(argv) == 4:
+			if argv[3] == 'detail':
+				result = dist_client.distClient_Show(email, argv[2], '0')
+				if len(result) != 0:
+					print(result[0][1])
+			if argv[3] == 'comment':
+				result = dist_client.distClient_Show(email, argv[2], '0')
+				if len(result) != 0:
+					print("评论区：\n{0}".format(result[0][2]))
 			exit(0)
+		else:
+			help()
 
 		for rf in result_filter:
 			print("commitID:{0[0]} bugzilla:{0[1]} ACK:{0[2]} type:{0[3]} score:{0[4]}".format(rf))
@@ -95,3 +111,12 @@ if __name__ == '__main__':
 			print(history.strip('\n'))
 		else:
 			print("["+time.asctime(time.localtime(time.time()))+"]"+" Fail to search your processing history")
+	if argv[1] == 'comment':
+		if len(argv) != 3:
+			help()
+		content = sys.stdin.readlines()
+		result = dist_client.distClient_Comment(email, argv[1], content[0])
+		if result == 0:
+			print("["+time.asctime(time.localtime(time.time()))+"]"+" Success to comment")
+		else:
+			print("["+time.asctime(time.localtime(time.time()))+"]"+" Fail to comment")

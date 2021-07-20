@@ -42,6 +42,7 @@ def distClient_Show(__user, __commitID, __selected):
 		rr = []
 		rr.append(r.commitID)
 		rr.append(r.detail)
+		rr.append(r.comment)
 		rr.append(r.bugzilla)
 		rr.append(r.user)
 		rr.append(r.type)
@@ -56,3 +57,11 @@ def distClient_History(__user):
 		dist_pb2.Usr(user = __user)
 	)
 	return response.result, response.history
+
+def distClient_Comment(__user, __commitID, __content):
+	global stub
+	distClient_Connect()
+	response = stub.distComment(
+		dist_pb2.QComt(user = __user, commitID = __commitID, content = __content)
+	)
+	return response.result
