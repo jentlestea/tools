@@ -2,6 +2,7 @@ import os
 import random
 import fcntl
 import time
+import _thread
 
 LOCKPATH = "../dataBase/.lockf"
 flockfd = None
@@ -18,11 +19,45 @@ def prepare():
 	global flockfd
 	if flockfd == None:
 		flockfd = open(LOCKPATH)
+	try:
+		_thread.start_new_thread(lockClearFrozen, ())
+	except:
+		print('ERROR: create clear frozen thread failed')
+
 def clean():
 	global flockfd
 	if flockfd != None:
 		flockfd.close()
 	flockfd = None
+
+lockTimeMap = {}
+def setFrozen(commitID):
+	global lockTimeMap
+	time = time.time()
+	lockTimeMap[commitID] = time
+
+#2 day frozen
+frozenTime = 60*60*24*2
+def lockClearFrozen():
+	flock()
+	currentTime = time.time()
+	lines = None
+	with open("../dataBase/frozen.usr") as f:
+		lines = f.readlines()
+	with open("../dataBase/frozen.usr", 'w+') as f:
+		for line in lines:
+			content = line.strip("\n").split()
+			if len(content) != 3:
+				return ret
+			if lockTimeMap.has_key(content[0]) == False:
+				print("ERROR: {0} not found when clear frozen".format(content[0]))
+				continue
+			div = currentTime - lockTimeMap[content[0]]
+			if div < frozenTime:
+				f.write("{0[0]} {0[1]} {0[2]}\n".format(content))
+			else
+				del lockTimeMap[content[0]]
+	funlock()
 
 def record(user, line):
 	path = "../dataBase/person/{0}".format(user)
@@ -45,6 +80,13 @@ def select(user, commitID):
 	ret = ['-1', None]
 	commitIDs=[]
 	contents=[]
+	lockLTS = False
+	with open("../dataBase/person/LTSList") as f:
+		lines = f.readlines()
+		for line in lines:
+			content = line.strip("\n")
+			if content.find(user) != -1:
+				lockLTS = True
 	with open("../dataBase/frozen.usr") as f:
 		lines = f.readlines()
 		times = 0
@@ -64,7 +106,7 @@ def select(user, commitID):
 				type = ftype.read().strip('\n')
 				if type.find("LTS") != -1:
 					ltsTimes += 1
-		if times >= 5 or ltsTimes >= 3:
+		if times >= 2 or ltsTimes >= 1:
 			return ret
 	with open("../dataBase/candidates") as f:
 		lines = f.readlines()
@@ -77,16 +119,27 @@ def select(user, commitID):
 		return ret
 
 	if commitID == '0':
-		rd = random.randint(0, len(contents))
-		ret = contents[rd]
+		type = 'LTS'
+		while type.find('LTS') != -1:
+		do
+			rd = random.randint(0, len(contents))
+			ret = contents[rd]
+			ftype = os.popen('bash get_type.sh {0}'.format(ret[0]))
+			type = ftype.read().strip('\n')
+		done
 	else:
 		for c in contents:
 			if commitID == c[0]:
 				ret = c
+				ftype = os.popen('bash get_type.sh {0}'.format(commitID))
+				type = ftype.read().strip('\n')
+				if type.find('LTS') != -1 and lockLTS == True:
+					ret[0] = '-1'
 	if ret[0] != '-1':
 		wc = [ret[0], ret[1], user]
 		with open("../dataBase/frozen.usr", 'a') as f:
 			f.write("{0[0]} {0[1]} {0[2]}\n".format(wc))
+		setFrozen(ret[0])
 		record(user, "Select commitID:{0}".format(ret[0]))
 	return ret
 

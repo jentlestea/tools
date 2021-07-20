@@ -73,7 +73,7 @@ cd - 2>&1 >/dev/null
 
 cd $REPOPATH
 #TODO
-#git pull $TARGET_BRANCH
+git pull $TARGET_BRANCH
 cd - 2>&1 >/dev/null
 
 scanPatchesHasMerged(){
@@ -82,6 +82,18 @@ scanPatchesHasMerged(){
 	sed -i "1d" .tmp
 	cd - 2>&1 >/dev/null
 	cat /$REPOPATH/.tmp > .mergedCommitIDs.tmp
+
+	cd $REPOPATH
+	cat /$REPOPATH/.tmp | while read line
+	do
+		commitMsg=`git show --format=%B $line $SOURCE_BRANCH | head -n 1`
+		isLTS=`echo $commitMsg | grep '##LTS##'`
+		if [ -n "$isLTS" ];then
+			author=`git log $line -1 $TARGET_BRANCH | sed -n -e 's/.*Author: \(.*\)/\1/p'`
+			echo $author >> $DATABASEDIR/person/LTSList
+		fi
+	done
+	cd - 2>&1 >/dev/null
 
     # it has been merged
     cat .mergedCommitIDs.tmp >> $DATABASEDIR/history/$time.pchs
