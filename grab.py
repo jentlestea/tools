@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
 	if argv[1] == 'show':
 		result_filter = []
-		if len(argv) != 3 && len(argv) != 2:
+		if len(argv) != 3 and len(argv) != 2:
 			help()
 		if len(argv) == 2:
 			result = dist_client.distClient_Show(email, '0', '0')
@@ -55,7 +55,7 @@ if __name__ == '__main__':
 		else:
 			# input is commitID
 			result = dist_client.distClient_Show(email, argv[3], '0')
-			print(result[1]))
+			print(result[0][1])
 			exit(0)
 
 		for rf in result_filter:
