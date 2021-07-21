@@ -59,7 +59,7 @@ if __name__ == '__main__':
 				result = dist_client.distClient_Show(email, argv[2], '0')
 				if len(result) != 0:
 					print(result[0][1])
-					print("评论区：\n{0}".format(result[0][2]))
+					print("\033[0;37;44m评论区:\033[0m\n{0}".format(result[0][3]))
 				exit(0)
 		elif len(argv) == 4:
 			if argv[3] == 'detail':
@@ -69,13 +69,13 @@ if __name__ == '__main__':
 			if argv[3] == 'comment':
 				result = dist_client.distClient_Show(email, argv[2], '0')
 				if len(result) != 0:
-					print("评论区：\n{0}".format(result[0][2]))
+					print("评论区：\n{0}".format(result[0][3]))
 			exit(0)
 		else:
 			help()
 
 		for rf in result_filter:
-			print("commitID:{0[0]} bugzilla:{0[1]} ACK:{0[2]} type:{0[3]} score:{0[4]}".format(rf))
+			print("commitID:{0[0]} bugzilla:{0[2]} ACK:{0[4]} type:{0[5]} score:{0[6]}".format(rf))
 		exit(0)
 
 	if argv[1] == 'select':
@@ -115,7 +115,7 @@ if __name__ == '__main__':
 		if len(argv) != 3:
 			help()
 		content = sys.stdin.readlines()
-		result = dist_client.distClient_Comment(email, argv[1], content[0])
+		result = dist_client.distClient_Comment(email, argv[2], content[0])
 		if result == 0:
 			print("["+time.asctime(time.localtime(time.time()))+"]"+" Success to comment")
 		else:

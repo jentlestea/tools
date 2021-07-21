@@ -42,8 +42,8 @@ def distClient_Show(__user, __commitID, __selected):
 		rr = []
 		rr.append(r.commitID)
 		rr.append(r.detail)
-		rr.append(r.comment)
 		rr.append(r.bugzilla)
+		rr.append(r.comment)
 		rr.append(r.user)
 		rr.append(r.type)
 		rr.append(r.score)
