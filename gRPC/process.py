@@ -56,8 +56,8 @@ def lockClearFrozen():
 			else:
 				del lockTimeMap[content[0]]
 		f.flush()
-	time.sleep(60*60)
 	funlock('frozen')
+	time.sleep(60*60)
 
 def record(user, line):
 	path = "../dataBase/person/{0}".format(user)
