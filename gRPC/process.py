@@ -56,7 +56,7 @@ def lockClearFrozen():
 			else:
 				del lockTimeMap[content[0]]
 		f.flush()
-	os.sleep(60*60)
+	time.sleep(60*60)
 	funlock('frozen')
 
 def record(user, line):
