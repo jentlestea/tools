@@ -192,7 +192,7 @@ def lockCancel(user, commitID):
 def show(user, commitID, selected):
 	ret = []
 	if commitID != '0' or selected != '0':
-		if selected == 'claimed':
+		if selected == 'selected':
 			with open("../dataBase/frozen.usr") as f:
 				lines = f.readlines()
 				for line in lines:
