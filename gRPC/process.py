@@ -299,8 +299,11 @@ def comment(user, commitID, __content):
 	if checkCommit == False:
 		return -1
 	commentBody = "{0} 说:\n{1}\n".format(user, __content)
-	with open("../dataBase/comments/{0}".format(commitID), 'a+') as f:
+	with open("../dataBase/comments/{0}".format(commitID), 'r+') as f:
+		old = f.read()
+		f.seek(0)
 		f.write(commentBody)
+		f.write(old)
 		f.flush()
 	record(user, "Comment {0}".format(commitID))
 	return 0
