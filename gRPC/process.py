@@ -131,7 +131,7 @@ def select(user, commitID):
 				frozens.append(lineStrip[0])
 		for c in contents:
 			ftype = os.popen("bash get_type.sh {0}".format(c[0]))
-			type = ftype.read.strip('\n')
+			type = ftype.read().strip('\n')
 			if type.find('LTS') != -1 and lockLTS == True:
 				continue
 			if c[0] in frozens:
