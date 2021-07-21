@@ -47,7 +47,7 @@ def lockClearFrozen():
 			content = line.strip("\n").split()
 			if len(content) != 3:
 				return ret
-			if lockTimeMap.has_key(content[0]) == False:
+			if content[0] not in lockTimeMap:
 				print("ERROR: {0} not found when clear frozen".format(content[0]))
 				continue
 			div = currentTime - lockTimeMap[content[0]]
@@ -56,6 +56,7 @@ def lockClearFrozen():
 			else:
 				del lockTimeMap[content[0]]
 		f.flush()
+	os.sleep(60*60)
 	funlock('frozen')
 
 def record(user, line):
@@ -119,12 +120,24 @@ def select(user, commitID):
 		return ret
 
 	if commitID == '0':
-		type = 'LTS'
-		while type.find('LTS') != -1:
-			rd = random.randint(0, len(contents))
-			ret = contents[rd]
-			ftype = os.popen('bash get_type.sh {0}'.format(ret[0]))
-			type = ftype.read().strip('\n')
+		frozens = []
+		with open("../dataBase/frozen.usr") as f:
+			lines = f.readlines()
+			for line in lines:
+				lineStrip = line.strip('\n').split()
+				if len(lineStrip) != 3:
+					print('OQServer ERROR: frozen.usr format error')
+					continue
+				frozens.append(lineStrip[0])
+		for c in contents:
+			ftype = os.popen("bash get_type.sh {0}".format(c[0]))
+			type = ftype.read.strip('\n')
+			if type.find('LTS') != -1 and lockLTS == True:
+				continue
+			if c[0] in frozens:
+				continue
+			ret = c
+			break
 	else:
 		for c in contents:
 			if commitID == c[0]:
@@ -249,7 +262,7 @@ def show(user, commitID, selected):
 				print("OQServer ERROR: frozen.usr format error")
 				continue
 			for i in ret:
-				if i[0] == content[0] and user == content[2]:
+				if i[0] == content[0]:#and user == content[2]:
 					i[4] = '1'
 	record(user, "Show commitIDs")
 	return ret

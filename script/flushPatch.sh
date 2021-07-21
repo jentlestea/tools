@@ -75,8 +75,8 @@ cd - 2>&1 >/dev/null
 sort -u $DATABASEDIR/summary/total.csv > .total.csv
 cat .total.csv > $DATABASEDIR/summary/total.csv
 rm .total.csv
-sort -u .tmp > ..tmp
-cat ..tmp > .tmp
+sort -u $DATABASEDIR/.tmp > ..tmp
+cat ..tmp > $DATABASEDIR/.tmp
 rm ..tmp
 
 cat $REPOPATH/.tmp > .prepareToMergePatches.tmp
