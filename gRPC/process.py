@@ -152,7 +152,7 @@ def select(user, commitID):
 			f.write("{0[0]} {0[1]} {0[2]}\n".format(wc))
 			f.flush()
 		setFrozen(ret[0])
-		record(user, "Select commitID:{0}".format(ret[0]))
+		record(user, "Claim commitID:{0}".format(ret[0]))
 	return ret
 
 def lockSelect(user, commitID):
@@ -180,7 +180,7 @@ def cancel(user, commitID):
 			f.write("{0[0]} {0[1]} {0[2]}\n".format(line))
 		f.flush()
 	if found == 1:
-		record(user, "Cancel commitID:{0}".format(commitID))
+		record(user, "hang commitID:{0}".format(commitID))
 	return found
 
 def lockCancel(user, commitID):
@@ -192,7 +192,7 @@ def lockCancel(user, commitID):
 def show(user, commitID, selected):
 	ret = []
 	if commitID != '0' or selected != '0':
-		if selected == 'selected':
+		if selected == 'claimed':
 			with open("../dataBase/frozen.usr") as f:
 				lines = f.readlines()
 				for line in lines:
