@@ -17,7 +17,7 @@ def help():
 	print(" 2、BUG类型的问题，每个有效期（2天）之内最多只能选2个")
 	print(" 3、COURSE类型问题，暂不做限制")
 	print('\033[0;37;44m指令:\033[0m')
-	print(' # Question show                     //显示所有待解决的问题，bugzilla为记录该问题的数据库地址')
+	print(' # Question show                     //显示所有待解决的问题，bugzilla为记录该问题的数据库地址，ACK表示是否有被人锁定')
 	print(' # Question show {commitID}          //显示该问题的详细信息包括评论，输入一个commitID，输入时候{}要去掉')
 	print(' # Question show {commitID} detail   //显示该问题的详细信息，输入一个commitID，输入时候{}要去掉')
 	print(' # Question show {commitID} comment  //显示该问题的评论，输入一个commitID，输入时候{}要去掉')
@@ -69,7 +69,7 @@ if __name__ == '__main__':
 			if argv[3] == 'comment':
 				result = dist_client.distClient_Show(email, argv[2], '0')
 				if len(result) != 0:
-					print("评论区：\n{0}".format(result[0][3]))
+					print("\033[0;37;44m评论区:\033[0m\n{0}".format(result[0][3]))
 			exit(0)
 		else:
 			help()
