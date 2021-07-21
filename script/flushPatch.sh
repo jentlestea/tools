@@ -18,51 +18,66 @@ if [ ! -d $REPOPATH ];then
 fi
 
 cd $INSTALL_REPO_PATH
-if [ ! `git branch | grep $INSTALL_TARGET_BRANCH` ];then
-	echo 'ERROR: branch '$INSTALL_TARGET_BRANCH' not exit.'
-	echo 0
-	exit
-fi
-if [ ! `git branch | grep $INSTALL_SOURCE_BRANCH` ];then
-	echo 'ERROR: branch '$INSTALL_SOURCE_BRANCH' not exit.'
+#branches=`git branch`
+#hastbranch=`echo branches | grep $INSTALL_TARGET_BRANCH`
+if [ `git rev-parse --verify $INSTALL_TARGET_BRANCH` ];then
+	echo 'SUCCESS: branch '$INSTALL_TARGET_BRANCH' check pass.' >> $log
+else
+	echo 'ERROR: branch '$INSTALL_TARGET_BRANCH' not exit.' >> $log
 	echo 0
 	exit
 fi
 
-[ -r tag.conf ] && . ./tag.conf || echo " tag.conf file not exist"
+if [ `git rev-parse --verify $INSTALL_SOURCE_BRANCH` ];then
+	echo 'SUCCESS: branch '$INSTALL_SOURCE_BRANCH' check pass.' >> $log
+else
+	echo 'ERROR: branch '$INSTALL_SOURCE_BRANCH' not exit.' >> $log
+	echo 0
+	exit
+fi
+cd - 2>&1 >/dev/null
+
+[ -r tag.conf ] && . ./tag.conf || echo " tag.conf file not exist" >> $log
 
 TTAGBASE=$TARGETBASE
 TAGFROM=$SOURCEFROM
 TAGTO=$SOURCETO
 function version_le() { test "$(echo "$@" | tr " " "\n" | sort -V | head -n 1)" == "$1"; }
 if version_le $TAGTO $TAGFROM;then
-    echo 'ERROR: '$TAGTO' is older than '$TAGFROM >> $log
-    echo -1
+    echo 'WARN: Totag:'$TAGTO' Fromtag:'$TAGFROM' check failed' >> $log
 fi
 
 cd $REPOPATH
 #for commit in $(git rev-list $SOURCE_BRANCH $TAGFROM..$TAGTO)
-git pull $TARGET_BRANCH
-git log --oneline $SOURCE_BRANCH $TAGFROM..$TAGTO | awk ' ''{print $1}' > .tmp
-
+git pull question $SOURCE_BRANCH &> /dev/null
+#Note! TODO we only pull question from import.csv but not here
+#git log --oneline $SOURCE_BRANCH $TAGFROM..$TAGTO | awk ' ''{print $1}' > .tmp
 #Plugin extra commitIDs
-if [ -f $IMPORT_COMMIT_FILE ];then
+cat /dev/null > $REPOPATH/.tmp
+if [ -f "$IMPORT_COMMIT_FILE" ];then
 	cat $IMPORT_COMMIT_FILE >> $DATABASEDIR/summary/total.csv
-	cat $IMPORT_COMMIT_FILE | awk ' ''{print $1} > .itmp
-	#check commitID really exist
+	cat $IMPORT_COMMIT_FILE | awk ' ''{print $1}' > .itmp
+
 	cat $IMPORT_COMMIT_FILE | while read line
 	do
-		commitID=`echo $line | awk ' ''{print $1}`
+		commitID=`echo $line | awk ' ''{print $1}'`
 		found=`git log --oneline $SOURCE_BRANCH | grep "$commitID"`
-		if [ -n "$found" ];then
+		if [ -z "$found" ];then
 			sed -i '/'"$commitID"'/d' .itmp
-			echo "$commitID"" does not in branch "$SOURCE_BRANCH" >> $log
+			echo $commitID" does not in branch "$SOURCE_BRANCH >> $log
 		fi
 	done
 	cat .itmp >> .tmp
 	rm .itmp
 fi
 cd - 2>&1 >/dev/null
+#sort total.csv .tmp
+sort -u $DATABASEDIR/summary/total.csv > .total.csv
+cat .total.csv > $DATABASEDIR/summary/total.csv
+rm .total.csv
+sort -u .tmp > ..tmp
+cat ..tmp > .tmp
+rm ..tmp
 
 cat $REPOPATH/.tmp > .prepareToMergePatches.tmp
 rm $REPOPATH/.tmp
@@ -73,12 +88,13 @@ cd - 2>&1 >/dev/null
 
 cd $REPOPATH
 #TODO
-git pull $TARGET_BRANCH
+git pull openEulerKernel $TARGET_BRANCH &> /dev/null
 cd - 2>&1 >/dev/null
 
 scanPatchesHasMerged(){
 	cd $REPOPATH
-	git log --oneline $TARGET_BRANCH $targetHeadCommits..HEAD | awk ' ''{print $1}' > .tmp
+	#git checkout $TARGET_BRANCH
+	git log --oneline $targetHeadCommits..$TARGET_BRANCH | awk ' ''{print $1}' > .tmp
 	sed -i "1d" .tmp
 	cd - 2>&1 >/dev/null
 	cat /$REPOPATH/.tmp > .mergedCommitIDs.tmp
@@ -110,9 +126,13 @@ scanPatchesHasMerged(){
 		bugzilla=`git log $line -1 $TARGET_BRANCH | sed -n -e 's/.*bugzilla: \(.*\)/\1/p'`
 		cd - 2>&1 >/dev/null
 		#get score
-		score=`cat $DATABASEDIR/summary/total.csv | grep $bugzilla | awk ' ''{print $3}`
+		score=`cat $DATABASEDIR/summary/total.csv | grep $bugzilla | awk ' ''{print $3}'`
 		echo $author' '$line' '$bugzilla' '$score >> $DATABASEDIR/record/newMerged$time.record
     done
+	sort -u $DATABASEDIR/record/newMerged$time.record > .recordTmp
+	cat .recordTmp > $DATABASEDIR/record/newMerged$time.record
+	rm .recordTmp
+
 	cat $DATABASEDIR/record/newMerged$time.record >> $OUTPUT_REPORT_DIR/$time.report 2>&1 > /dev/null
 
     # drop this commits from active.pchs to history, it has been merged
@@ -124,7 +144,7 @@ scanPatchesHasMerged(){
 
 		cd $REPOPATH
 		bugzilla=`git log $targetCommitID -1 $TARGET_BRANCH | sed -n -e 's/.*bugzilla: \(.*\)/\1/p' | head -n 2 | tail -n +2`
-		sourceCommitID=`cat $DATABASEDIR/summary/total.csv | grep $bugzilla | awk ' ''{print $1}`
+		sourceCommitID=`cat $DATABASEDIR/summary/total.csv | grep $bugzilla | awk ' ''{print $1}'`
 		cd - 2>&1 >/dev/null
 
 		sed -i '/'"$sourceCommitID"'/d' $DATABASEDIR/active.pchs
@@ -138,8 +158,8 @@ scanPatchesHasMerged(){
 		cd $REPOPATH
 		#commitMsg=`git show --format=%B $commitID $SOURCE_BRANCH  | head -n 1`
 		#found=`git log --oneline $TTAGBASE..HEAD | grep "$commitMsg"`
-		bugzilla=`cat $DATABASEDIR/summary/total.csv | grep $commitID | awk ' ''{print $2}`
-		found=`git log $TTAGBASE..HEAD $TARGET_BRANCH | grep $bugzilla`
+		bugzilla=`cat $DATABASEDIR/summary/total.csv | grep $commitID | awk ' ''{print $2}'`
+		found=`git log $TTAGBASE..$TARGET_BRANCH $TARGET_BRANCH | grep $bugzilla`
 		cd - 2>&1 >/dev/null
 		if [ -n "$found" ];then
 			sed -i '/'"$commitID"'/d' .prepareToMergePatches.tmp
@@ -147,7 +167,6 @@ scanPatchesHasMerged(){
     done
 }
 scanPatchesHasMerged
-
 putPatchesToDatabase(){
     cat .prepareToMergePatches.tmp > $DATABASEDIR/active.pchs.new
     rm -f .prepareToMergePatches.tmp
@@ -159,10 +178,10 @@ echo 'SUCCESS: Flush patches count: '$c >> $log
 
 # it has been in active list
 dropActivePchs(){
-    cat $DATABASEDIR/active.pchs | while read line
-    do
+	cat $DATABASEDIR/active.pchs | while read line
+	do
 		sed -i '/'"$line"'/d' $DATABASEDIR/active.pchs.new
-    done
+	done
 }
 dropActivePchs
 
@@ -174,7 +193,7 @@ createBugzilla(){
 		#if [ $bugID -ne -1 ];then
 		#	echo 'SUCCESS: create bugzilla, '$line' '$bugID >> $log
 		#	echo $line' '$bugID >> $DATABASEDIR/candidates
-		bugzilla=`cat $DATABASEDIR/summary/total.csv | grep $line | awk ' ''{print $2}`
+		bugzilla=`cat $DATABASEDIR/summary/total.csv | grep $line | awk ' ''{print $2}'`
 		if [ -n "$bugzilla" ];then
 			echo "SUCCESS: scan bugzilla, "$line" "$bugzilla >> $log
 			echo $line' '$bugzilla >> $DATABASEDIR/candidates
@@ -227,20 +246,19 @@ rm -f .candidates.tmp
 cat /dev/null > $DATABASEDIR/mergeConflicts
 judgeMergeConflicts(){
 	cd $REPOPATH
-	#git checkout openEuler-21.03 &> /dev/null
  	cat $DATABASEDIR/active.pchs | while read line
 	do
-		#git cherry-pick $line &> /dev/null
-		conflict = git log $line | grep 'Status:##Conflict##'
+		conflict=`git show --format=%B $line $SOURCE_BRANCH | head -n 1 | grep '##Conflict##'`
 		if [ -n "$conflict" ];then
 			echo $line >> $DATABASEDIR/mergeConflicts
-		#else
-		#			git add -A
 		fi
-		#git reset $targetHeadCommits --hard &> /dev/null
 	done
 	cd - 2>&1 >/dev/null
 }
 judgeMergeConflicts
 
+rm REPOPATH/.tmp &> /dev/null
+rm .prepareToMergePatches.tmp &> /dev/null
+rm .tmp &> /dev/null
+rm .itmp &> /dev/null
 echo 0

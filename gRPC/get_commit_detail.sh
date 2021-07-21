@@ -2,7 +2,7 @@
 
 cd $INSTALL_REPO_PATH &> /dev/null
 
-detail=`git show $1`
-echo $detail
+git show $1 > $WORKON_HOME/gRPC/.detailTmp
+echo 0
 
 cd - &> /dev/null

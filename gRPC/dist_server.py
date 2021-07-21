@@ -28,7 +28,7 @@ class dist(dist_pb2_grpc.distServicer):
 		selected = request.selected
 		result = process.lockShow(user, commitID, selected)
 		for i in result:
-			grpcResult = dist_pb2.Show(commitID = i[0], detail = i[1], comment = i[2], bugzilla = i[3], user = i[4], type = i[5], score = i[6])
+			grpcResult = dist_pb2.Show(commitID = i[0], detail = i[1], bugzilla = i[2], comment = i[3], user = i[4], type = i[5], score = i[6])
 			yield grpcResult
 	def distHistory(self, request, context):
 		user = request.user
@@ -50,18 +50,17 @@ def serve():
 	print('[dist Service] startup [OK]')
 	try:
 		while True:
-			process.flock()
+			process.flock('startup')
 			print('[dist Service] Waiting for flush patches...')
-			f = os.popen("bash ../script/flushPatch.sh")
+			f = os.popen("bash -x ../script/flushPatch.sh")
 			err = f.read().strip('\n')
 			if err != '0':
 				print("[dist Service] Flush patches failed!")
 				process.clean()
 				server.stop(0)
-				process.funlock()
 				exit(0)
 			print("[dist Service] Flush patches success!")
-			process.funlock()
+			process.funlock('startup')
 			time.sleep(60*60*24) # one day in seconds
 	except KeyboardInterrupt:
 		process.clean()

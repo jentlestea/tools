@@ -5,41 +5,39 @@ import time
 import _thread
 
 LOCKPATH = "../dataBase/.lockf"
-flockfd = None
+flockfdMap = {}
 #workOnHome = os.getenv('WORKON_HOME')
 
-def flock():
-	global flockfd
+def flock(user):
+	global flockfdMap
+	flockfd = open(LOCKPATH, 'w+')
+	flockfdMap[user] = flockfd
 	fcntl.flock(flockfd, fcntl.LOCK_EX)
-def funlock():
-	global flockfd
-	fcntl.flock(flockfd, fcntl.LOCK_UN)
+def funlock(user):
+	global flockfdMap
+	fcntl.flock(flockfdMap[user], fcntl.LOCK_UN)
+	flockfdMap[user].close()
+	del flockfdMap[user]
 
 def prepare():
-	global flockfd
-	if flockfd == None:
-		flockfd = open(LOCKPATH)
 	try:
 		_thread.start_new_thread(lockClearFrozen, ())
 	except:
 		print('ERROR: create clear frozen thread failed')
 
 def clean():
-	global flockfd
-	if flockfd != None:
-		flockfd.close()
-	flockfd = None
+	return
 
 lockTimeMap = {}
 def setFrozen(commitID):
 	global lockTimeMap
-	time = time.time()
-	lockTimeMap[commitID] = time
+	currentTime = time.time()
+	lockTimeMap[commitID] = currentTime
 
 #2 day frozen
 frozenTime = 60*60*24*2
 def lockClearFrozen():
-	flock()
+	flock('frozen')
 	currentTime = time.time()
 	lines = None
 	with open("../dataBase/frozen.usr") as f:
@@ -57,12 +55,14 @@ def lockClearFrozen():
 				f.write("{0[0]} {0[1]} {0[2]}\n".format(content))
 			else:
 				del lockTimeMap[content[0]]
-	funlock()
+		f.flush()
+	funlock('frozen')
 
 def record(user, line):
 	path = "../dataBase/person/{0}".format(user)
 	with open(path, 'a+') as f:
 		f.write("["+time.asctime(time.localtime(time.time()))+"] "+"{0}\n".format(line))
+		f.flush()
 
 def getRecord(user):
 	path = "../dataBase/person/{0}".format(user)
@@ -137,14 +137,15 @@ def select(user, commitID):
 		wc = [ret[0], ret[1], user]
 		with open("../dataBase/frozen.usr", 'a') as f:
 			f.write("{0[0]} {0[1]} {0[2]}\n".format(wc))
+			f.flush()
 		setFrozen(ret[0])
 		record(user, "Select commitID:{0}".format(ret[0]))
 	return ret
 
 def lockSelect(user, commitID):
-	flock()
+	flock(user)
 	ret = select(user, commitID)
-	funlock()
+	funlock(user)
 	return ret
 
 def cancel(user, commitID):
@@ -164,14 +165,15 @@ def cancel(user, commitID):
 		f.truncate()
 		for line in contents:
 			f.write("{0[0]} {0[1]} {0[2]}\n".format(line))
+		f.flush()
 	if found == 1:
 		record(user, "Cancel commitID:{0}".format(commitID))
 	return found
 
 def lockCancel(user, commitID):
-	flock()
+	flock(user)
 	ret = cancel(user, commitID)
-	funlock()
+	funlock(user)
 	return ret
 
 def show(user, commitID, selected):
@@ -189,7 +191,7 @@ def show(user, commitID, selected):
 					type = ftype.read().strip('\n')
 					fscore = os.popen('bash get_score.sh {0}'.format(content[0]))
 					score = fscore.read().strip('\n')
-					showinfo = [content[0], '0', '0', content[1], '1', type, score]
+					showinfo = [content[0], '0', content[1], '0', '1', type, score]
 					ret.append(showinfo)
 		else:
 			# show selected commit
@@ -206,11 +208,24 @@ def show(user, commitID, selected):
 						break
 			showinfo = None
 			if checkCommitID == False:
-				showinfo = ['0', 'No details.', 'No details.', '0', '0', '0', '0']
+				showinfo = ['0', 'No details.', '0', 'No details.', '0', '0', '0']
 			else:
-				detail = os.popen('bash get_commit_detail.sh {0}'.format(commitID))
-				comment = os.popen('bash get_commit_comment.sh {0}'.format(commitID))
-				showinfo = ['0', detail, comment, '0', '0', '0', '0']
+				retDetail = os.popen('bash get_commit_detail.sh {0}'.format(commitID))
+				retComment = os.popen('bash get_commit_comment.sh {0}'.format(commitID))
+				#print(comment.readlines())
+				detail = None
+				comment = None
+				if retDetail.read().strip('\n') == '0':
+					with open(".detailTmp") as f:
+						detail = f.read()
+				else:
+					detail = "No details."
+				if retComment.read().strip('\n') == '0':
+					with open(".commentTmp") as f:
+						comment = f.read()
+				else:
+					comment = "No comment."
+				showinfo = ['0', detail, '0', comment, '0', '0', '0']
 			ret.append(showinfo)
 		return ret
 	with open("../dataBase/candidates") as f:
@@ -224,7 +239,7 @@ def show(user, commitID, selected):
 			type = ftype.read().strip('\n')
 			fscore = os.popen('bash get_score.sh {0}'.format(content[0]))
 			score = fscore.read().strip('\n')
-			showinfo = [content[0], '0', '0', content[1], '0', type, score]
+			showinfo = [content[0], '0', content[1], '0', '0', type, score]
 			ret.append(showinfo)
 	with open("../dataBase/frozen.usr") as f:
 		lines = f.readlines()
@@ -235,23 +250,23 @@ def show(user, commitID, selected):
 				continue
 			for i in ret:
 				if i[0] == content[0] and user == content[2]:
-					i[3] = '1'
+					i[4] = '1'
 	record(user, "Show commitIDs")
 	return ret
 
 def lockShow(user, commitID, selected):
-	flock()
+	flock(user)
 	ret = show(user, commitID, selected)
-	funlock()
+	funlock(user)
 	return ret
 
 def history(user):
 	return getRecord(user)
 
 def lockHistory(user):
-	flock()
+	flock(user)
 	ret, __history = history(user)
-	funlock()
+	funlock(user)
 	return ret, __history
 
 def comment(user, commitID, __content):
@@ -270,15 +285,16 @@ def comment(user, commitID, __content):
 				break
 	if checkCommit == False:
 		return -1
-	commentBody = "{0} 说：\n{1}\n".format(user, content)
-	with open("../dataBase/comments/{0}", 'a+') as f:
+	commentBody = "{0} 说:\n{1}\n".format(user, __content)
+	with open("../dataBase/comments/{0}".format(commitID), 'a+') as f:
 		f.write(commentBody)
+		f.flush()
 	record(user, "Comment {0}".format(commitID))
 	return 0
 
 def lockComment(user, commitID, content):
-	flock()
+	flock(user)
 	ret = comment(user, commitID, content)
-	funlock()
+	funlock(user)
 	return ret
 

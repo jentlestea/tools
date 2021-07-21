@@ -1,9 +1,9 @@
 #!/bin/sh
 
 if [ -f $WORKON_HOME/dataBase/comments/$1 ];then
-	comment=`cat $WORKON_HOME/dataBase/comments/$1`
+	cat $WORKON_HOME/dataBase/comments/$1 > $WORKON_HOME/gRPC/.commentTmp
+	echo 0
 else
-	comment='No comment.'
+	echo 'No comment.' > $WORKON_HOME/gRPC/.commentTmp
+	echo -1
 fi
-
-echo $comment

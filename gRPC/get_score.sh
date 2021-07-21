@@ -3,10 +3,10 @@ DATABASEDIR=$WORKON_HOME/dataBase
 
 commitID=$1
 
-score=`cat $DATABASEDIR/summary/total.csv | grep $commitID | awk ' ''{print $3}`
+score=`cat $DATABASEDIR/summary/total.csv | grep $commitID | awk ' ''{print $3}'`
 
-if [ -n "$score" ];then
+if [ -z "$score" ];then
 	echo '?'
-elif
+else
 	echo $score
 fi
