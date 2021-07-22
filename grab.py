@@ -8,7 +8,7 @@ import re
 import time
 
 def help():
-	print('\033[0;37;43m简介:\033[0m')
+	print('\033[0;44;43m简介:\033[0m')
 	print(' openEuler kernel问题分发系统，使用前请先配置git的user.email，使用下面指令您可以认领某几个问题，')
 	print(' 在此期间该问题为你所有，有效期维持两天，如果有效期内您向openEuler推送解决该问题的补丁，且合入')
 	print(' 到openEuler仓库内，您将获得我们赠送的积分，若积分排名靠前您还会收到我们社区送出的礼品。')
@@ -18,14 +18,14 @@ def help():
 	print(" 3、COURSE类型问题，暂不做限制。")
 	print('\033[0;37;44m指令:\033[0m')
 	print(' # Question show                     //显示所有待解决的问题，bugzilla为记录该问题的数据库地址，Claimed表示是否已被人认领')
-	print(' # Question show {commitID}          //显示该问题的详细信息包括评论，输入一个commitID，输入时候{}要去掉')
-	print(' # Question show {commitID} detail   //显示该问题的详细信息，输入一个commitID，输入时候{}要去掉')
-	print(' # Question show {commitID} comment  //显示该问题的评论，输入一个commitID，输入时候{}要去掉')
+	print(' # Question show {commitID}          //显示该问题的详细信息包括评论，\033[1m输入一个commitID，输入时候{}要去掉\033[0m')
+	print(' # Question show {commitID} detail   //显示该问题的详细信息')
+	print(' # Question show {commitID} comment  //显示该问题的评论')
 	print(' # Question show claimd              //显示你认领的问题')
 	print(' # Question claim                    //随机认领一个问题')
-	print(' # Question claim {commitID}         //认领你想要解决的问题，输入一个commitID，输入时候{}要去掉')
-	print(' # Question hang {commitID}          //释放你认领的问题，输入一个commitID，输入的时候{}要去掉')
-	print(' # Question comment {commitID}       //对问题进行评论，按ctrl+D结束输入，输入一个commitID，输入时候{}要去掉')
+	print(' # Question claim {commitID}         //认领你想要解决的问题')
+	print(' # Question hang {commitID}          //释放你认领的问题')
+	print(' # Question comment {commitID}       //对问题进行评论，按ctrl+D结束输入')
 	print(' # Question history                  //查询你的操作记录')
 	print('\033[0;37;44m提示:\033[0m')
 	print('问题列表中会显示该问题的积分(score)，本应用用于openEuler kernel社区交流Linux技术问题，严禁从事其他无关活动!')
@@ -68,10 +68,12 @@ if __name__ == '__main__':
 				result = dist_client.distClient_Show(email, argv[2], '0')
 				if len(result) != 0:
 					print(result[0][1])
-			if argv[3] == 'comment':
+			elif argv[3] == 'comment':
 				result = dist_client.distClient_Show(email, argv[2], '0')
 				if len(result) != 0:
 					print("\033[0;37;44m评论区:\033[0m\n{0}".format(result[0][3]))
+			else:
+				help()
 			exit(0)
 		else:
 			help()
@@ -116,9 +118,13 @@ if __name__ == '__main__':
 	if argv[1] == 'comment':
 		if len(argv) != 3:
 			help()
-		content = sys.stdin.readlines()
-		result = dist_client.distClient_Comment(email, argv[2], content[0])
+		no_of_lines = 20
+		lines = ""
+		for line in sys.stdin:
+			lines += line
+		result = dist_client.distClient_Comment(email, argv[2], lines)
 		if result == 0:
 			print("["+time.asctime(time.localtime(time.time()))+"]"+" Success to comment")
 		else:
 			print("["+time.asctime(time.localtime(time.time()))+"]"+" Fail to comment")
+	help()
