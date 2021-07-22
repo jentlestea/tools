@@ -46,9 +46,11 @@ def lockClearFrozen():
 		for line in lines:
 			content = line.strip("\n").split()
 			if len(content) != 3:
-				return ret
+				continue
 			if content[0] not in lockTimeMap:
-				print("ERROR: {0} not found when clear frozen".format(content[0]))
+				setFrozen(content[0])
+				#reserve it and re-counting
+				f.write("{0[0]} {0[1]} {0[2]}\n".format(content))
 				continue
 			div = currentTime - lockTimeMap[content[0]]
 			if div < frozenTime:
