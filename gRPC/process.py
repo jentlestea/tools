@@ -121,7 +121,7 @@ def select(user, commitID):
 	if len(contents) == 0:
 		return ret
 
-	setCommitType = False
+	setCommitIDType = False
 	if commitID in ['LTS', 'LTS[C]', 'BUG', 'COURSE']:
 		setCommitIDType = True
 	if commitID == '0' or setCommitIDType == True:
@@ -142,7 +142,7 @@ def select(user, commitID):
 			if type.find('LTS') != -1 and lockLTS == True:
 				continue
 			if setCommitIDType == True and type != commitID:
-					continue
+				continue
 			ret = c
 			break
 	else:
