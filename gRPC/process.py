@@ -121,7 +121,10 @@ def select(user, commitID):
 	if len(contents) == 0:
 		return ret
 
-	if commitID == '0':
+	setCommitType = False
+	if commitID in ['LTS', 'LTS[C]', 'BUG', 'COURSE']:
+		setCommitIDType = True
+	if commitID == '0' or setCommitIDType == True:
 		frozens = []
 		with open("../dataBase/frozen.usr") as f:
 			lines = f.readlines()
@@ -132,12 +135,14 @@ def select(user, commitID):
 					continue
 				frozens.append(lineStrip[0])
 		for c in contents:
+			if c[0] in frozens:
+				continue
 			ftype = os.popen("bash get_type.sh {0}".format(c[0]))
 			type = ftype.read().strip('\n')
 			if type.find('LTS') != -1 and lockLTS == True:
 				continue
-			if c[0] in frozens:
-				continue
+			if setCommitIDType == True and type != commitID:
+					continue
 			ret = c
 			break
 	else:

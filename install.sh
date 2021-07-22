@@ -21,8 +21,10 @@ if [ -z "$REPORT_DIR_PATH" ];then
 	mkdir -p $REPORT_DIR_PATH
 fi
 echo "export OUTPUT_REPORT_DIR=$REPORT_DIR_PATH" >> ~/.bashrc
-
 echo "alias oqserver='cd `pwd` && python3 ./gRPC/dist_server.py'" >> ~/.bashrc
+
+echo "alias oqserver-tool='python3 $WORKON_HOME/tools/oqserver-tool.py'" >> ~/.bashrc
+
 source ~/.bashrc
 
 #export PATH=$PATH:/usr/local/bin/
