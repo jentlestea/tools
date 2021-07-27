@@ -1,0 +1,14 @@
+Head: 在devmem中增加十进制显示
+Type: COURSE
+Description: 通过增加十进制显示，达到什么效果
+Status: xxx
+Body:
+需要准备环境：xxxx
+复现场景：xxxx
+issue链接：xxxx
+bugzilla链接：xxxx
+
+课程描述：
+存在某种场景，请完善这个功能
+
+print(%lld)
