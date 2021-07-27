@@ -9,6 +9,8 @@ if [[ `uname` == 'Darwin' ]];then
 	sed -i '' '/IMPORT_COMMIT_FILE=/d' ~/.bashrc
 	sed -i '' '/alias oqserver=/d' ~/.bashrc
 	sed -i '' '/OUTPUT_REPORT_DIR=/d' ~/.bashrc
+	sed -i '' '/IFSPATH=/d' ~/.bashrc
+	sed -i '' '/alias oqserver-tool=/d' ~/.bashrc
 else
 	sed -i '/WORKON_HOME=/d' ~/.bashrc
 	sed -i '/INSTALL_REPO_PATH=/d' ~/.bashrc
@@ -18,5 +20,7 @@ else
 	sed -i '/IMPORT_COMMIT_FILE=/d' ~/.bashrc
 	sed -i '/alias oqserver=/d' ~/.bashrc
 	sed -i '/OUTPUT_REPORT_DIR=/d' ~/.bashrc
+	sed -i '/IFSPATH=/d' ~/.bashrc
+	sed -i '/alias oqserver-tool=/d' ~/.bashrc
 fi
 source ~/.bashrc

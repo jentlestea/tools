@@ -3,7 +3,7 @@
 time=$(date "+%Y-%m-%d")
 DATABASEDIR=$WORKON_HOME/dataBase
 SCRIPTDIR=$WORKON_HOME/script
-log=$SCRIPTDIR/log/$time.log
+log=$WORKON_HOME/log/$time.log
 cd $SCRIPTDIR
 echo 'Start refresh candidates... time:['$time']' >> $log
 

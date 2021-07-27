@@ -9,6 +9,8 @@ LOCKPATH = workOnTools+"/../dataBase/.lockf"
 flockfd = None
 #workOnHome = os.getenv('WORKON_HOME')
 
+commitFile=os.getenv('IMPORT_COMMIT_FILE')
+
 def flock():
 	global flockfd
 	flockfd = open(LOCKPATH, 'w+')
@@ -20,7 +22,8 @@ def funlock():
 def help():
 	print('Usage:')
 	print('# oqserver-tool reflush-database')
-	print('# oqserver-tool import-question {path}')
+	print('# oqserver-tool push-repo')
+	print('# oqserver-tool import-csv {csv_path}')
 	exit(0)
 
 if __name__ == '__main__':
@@ -28,6 +31,8 @@ if __name__ == '__main__':
 	if len(argv) < 2:
 		help()
 	if argv[1] == 'reflush-database':
+		if len(argv) != 2:
+			help()
 		flock()
 		f = os.popen("bash -x "+workOnTools+"/../script/flushPatch.sh")
 		err = f.read().strip('\n')
@@ -37,13 +42,24 @@ if __name__ == '__main__':
 			print('SUCCESS: flush database')
 		funlock()
 		exit(0)
-	if argv[2] == 'import-quesiton':
-		if 
-		f = os.popen("bash -x "+workOnTools+"/tools/import_question.sh")
+	if argv[1] == 'push-repo':
+		if len(argv) != 2:
+			help()
+		f = os.popen("bash -x "+workOnTools+"/tools/importfs/ifscan.sh")
 		err = f.read().strip('\n')
 		if err != '0':
-			print('ERROR: import question failed')
+			print('ERROR: import scan failed')
 		else:
-			print('SUCCESS: import question')
+			print('SUCCESS: import scan, check ./import.csv.tmp')
 		exit(0)
-	exit(0)
+	if argv[1] == 'import-csv':
+		if len(argv) != 3:
+			help()
+		f = os.popen("cp "+argv[2]+" "+commitFile+"")
+		err = f.read().strip('\n')
+		if err != '0':
+			print('ERROR: import csv failed')
+		else:
+			print('SUCCESS: now you can run reflush-database!')
+		exit(0)
+	help()

@@ -1,0 +1,16 @@
+Start refresh candidates... time:[2021-07-26]
+SUCCESS: branch openEuler-21.03 check pass.
+SUCCESS: branch Questions check pass.
+WARN: Totag:v1.0.0 Fromtag:v1.0.0 check failed
+Start refresh candidates... time:[2021-07-26]
+SUCCESS: branch openEuler-21.03 check pass.
+SUCCESS: branch Questions check pass.
+WARN: Totag:v1.0.0 Fromtag:v1.0.0 check failed
+SUCCESS: Flush patches count: 4
+Prepare to create bugzilla...
+SUCCESS: scan bugzilla, 20c5e40557f2 https://bugzilla.openeuler.org/show_bug.cgi?id=130
+SUCCESS: scan bugzilla, 23483409ee8a https://bugzilla.openeuler.org/show_bug.cgi?id=146
+SUCCESS: scan bugzilla, c0debe7f5b7f https://bugzilla.openeuler.org/show_bug.cgi?id=66
+SUCCESS: scan bugzilla, 003b3b79e5f1 https://bugzilla.openeuler.org/show_bug.cgi?id=145
+Create bugzilla end
+SUCCESS: refresh candidates OK
