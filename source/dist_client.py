@@ -65,3 +65,11 @@ def distClient_Comment(__user, __commitID, __content):
 		dist_pb2.QComt(user = __user, commitID = __commitID, content = __content)
 	)
 	return response.result
+
+def distClient_Report(__user, __report):
+	global stub
+	distClient_Connect()
+	response = stub.distReport(
+		dist_pb2.UsrReport(user = __user, report = __report)
+	)
+	return response.result

@@ -30,13 +30,34 @@ def help():
 	print(' # Question comment {commitID}       //对问题进行评论，按ctrl+D结束输入')
 	print(' # Question history                  //查询你的操作记录')
 	print(' # Question news                     //实时新闻，目前还在开发')
-	print(' # Question report {report_file}     //向社区提交一个问题，目前还在开发')
+	print(' # Question report format            //提交问题的格式')
+	print(' # Question report {report_file}     //向社区提交一个问题')
 	print('\033[0;37;44m提示:\033[0m')
 	print('问题列表中会显示该问题的积分(score)，本应用用于openEuler kernel社区交流Linux技术问题，严禁从事其他无关活动!')
 	print('查看积分排名的网址：www.xxx.com')
 	print('规则详情请参考：www.xxx.com')
 	print('\n\033[1;37mCopyright © Bobo \033[0m')
 	exit(0)
+
+def reportFmt():
+	print('Head: xxx')
+	print('Type: xxx')
+	print('Description: xxx')
+	print('Body:')
+	print('xxx')
+	print('\n下为例子:')
+	print('Head: blueTooth: 解决因为race造成的sock UAF')
+	print('Type: BUG')
+	print('Description: 手动shutdown sockt时会造成sock的race，并导致UAF')
+	print('Body:')
+	print('复现场景:')
+	print('xxxxxxxxx')
+	print('issue链接:')
+	print('xxxxxxxxx')
+	print('详细情况:')
+	print('xxxxxxxxx')
+	exit(0)
+
 
 if __name__ == '__main__':
 	argv = sys.argv
@@ -133,4 +154,16 @@ if __name__ == '__main__':
 		else:
 			print("["+time.asctime(time.localtime(time.time()))+"]"+" Fail to comment")
 		exit(0)
+	if argv[1] == 'report':
+		if len(argv) != 3:
+			help()
+		if argv[2] == 'format':
+			reportFmt()
+		with open(argv[2]) as f:
+			report = f.read()
+			result = dist_client.distClient_Report(email, report)
+			if result == 0:
+				print("["+time.asctime(time.localtime(time.time()))+"]"+" Failed to report")
+			else:
+				print("["+time.asctime(time.localtime(time.time()))+"]"+" Success to report")
 	help()
