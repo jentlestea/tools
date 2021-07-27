@@ -40,6 +40,11 @@ class dist(dist_pb2_grpc.distServicer):
 		content = request.content
 		ret = process.lockComment(user, commitID, content)
 		return dist_pb2.Result(result = ret)
+	def distReport(self, request, context):
+		user = request.user
+		report = request.report
+		ret = process.lockReport(user, report)
+		return dist_pb2.Result(result = ret)
 
 def serve():
 	server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
@@ -59,6 +64,10 @@ def serve():
 				process.clean()
 				server.stop(0)
 				exit(0)
+			f = os.popen("bash -x ../script/backend.sh")
+			err = f.read().strip('\n')
+			if err != '0':
+				print("[dist Service] backend failed!")
 			print("[dist Service] Flush patches success!")
 			process.funlock('startup')
 			time.sleep(60*60*24) # one day in seconds

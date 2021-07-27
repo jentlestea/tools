@@ -7,6 +7,7 @@ import _thread
 LOCKPATH = "../dataBase/.lockf"
 flockfdMap = {}
 #workOnHome = os.getenv('WORKON_HOME')
+poolIfs=os.getenv('IFSPATH')
 
 def flock(user):
 	global flockfdMap
@@ -318,3 +319,19 @@ def lockComment(user, commitID, content):
 	funlock(user)
 	return ret
 
+def report(usr, __report):
+	currentTime = time.time()
+	with open(poolIfs+"/"+currentTime.report, 'w+') as f:
+		f.write("Reported-by: "+usr+"\n")
+		f.write(__report)
+	f = os.popen("bash -x checkIfs.sh")
+	err = f.read().strip('\n')
+	if err != '0':
+		return -1
+	return 0
+
+def lockReport(user, __report):
+	flock(user)
+	ret = report(__report)
+	funlock(user)
+	return ret
