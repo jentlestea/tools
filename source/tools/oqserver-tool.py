@@ -55,6 +55,10 @@ if __name__ == '__main__':
 	if argv[1] == 'import-csv':
 		if len(argv) != 3:
 			help()
+		f = os.popen("cp "+commitFile+" "+commitFile+".old")
+		err = f.read().strip('\n')
+		if err != '0':
+			print('ERROR: backend import csv failed')
 		f = os.popen("cp "+argv[2]+" "+commitFile+"")
 		err = f.read().strip('\n')
 		if err != '0':

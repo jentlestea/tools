@@ -8,6 +8,8 @@ if [ -z "$dir" ];then
 	exit
 fi
 
+cat /dev/null > ./import.csv.tmp
+
 for file in `ls $dir`
 do
 	commitID=`bash -x $TOOLSCRIPTDIR/handleifs.sh $file`
