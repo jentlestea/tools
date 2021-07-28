@@ -24,7 +24,7 @@ def help():
 	print(' # Question show claimd              //显示你认领的问题')
 	print(' # Question show related             //查看和你相关的一些问题，目前还在开发')
 	print(' # Question claim                    //随机认领一个问题')
-	print(' # Question claim {type}             //随机认领一个type类型的问题，type可以为LTS,LTS[C],BUG,COURSE，\033[1m输入时{}去掉，注意[]转义\033[0m')
+	print(' # Question claim {type}             //随机认领一个type类型的问题，type可以为LTS,LTS(C),BUG,COURSE，\033[1m输入时{}去掉，注意()转义\033[0m')
 	print(' # Question claim {commitID}         //认领你想要解决的问题')
 	print(' # Question hang {commitID}          //释放你认领的问题')
 	print(' # Question comment {commitID}       //对问题进行评论，按ctrl+D结束输入')
