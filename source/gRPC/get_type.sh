@@ -1,4 +1,5 @@
 #!/bin/bash
+DATABASEDIR=$WORKON_HOME/dataBase
 
 commitID=$1
 type=`cat $DATABASEDIR/summary/total.csv | grep $commitID | awk ' ''{print $2}'`
