@@ -5,13 +5,13 @@ log=$2
 
 VerifyCode=`cat $file | grep 'VerifyCode' | sed -n -e 's/.*VerifyCode: \(.*\)/\1/p'`
 cd $INSTALL_REPO_PATH
-git checkout $INSTALL_SOURCE_BRANCH
+git checkout $INSTALL_SOURCE_BRANCH &> /dev/null
 found=`git log | grep "VerifyCode: $VerifyCode"`
 if [[ -n "$VerifyCode" ]] && [[ -n $found ]];then
-	#echo 0
+	echo 0
 	exit
 fi
-cd - 2>&1 >/dev/null
+cd - &>/dev/null
 
 if [ -z "$VerifyCode" ];then
 	VerifyCode=`echo $(($(date +%s%N)/1000000))`
@@ -26,7 +26,7 @@ Status=`cat $file | grep 'Status' | sed -n -e 's/.*Status: \(.*\)/\1/p'`
 
 if [ -z "$Head" ] || [ -z "$Type" ] || [ -z "$Description" ];then
 	echo '[ERROR] invalid ifs:'$file >> $log
-	#echo 0
+	echo 0
 	exit
 fi
 
@@ -42,13 +42,13 @@ delimI='Body'
 Body=`sed -n -e '/Body:/,//p' $file | tail +2`
 BodyShow="$Body"
 
-ReportedBy="Reported-by: $ReportedBy"
+ReportedByShow="Reported-by: $ReportedBy"
 DescriptionShow="Description: $Description"
 VerifyCodeShow="VerifyCode: $VerifyCode"
-
 cd $INSTALL_REPO_PATH
-git checkout $INSTALL_SOURCE_BRANCH
-git commit -m "$HeadLineShow" -m "$VerifyCodeShow" -m "$ReportedByShow" -m "$DescriptionShow" -m "$delimO" -m "$BodyShow" -m "$delimO" --allow-empty
+git checkout $INSTALL_SOURCE_BRANCH &> /dev/null
+git commit -m "$HeadLineShow" -m "$VerifyCodeShow" -m "$ReportedByShow" -m "$DescriptionShow" -m "$delimO" -m "$BodyShow" -m "$delimO" --allow-empty &> /dev/null
 commitID=`git log --oneline -1 | awk ' ''{print $1}'`
-cd - 2>&1 >/dev/null
+
+cd - &>/dev/null
 echo $commitID

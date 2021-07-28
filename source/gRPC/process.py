@@ -321,10 +321,11 @@ def lockComment(user, commitID, content):
 
 def report(usr, __report):
 	currentTime = time.time()
-	with open(poolIfs+"/"+currentTime.report, 'w+') as f:
+	wfile=poolIfs+"/{0}.report".format(currentTime)
+	with open(wfile, 'w+') as f:
 		f.write("Reported-by: "+usr+"\n")
 		f.write(__report)
-	f = os.popen("bash -x checkIfs.sh")
+	f = os.popen("bash -x ./checkIfs.sh {0}".format(wfile))
 	err = f.read().strip('\n')
 	if err != '0':
 		return -1
@@ -333,6 +334,6 @@ def report(usr, __report):
 
 def lockReport(user, __report):
 	flock(user)
-	ret = report(__report)
+	ret = report(user, __report)
 	funlock(user)
 	return ret

@@ -2,6 +2,11 @@
 
 file=$1
 
+if [ -z "$file" ];then
+	echo 0
+	exit
+fi
+
 Head=`cat $file | grep 'Head' | sed -n -e 's/.*Head: \(.*\)/\1/p'`
 Type=`cat $file | grep 'Type' | sed -n -e 's/.*Type: \(.*\)/\1/p'`
 Body=`cat $file | grep 'Body' | sed -n -e 's/.*Body: \(.*\)/\1/p'`

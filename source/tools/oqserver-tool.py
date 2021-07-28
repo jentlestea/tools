@@ -34,7 +34,7 @@ if __name__ == '__main__':
 		if len(argv) != 2:
 			help()
 		flock()
-		f = os.popen("bash -x "+workOnTools+"/../script/flushPatch.sh")
+		f = os.popen("bash "+workOnTools+"/../script/flushPatch.sh")
 		err = f.read().strip('\n')
 		if err != '0':
 			print('ERROR: flush database failed')
@@ -45,25 +45,35 @@ if __name__ == '__main__':
 	if argv[1] == 'push-repo':
 		if len(argv) != 2:
 			help()
-		f = os.popen("bash -x "+workOnTools+"/tools/importfs/ifscan.sh")
+		flock()
+		f = os.popen("bash "+workOnTools+"/importfs/ifscan.sh")
 		err = f.read().strip('\n')
 		if err != '0':
-			print('ERROR: import scan failed')
+			print('ERROR: push repo failed')
 		else:
-			print('SUCCESS: import scan, check ./import.csv.tmp')
+			print('SUCCESS: pls check ./import.csv.tmp')
+		funlock()
 		exit(0)
 	if argv[1] == 'import-csv':
 		if len(argv) != 3:
 			help()
-		f = os.popen("cp "+commitFile+" "+commitFile+".old")
+		flock()
+		if os.path.exists(commitFile) == True:
+			f = os.popen("cp "+commitFile+" "+commitFile+".old")
+			err = f.read().strip('\n')
+			if err != '':
+				print(err,'ERROR: backend import csv failed')
+		f = os.popen("bash checkcsv.sh {0}".format(argv[2]))
 		err = f.read().strip('\n')
 		if err != '0':
-			print('ERROR: backend import csv failed')
+			print('ERROR: pls check csv format!')
+			exit(0)
 		f = os.popen("cp "+argv[2]+" "+commitFile+"")
 		err = f.read().strip('\n')
-		if err != '0':
-			print('ERROR: import csv failed')
+		if err != '':
+			print(err,'ERROR: import csv failed')
 		else:
 			print('SUCCESS: now you can run reflush-database!')
+		funlock()
 		exit(0)
 	help()
