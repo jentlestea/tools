@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\ndist.proto\"8\n\x05QComt\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x10\n\x08\x63ommitID\x18\x02 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x03 \x01(\t\"\x13\n\x03Usr\x12\x0c\n\x04user\x18\x01 \x01(\t\";\n\x07UsrShow\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x10\n\x08\x63ommitID\x18\x02 \x01(\t\x12\x10\n\x08selected\x18\x03 \x01(\t\"(\n\x06UsrMsg\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x10\n\x08\x63ommitID\x18\x02 \x01(\t\"\x18\n\x06Result\x12\x0e\n\x06result\x18\x01 \x01(\x05\",\n\x06Select\x12\x10\n\x08\x63ommitID\x18\x01 \x01(\t\x12\x10\n\x08\x62ugzilla\x18\x02 \x01(\t\"v\n\x04Show\x12\x10\n\x08\x63ommitID\x18\x01 \x01(\t\x12\x0e\n\x06\x64\x65tail\x18\x02 \x01(\t\x12\x10\n\x08\x62ugzilla\x18\x03 \x01(\t\x12\x0f\n\x07\x63omment\x18\x04 \x01(\t\x12\x0c\n\x04user\x18\x05 \x01(\t\x12\x0c\n\x04type\x18\x06 \x01(\t\x12\r\n\x05score\x18\x07 \x01(\t\"*\n\x07History\x12\x0e\n\x06result\x18\x01 \x01(\x05\x12\x0f\n\x07history\x18\x02 \x01(\t2\xae\x01\n\x04\x64ist\x12 \n\ndistSelect\x12\x07.UsrMsg\x1a\x07.Select\"\x00\x12 \n\ndistCancel\x12\x07.UsrMsg\x1a\x07.Result\"\x00\x12\x1f\n\x08\x64istShow\x12\x08.UsrShow\x1a\x05.Show\"\x00\x30\x01\x12\x1f\n\x0b\x64istHistory\x12\x04.Usr\x1a\x08.History\"\x00\x12 \n\x0b\x64istComment\x12\x06.QComt\x1a\x07.Result\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\ndist.proto\"8\n\x05QComt\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x10\n\x08\x63ommitID\x18\x02 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x03 \x01(\t\"\x13\n\x03Usr\x12\x0c\n\x04user\x18\x01 \x01(\t\";\n\x07UsrShow\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x10\n\x08\x63ommitID\x18\x02 \x01(\t\x12\x10\n\x08selected\x18\x03 \x01(\t\"(\n\x06UsrMsg\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x10\n\x08\x63ommitID\x18\x02 \x01(\t\")\n\tUsrReport\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x0e\n\x06report\x18\x02 \x01(\t\"\x18\n\x06Result\x12\x0e\n\x06result\x18\x01 \x01(\x05\",\n\x06Select\x12\x10\n\x08\x63ommitID\x18\x01 \x01(\t\x12\x10\n\x08\x62ugzilla\x18\x02 \x01(\t\"v\n\x04Show\x12\x10\n\x08\x63ommitID\x18\x01 \x01(\t\x12\x0e\n\x06\x64\x65tail\x18\x02 \x01(\t\x12\x10\n\x08\x62ugzilla\x18\x03 \x01(\t\x12\x0f\n\x07\x63omment\x18\x04 \x01(\t\x12\x0c\n\x04user\x18\x05 \x01(\t\x12\x0c\n\x04type\x18\x06 \x01(\t\x12\r\n\x05score\x18\x07 \x01(\t\"*\n\x07History\x12\x0e\n\x06result\x18\x01 \x01(\x05\x12\x0f\n\x07history\x18\x02 \x01(\t2\xd3\x01\n\x04\x64ist\x12 \n\ndistSelect\x12\x07.UsrMsg\x1a\x07.Select\"\x00\x12 \n\ndistCancel\x12\x07.UsrMsg\x1a\x07.Result\"\x00\x12\x1f\n\x08\x64istShow\x12\x08.UsrShow\x1a\x05.Show\"\x00\x30\x01\x12\x1f\n\x0b\x64istHistory\x12\x04.Usr\x1a\x08.History\"\x00\x12 \n\x0b\x64istComment\x12\x06.QComt\x1a\x07.Result\"\x00\x12#\n\ndistReport\x12\n.UsrReport\x1a\x07.Result\"\x00\x62\x06proto3'
 )
 
 
@@ -188,6 +188,45 @@ _USRMSG = _descriptor.Descriptor(
 )
 
 
+_USRREPORT = _descriptor.Descriptor(
+  name='UsrReport',
+  full_name='UsrReport',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user', full_name='UsrReport.user', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='report', full_name='UsrReport.report', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=196,
+  serialized_end=237,
+)
+
+
 _RESULT = _descriptor.Descriptor(
   name='Result',
   full_name='Result',
@@ -215,8 +254,8 @@ _RESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=196,
-  serialized_end=220,
+  serialized_start=239,
+  serialized_end=263,
 )
 
 
@@ -254,8 +293,8 @@ _SELECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=222,
-  serialized_end=266,
+  serialized_start=265,
+  serialized_end=309,
 )
 
 
@@ -328,8 +367,8 @@ _SHOW = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=268,
-  serialized_end=386,
+  serialized_start=311,
+  serialized_end=429,
 )
 
 
@@ -367,14 +406,15 @@ _HISTORY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=388,
-  serialized_end=430,
+  serialized_start=431,
+  serialized_end=473,
 )
 
 DESCRIPTOR.message_types_by_name['QComt'] = _QCOMT
 DESCRIPTOR.message_types_by_name['Usr'] = _USR
 DESCRIPTOR.message_types_by_name['UsrShow'] = _USRSHOW
 DESCRIPTOR.message_types_by_name['UsrMsg'] = _USRMSG
+DESCRIPTOR.message_types_by_name['UsrReport'] = _USRREPORT
 DESCRIPTOR.message_types_by_name['Result'] = _RESULT
 DESCRIPTOR.message_types_by_name['Select'] = _SELECT
 DESCRIPTOR.message_types_by_name['Show'] = _SHOW
@@ -408,6 +448,13 @@ UsrMsg = _reflection.GeneratedProtocolMessageType('UsrMsg', (_message.Message,),
   # @@protoc_insertion_point(class_scope:UsrMsg)
   })
 _sym_db.RegisterMessage(UsrMsg)
+
+UsrReport = _reflection.GeneratedProtocolMessageType('UsrReport', (_message.Message,), {
+  'DESCRIPTOR' : _USRREPORT,
+  '__module__' : 'dist_pb2'
+  # @@protoc_insertion_point(class_scope:UsrReport)
+  })
+_sym_db.RegisterMessage(UsrReport)
 
 Result = _reflection.GeneratedProtocolMessageType('Result', (_message.Message,), {
   'DESCRIPTOR' : _RESULT,
@@ -446,8 +493,8 @@ _DIST = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=433,
-  serialized_end=607,
+  serialized_start=476,
+  serialized_end=687,
   methods=[
   _descriptor.MethodDescriptor(
     name='distSelect',
@@ -495,6 +542,16 @@ _DIST = _descriptor.ServiceDescriptor(
     index=4,
     containing_service=None,
     input_type=_QCOMT,
+    output_type=_RESULT,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='distReport',
+    full_name='dist.distReport',
+    index=5,
+    containing_service=None,
+    input_type=_USRREPORT,
     output_type=_RESULT,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,

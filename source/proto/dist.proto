@@ -10,6 +10,7 @@ service dist {
     rpc distShow(UsrShow) returns (stream Show) {}
     rpc distHistory(Usr) returns (History) {}
     rpc distComment(QComt) returns (Result) {}
+    rpc distReport(UsrReport) returns (Result) {}
 }
 
 message QComt {
@@ -31,6 +32,11 @@ message UsrShow {
 message UsrMsg {
     string user = 1;
     string commitID = 2;
+}
+
+message UsrReport {
+	string user = 1;
+	string report = 2;
 }
 
 message Result {
