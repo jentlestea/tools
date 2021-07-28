@@ -166,4 +166,5 @@ if __name__ == '__main__':
 				print("["+time.asctime(time.localtime(time.time()))+"]"+" Failed to report")
 			else:
 				print("["+time.asctime(time.localtime(time.time()))+"]"+" Success to report")
+		exit(0)
 	help()
