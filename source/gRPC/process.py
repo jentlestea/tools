@@ -328,6 +328,7 @@ def report(usr, __report):
 	err = f.read().strip('\n')
 	if err != '0':
 		return -1
+	record(user, "report a problem")
 	return 0
 
 def lockReport(user, __report):

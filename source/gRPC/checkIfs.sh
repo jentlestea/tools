@@ -11,4 +11,6 @@ if [[ -z "$Head" ]] || [[ -z "$Type" ]] || [[ -z "$Body" ]] || [[ -z "$Descripti
 	echo '-1'
 	exit
 fi
-echo '0'
+
+TypeAllow=('LTS','LTS(C)','COURSE','BUG')
+echo "${TypeAllow[@]}" | grep -wq "$Type" && echo '0' || echo '-1'

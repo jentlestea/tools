@@ -126,7 +126,7 @@ scanPatchesHasMerged(){
 		bugzilla=`git log $line -1 $TARGET_BRANCH | sed -n -e 's/.*bugzilla: \(.*\)/\1/p'`
 		cd - 2>&1 >/dev/null
 		#get score
-		score=`cat $DATABASEDIR/summary/total.csv | grep $bugzilla | awk ' ''{print $3}'`
+		score=`cat $DATABASEDIR/summary/total.csv | grep $bugzilla | awk ' ''{print $4}'`
 		echo $author' '$line' '$bugzilla' '$score >> $DATABASEDIR/record/newMerged$time.record
     done
 	sort -u $DATABASEDIR/record/newMerged$time.record > .recordTmp
@@ -158,7 +158,7 @@ scanPatchesHasMerged(){
 		cd $REPOPATH
 		#commitMsg=`git show --format=%B $commitID $SOURCE_BRANCH  | head -n 1`
 		#found=`git log --oneline $TTAGBASE..HEAD | grep "$commitMsg"`
-		bugzilla=`cat $DATABASEDIR/summary/total.csv | grep $commitID | awk ' ''{print $2}'`
+		bugzilla=`cat $DATABASEDIR/summary/total.csv | grep $commitID | awk ' ''{print $3}'`
 		found=`git log $TTAGBASE..$TARGET_BRANCH $TARGET_BRANCH | grep $bugzilla`
 		cd - 2>&1 >/dev/null
 		if [ -n "$found" ];then
@@ -193,7 +193,7 @@ createBugzilla(){
 		#if [ $bugID -ne -1 ];then
 		#	echo 'SUCCESS: create bugzilla, '$line' '$bugID >> $log
 		#	echo $line' '$bugID >> $DATABASEDIR/candidates
-		bugzilla=`cat $DATABASEDIR/summary/total.csv | grep $line | awk ' ''{print $2}'`
+		bugzilla=`cat $DATABASEDIR/summary/total.csv | grep $line | awk ' ''{print $3}'`
 		if [ -n "$bugzilla" ];then
 			echo "SUCCESS: scan bugzilla, "$line" "$bugzilla >> $log
 			echo $line' '$bugzilla >> $DATABASEDIR/candidates
