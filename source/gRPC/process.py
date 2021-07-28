@@ -109,8 +109,8 @@ def select(user, commitID):
 				ftype = os.popen('bash get_type.sh {0}'.format(content[0]))
 				type = ftype.read().strip('\n')
 				if type.find("LTS") != -1:
-					ltsTimes += 1
-		if times >= 2 or ltsTimes >= 1:
+					lockLTS = True
+		if times >= 2:
 			return ret
 	with open("../dataBase/candidates") as f:
 		lines = f.readlines()
@@ -123,7 +123,7 @@ def select(user, commitID):
 		return ret
 
 	setCommitIDType = False
-	if commitID in ['LTS', 'LTS[C]', 'BUG', 'COURSE']:
+	if commitID in ['LTS', 'LTS(C)', 'BUG', 'COURSE']:
 		setCommitIDType = True
 	if commitID == '0' or setCommitIDType == True:
 		frozens = []
