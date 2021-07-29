@@ -1,10 +1,17 @@
 #!/bin/bash
 
-if [ -n "$1" ];then
-	echo $1 > ip.conf
+echo $#
+if [ $# != 1 ];then
+	exit
 fi
 
-echo "export CWORKON_HOME=`pwd`" >> ~/.bashrc
-echo "export CPYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/proto" >> ~/.bashrc
-echo "alias Question='python3 `pwd`/grab.py'" >> ~/.bashrc
-source ~/.bashrc
+QCDIR=$1
+
+if [ -f '/etc/profile.d/qc.sh' ];then
+	exit
+fi
+
+touch /etc/profile.d/qc.sh
+echo "QCDIR=$QCDIR" >> /etc/profile.d/qc.sh
+echo "export QCWORKON_HOME=$QCDIR" >> /etc/profile.d/qc.sh
+echo "alias Question='python3 $QCDIR/grab.py'" >> /etc/profile.d/qc.sh

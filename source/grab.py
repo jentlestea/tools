@@ -1,6 +1,6 @@
 import sys
 import os
-workHome = os.getenv('CWORKON_HOME')
+workHome = os.getenv('QCWORKON_HOME')
 if workHome not in sys.path:
 	sys.path.append(workHome)
 import dist_client

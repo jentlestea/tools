@@ -1,13 +1,13 @@
 import sys
 import os
-workProtoHome = os.getenv('CWORKON_HOME') + '/proto'
+workProtoHome = os.getenv('QCWORKON_HOME') + '/proto'
 if workProtoHome not in sys.path:
 	sys.path.append(workProtoHome)
 import grpc
 import dist_pb2
 import dist_pb2_grpc
 
-workHome = os.getenv('CWORKON_HOME')
+workHome = os.getenv('QCWORKON_HOME')
 #addr = "139.159.148.89:50051"
 f = open(workHome + "/ip.conf")
 addr = f.readline().strip('\n')
