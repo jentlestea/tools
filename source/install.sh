@@ -15,4 +15,3 @@ touch /etc/profile.d/qc.sh
 echo "QCDIR=$QCDIR" >> /etc/profile.d/qc.sh
 echo "export QCWORKON_HOME=$QCDIR" >> /etc/profile.d/qc.sh
 echo "alias Question='python3 $QCDIR/grab.py'" >> /etc/profile.d/qc.sh
-source /etc/profile
