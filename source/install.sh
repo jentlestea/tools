@@ -9,7 +9,6 @@ echo "export INSTALL_SOURCE_BRANCH=Questions" >> ~/.bashrc
 echo "export SPYTHONPATH=`pwd`/gRPC:`pwd`/gRPC/proto" >> ~/.bashrc
 mkdir -p ~/oqserver/pool/ifs
 echo "export IFSPATH=~/oqserver/pool/ifs" >> ~/.bashrc
-
 if [ -z "$COMMIT_FILE_PATH" ];then
 	COMMIT_DIR_PATH=~/oqserver/front
 	mkdir -p $COMMIT_DIR_PATH
@@ -17,16 +16,13 @@ if [ -z "$COMMIT_FILE_PATH" ];then
 	touch $COMMIT_FILE_PATH
 fi
 echo "export IMPORT_COMMIT_FILE=$COMMIT_FILE_PATH" >> ~/.bashrc
-
 if [ -z "$REPORT_DIR_PATH" ];then
 	REPORT_DIR_PATH=~/oqserver/front
 	mkdir -p $REPORT_DIR_PATH
 fi
 echo "export OUTPUT_REPORT_DIR=$REPORT_DIR_PATH" >> ~/.bashrc
 echo "alias oqserver='cd `pwd` && python3 ./gRPC/dist_server.py'" >> ~/.bashrc
-
-echo "alias oqserver-tool='python3 $WORKON_HOME/tools/oqserver-tool.py'" >> ~/.bashrc
-
+echo "alias oqserver-tool='python3 `pwd`/tools/oqserver-tool.py'" >> ~/.bashrc
 source ~/.bashrc
 
 #export PATH=$PATH:/usr/local/bin/
