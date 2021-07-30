@@ -2,7 +2,7 @@
 
 CONFPATH=/etc/profile.d/qs.sh
 
-if [ ! -f $CONFPATH ];then
+if [ -f $CONFPATH ];then
 	exit
 fi
 
@@ -11,7 +11,7 @@ if [ $# != 1 ];then
 fi
 TARGETDIR=$1
 
-echo "export WORKON_HOME=`pw`" >> $CONFPATH
+echo "export WORKON_HOME=$TARGETDIR" >> $CONFPATH
 
 mkdir -p ~/oqserver
 echo "export INSTALL_REPO_PATH=~/oqserver/repo" >> $CONFPATH
