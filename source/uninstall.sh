@@ -1,3 +1,3 @@
 #!/bin/sh
 
-rm -rf ~/oqserver
+rm -f /etc/profile.d/qs.sh
