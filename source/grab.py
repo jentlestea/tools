@@ -163,8 +163,8 @@ if __name__ == '__main__':
 			report = f.read()
 			result = dist_client.distClient_Report(email, report)
 			if result == 0:
-				print("["+time.asctime(time.localtime(time.time()))+"]"+" Failed to report")
-			else:
 				print("["+time.asctime(time.localtime(time.time()))+"]"+" Success to report")
+			else:
+				print("["+time.asctime(time.localtime(time.time()))+"]"+" Failed to report")
 		exit(0)
 	help()
