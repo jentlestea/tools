@@ -41,13 +41,15 @@ def help():
 
 def reportFmt():
 	print('Head: xxx')
-	print('Type: xxx //(当前只支持BUG,LTS,LTS(C),COURSE类型)')
+	print('Type: xxx //当前只支持BUG,LTS,LTS(C),COURSE类型)')
+	print('Score: xxx //评估当前问题的难易程度，只能介于1-10分之间')
 	print('Description: xxx')
 	print('Body:')
 	print('xxx')
 	print('\n以下为实例:\n')
 	print('Head: blueTooth: 解决因为race造成的sock UAF')
 	print('Type: BUG')
+	print('Score: 5')
 	print('Description: 手动shutdown sockt时会造成sock的race，并导致UAF')
 	print('Body:')
 	print('复现场景:')
