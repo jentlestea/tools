@@ -35,7 +35,7 @@ def help():
 	print(' # Question report {report_file}     //向社区提交一个问题')
 	print('\033[0;37;44m提示:\033[0m')
 	print('问题列表中会显示该问题的积分(score)，本应用用于openEuler kernel社区交流Linux技术问题，严禁从事其他无关活动!')
-	print('openEuler kernel社区官网(欢迎多多star，多多参与)：https://gitee.com/openeuler/kernel')
+	print('openEuler kernel社区仓库(欢迎多多star，多多参与)：https://gitee.com/openeuler/kernel')
 	print('查看积分排名的网址：暂未开放')
 	print('规则详情请参考：暂未开放')
 	print('\n\033[1;37mCopyright © Bobo \033[0m')
