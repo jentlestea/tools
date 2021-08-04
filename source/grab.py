@@ -163,7 +163,7 @@ if __name__ == '__main__':
 			help()
 		if argv[2] == 'format':
 			reportFmt()
-		with open(argv[2]) as f:
+		with open(argv[2], 'r', encoding='utf-8') as f:
 			report = f.read()
 			result = dist_client.distClient_Report(email, report)
 			if result == 0:
