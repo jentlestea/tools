@@ -11,7 +11,7 @@ if [ -f '/etc/bash_completion.d/qcc.sh' ];then
 	exit
 fi
 cp $QCDIR/qcc.sh /etc/bash_completion.d
-source /etc/bash_completion.d/qcc.sh
+bash /etc/bash_completion.d/qcc.sh
 
 if [ -f '/etc/profile.d/qc.sh' ];then
 	exit
